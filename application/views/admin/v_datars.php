@@ -21,8 +21,8 @@
 
     .button_tambah {
       background-color: #FFFFFF;
-      color: #ec4638;
-      border: 2px solid #ec4638;
+      color: #365465;
+      border: 2px solid #365465;
       padding: 5px 10px;
       margin: 0px 0px 4px 0px;
       font-size: 15px;
@@ -30,7 +30,7 @@
     }
 
     .button_tambah:hover {
-      background-color: #ec4638;
+      background-color: #365465;
       color: #FFFFFF;
     }
   </style>
