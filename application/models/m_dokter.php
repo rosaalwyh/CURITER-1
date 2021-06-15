@@ -10,6 +10,7 @@ class M_dokter extends CI_Model
         $this->db->select('*');
         $this->db->from('dokter');
         $this->db->join('rumahsakit','rumahsakit.id_rs = dokter.id_rs');
+        $this->db->join('poliklinik','poliklinik.id_poli = dokter.id_poli');
         return $this->db->get()->result_array();
     }
     public function get_dokterbyid($id){
@@ -27,8 +28,9 @@ class M_dokter extends CI_Model
         $this->db->select('*');
         $this->db->from('dokter');
         $this->db->join('rumahsakit','rumahsakit.id_rs = dokter.id_rs');
+        $this->db->join('poliklinik','poliklinik.id_poli = dokter.id_rs');
         $this->db->like('nama_dokter', $keyword);
-        $this->db->or_like('spesialis_dokter', $keyword);
+        $this->db->or_like('poliklinik.nama_poli', $keyword);
         $this->db->or_like('rumahsakit.nama_rs',$keyword);
         return $this->db->get()->result_array();
     }
