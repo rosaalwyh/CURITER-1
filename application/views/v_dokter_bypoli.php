@@ -157,8 +157,12 @@
 
 <div class="container" style="margin-top: 100px">
     <!-- <?= var_dump($dokter); ?> -->
-    <!-- <?= var_dump($jadwal); ?> -->
+
+    <?php if(empty($dokter)) {?>
+    <h5> Dokter Tidak Ditemukan </h5>
+    <?php }else{?>
     <h5> <?php echo $dokter[0]['nama_poli']; ?> </h5>
+    <?php }?>
     <?php foreach ($dokter as $d) { ?>
         <div class="konten-dokter" style="overflow:auto; height:auto;">
             <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">

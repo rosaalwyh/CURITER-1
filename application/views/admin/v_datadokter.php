@@ -64,7 +64,7 @@
               <form>
                 <td><?= $no++; ?></td>
                 <td><img src="<?php echo base_url(); ?>/Assets/doctor.png" style="width: 120px;" class="card-img" alt="..."></td>
-                <td><a href="<?= base_url('admin/dokter/jadwal/' . $d['id_dokter']) ?>" style="color:black"><?php echo $d['nama_dokter']; ?></a><button type="button" class="button_tambah" data-toggle="modal" data-target="#tambahjadwal<?= $d['id_dokter'] ?>">Tambah Jadwal</button></td>
+                <td><a href="<?= base_url('admin/dokter/jadwal/' . $d['id_dokter']) ?>" style="color:black"><?php echo $d['nama_dokter']; ?></a><br><button type="button" class="button_tambah" data-toggle="modal" data-target="#tambahjadwal<?= $d['id_dokter'] ?>">Tambah Jadwal</button></td>
                 <td><?php echo $d['no_dokter']; ?></td>
                 <td><?php echo $d['email_dokter'] ?></td>
                 <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?> "><i class="fas fa-edit"></i></button></td>
@@ -102,6 +102,10 @@
                       <div class="form-group">
                         <label for="formGroupExampleInput">Email</label>
                         <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Gambar</label>
+                        <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Email" name="gambar">
                       </div>
                   </div>
                   <div class="modal-footer">
