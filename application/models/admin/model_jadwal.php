@@ -10,4 +10,9 @@ class Model_jadwal extends CI_Model
     {
         return $this->db->get_where('jadwal', array('id_dokter' => $id))->result_array();
     }
+
+    public function tambah_jadwal($data)
+    {
+        $this->db->insert('jadwal', $data);
+    }
 }

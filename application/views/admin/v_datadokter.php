@@ -120,7 +120,7 @@
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title"><?= "Update Data Dokter " . $d['nama_dokter'] ?></h5>
+                    <h5 class="modal-title"><?= $d['nama_dokter'] ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -141,19 +141,15 @@
                         </div>
                         <div class="form-group">
                           <label for="formGroupExampleInput">Spesisalis</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Spesisalis" name="spesialis" value="<?php echo $d['spesialis_dokter'] ?>" required>
+                          <select multiple class="form-control" name="id_poli" id="id_poli" data-live-search="true" >
+                            <?php foreach ($poli as $pol) { ?>
+                              <option name="id_poli" value="<?php echo $pol['id_poli']; ?>"><?php echo $pol['nama_poli']; ?></option>
+                            <?php } ?>
+                          </select>
                         </div>
                         <div class="form-group">
                           <label for="formGroupExampleInput">Email</label>
                           <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email" value="<?php echo $d['email_dokter'] ?>">
-                        </div>
-                        <div class="form-group">
-                          <label for="formGroupExampleInput2">Rumah Sakit</label>
-                          <select class="form-control" id="formGroupExampleInput2" name="rs" required>
-                            <?php foreach ($rs as $r) { ?>
-                              <option value="<?php echo $r->id_rs; ?>"><?php echo $r->nama_rs;  ?></option>
-                            <?php } ?>
-                          </select>
                         </div>
                         <button type="submit" name="tambah" class="btn btn-primary float-right">Ubah Data</button>
                       </form>
