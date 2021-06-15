@@ -35,12 +35,14 @@
         }
     </style>
 </head>
-
 <body class="bodiadm">
     <div class="container">
         <div class="box">
+        
             <h3>Daftar Jadwal</h3>
-            <h6><?php echo $dokter[0]['nama_dokter']; ?></h6>
+        <?php foreach($jadwal as $d) { ?>
+            <h6><?php echo $d['nama_dokter']; ?></h6>
+
             <button type="button" class="button_tambah" data-toggle="modal" data-target="#tambah">Tambah Jadwal</button>
             <br></br>
             <table class="table table-bordered table-responsive" id="table">
@@ -55,8 +57,8 @@
                 <tbody>
                     <tr>
                         <td>Senin</td>
-                        <!-- <td><?php echo var_dump($jadwal); ?></td> -->
-                        <td><?php echo $jadwal[0]['senin']; ?></td>
+
+                        <td><?php echo $d['senin']; ?></td>
                         <form>
                             <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
                             <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
@@ -64,7 +66,7 @@
                     </tr>
                     <tr>
                         <td>Selasa</td>
-                        <td><?php echo $jadwal[0]['selasa']; ?></td>
+                        <td><?php echo $d['selasa']; ?></td>
                         <form>
                             <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
                             <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
@@ -72,15 +74,16 @@
                     </tr>
                     <tr>
                         <td>Rabu</td>
-                        <td><?php echo $jadwal[0]['rabu']; ?></td>
+                        <td><?php echo $d['rabu']; ?></td>
                         <form>
                             <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
                             <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
                         </form>
                     </tr>
                     <tr>
-                        <td>Kamis</td>
-                        <td><?php echo $jadwal[0]['kamis']; ?></td>
+                        <td>Kami</td>
+                        <td><?php echo $d['kamis']; ?></td>
+
                         <form>
                             <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
                             <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
@@ -88,7 +91,7 @@
                     </tr>
                     <tr>
                         <td>Jum'at</td>
-                        <td><?php echo $jadwal[0]['jumat']; ?></td>
+                        <td><?php echo $d['jumat']; ?></td>
                         <form>
                             <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
                             <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
@@ -96,7 +99,7 @@
                     </tr>
                     <tr>
                         <td>Sabtu</td>
-                        <td><?php echo $jadwal[0]['sabtu']; ?></td>
+                        <td><?php echo $d['sabtu']; ?></td>
                         <form>
                             <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
                             <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
@@ -104,7 +107,7 @@
                     </tr>
                     <tr>
                         <td>Minggu</td>
-                        <td><?php echo $jadwal[0]['minggu']; ?></td>
+                        <td><?php echo $d['minggu']; ?></td>
                         <form>
                             <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
                             <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
@@ -163,6 +166,7 @@
                         </div>
                     </div>
                 </tbody>
+        <?php } ?>
             </table>
         </div>
     </div>
