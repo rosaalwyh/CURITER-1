@@ -17,4 +17,16 @@ class Model_jadwal extends CI_Model
     {
         $this->db->insert('jadwal', $data);
     }
+
+    public function update_jadwal($id, $data)
+    {
+        $this->db->where('id_dokter', $id);
+        $this->db->update('jadwal', $data);
+    }
+
+    public function delete_jadwal($id)
+    {
+        $this->db->where('id_dokter', $id);
+        return $this->db->delete('jadwal');
+    }
 }

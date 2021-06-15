@@ -35,139 +35,139 @@
         }
     </style>
 </head>
+
 <body class="bodiadm">
     <div class="container">
         <div class="box">
-        
+
             <h3>Daftar Jadwal</h3>
-        <?php foreach($jadwal as $d) { ?>
-            <h6><?php echo $d['nama_dokter']; ?></h6>
-
-            <button type="button" class="button_tambah" data-toggle="modal" data-target="#tambah">Tambah Jadwal</button>
+            <br>
             <br></br>
-            <table class="table table-bordered table-responsive" id="table">
-                <thead>
-                    <tr>
-                        <th>Hari</th>
-                        <th>Waktu</th>
-                        <th>Edit</th>
-                        <th>Hapus</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Senin</td>
+            <?php foreach ($jadwal as $d) { ?>
+                <h6><?php echo $d['nama_dokter']; ?></h6>
+                <table class="table table-bordered table-responsive" id="table">
+                    <thead>
+                        <tr>
+                            <th>Hari</th>
+                            <th>Waktu</th>
+                            <th>Edit</th>
+                            <th>Hapus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Senin</td>
 
-                        <td><?php echo $d['senin']; ?></td>
-                        <form>
-                            <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
-                            <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <td>Selasa</td>
-                        <td><?php echo $d['selasa']; ?></td>
-                        <form>
-                            <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
-                            <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <td>Rabu</td>
-                        <td><?php echo $d['rabu']; ?></td>
-                        <form>
-                            <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
-                            <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <td>Kami</td>
-                        <td><?php echo $d['kamis']; ?></td>
+                            <td><?php echo $d['senin']; ?></td>
+                            <form>
+                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?>"><i class="fas fa-edit"></i></button></td>
+                                <td><a href="<?= base_url(); ?>admin/dokter/hapusJadwal/<?= $d['id_dokter'] ?>" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
+                            </form>
+                        </tr>
+                        <tr>
+                            <td>Selasa</td>
+                            <td><?php echo $d['selasa']; ?></td>
+                            <form>
+                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?>"><i class="fas fa-edit"></i></button></td>
+                                <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
+                            </form>
+                        </tr>
+                        <tr>
+                            <td>Rabu</td>
+                            <td><?php echo $d['rabu']; ?></td>
+                            <form>
+                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?>"><i class="fas fa-edit"></i></button></td>
+                                <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
+                            </form>
+                        </tr>
+                        <tr>
+                            <td>Kamis</td>
+                            <td><?php echo $d['kamis']; ?></td>
 
-                        <form>
-                            <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
-                            <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <td>Jum'at</td>
-                        <td><?php echo $d['jumat']; ?></td>
-                        <form>
-                            <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
-                            <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <td>Sabtu</td>
-                        <td><?php echo $d['sabtu']; ?></td>
-                        <form>
-                            <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
-                            <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <td>Minggu</td>
-                        <td><?php echo $d['minggu']; ?></td>
-                        <form>
-                            <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
-                            <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
-                        </form>
-                    </tr>
+                            <form>
+                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?>"><i class="fas fa-edit"></i></button></td>
+                                <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
+                            </form>
+                        </tr>
+                        <tr>
+                            <td>Jum'at</td>
+                            <td><?php echo $d['jumat']; ?></td>
+                            <form>
+                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?>"><i class="fas fa-edit"></i></button></td>
+                                <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
+                            </form>
+                        </tr>
+                        <tr>
+                            <td>Sabtu</td>
+                            <td><?php echo $d['sabtu']; ?></td>
+                            <form>
+                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?>"><i class="fas fa-edit"></i></button></td>
+                                <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
+                            </form>
+                        </tr>
+                        <tr>
+                            <td>Minggu</td>
+                            <td><?php echo $d['minggu']; ?></td>
+                            <form>
+                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?>"><i class="fas fa-edit"></i></button></td>
+                                <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
+                            </form>
+                        </tr>
+                    </tbody>
 
-
-                    <!-- Modal Tambah Jadwal -->
-                    <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                    <!-- Modal Ubah Jadwal -->
+                    <div class="modal fade" id="edit<?= $d['id_dokter'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <center>
-                                        <h2>Tambah Jadwal Dokter</h2>
+                                        <h2>Edit Jadwal Dokter</h2>
                                     </center>
                                 </div>
                                 <div class="modal-body">
-                                    <!-- <?php echo var_dump($dokter); ?> -->
-                                    <form method="POST" action="<?= base_url(); ?>admin/dokter/tambahJadwal">
-                                        <input type="hidden" name="id_dokter" value="<?= $dokter[0]['id_dokter'] ?>">
+                                    <form method="POST" action="<?= base_url(); ?>admin/dokter/editJadwal/<?= $d['id_dokter'] ?>">
+                                        <input type="hidden" name="id_dokter" value="<?= $d['id_dokter'] ?>">
                                         <div class="form-group">
                                             <label for="formGroupExampleInput">Senin</label>
-                                            <input type="text" class="form-control" placeholder="Masukkan jadwal senin" name="senin">
+                                            <input type="text" class="form-control" name="senin" value="<?= $d['senin'] ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="formGroupExampleInput">Selasa</label>
-                                            <input type="text" class="form-control" placeholder="Masukkan jadwal selasa" name="selasa">
+                                            <input type="text" class="form-control" name="selasa" value="<?= $d['selasa'] ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="formGroupExampleInput">Rabu</label>
-                                            <input type="text" class="form-control" placeholder="Masukkan jadwal rabu" name="rabu">
+                                            <input type="text" class="form-control" name="rabu" value="<?= $d['rabu'] ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="formGroupExampleInput">Kamis</label>
-                                            <input type="text" class="form-control" placeholder="Masukkan jadwal kamis" name="kamis">
+                                            <input type="text" class="form-control" name="kamis" value="<?= $d['kamis'] ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="formGroupExampleInput">Jum'at</label>
-                                            <input type="text" class="form-control" placeholder="Masukkan jadwal jum'at" name="jumat">
+                                            <input type="text" class="form-control" name="jumat" value="<?= $d['jumat'] ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="formGroupExampleInput">Sabtu</label>
-                                            <input type="text" class="form-control" placeholder="Masukkan jadwal sabtu" name="sabtu">
+                                            <input type="text" class="form-control" name="sabtu" value="<?= $d['sabtu'] ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="formGroupExampleInput">Minggu</label>
-                                            <input type="text" class="form-control" placeholder="Masukkan jadwal minggu" name="minggu">
+                                            <input type="text" class="form-control" name="minggu" value="<?= $d['senin'] ?>">
                                         </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                    <input type="submit" class="btn btn-primary" id="tambah" value="Submit" placeholder="Simpan">
+                                    <input type="submit" class="btn btn-primary" id="tambah" value="Ubah" placeholder="Ubah">
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </tbody>
-        <?php } ?>
-            </table>
+                <?php } ?>
+                </table>
+
+
         </div>
     </div>
 </body>
