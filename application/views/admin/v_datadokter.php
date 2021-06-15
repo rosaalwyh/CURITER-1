@@ -63,8 +63,8 @@
             <tr>
               <form>
                 <td><?= $no++; ?></td>
-                <td><img src="<?php echo base_url(); ?>/Assets/doctor.png" class="card-img" alt="..."></td>
-                <td><a href="<?= base_url('admin/dokter/jadwal/' . $d['id_dokter']) ?>" style="color:black"><?php echo $d['nama_dokter']; ?></a></td>
+                <td><img src="<?php echo base_url(); ?>/Assets/doctor.png" style="width: 120px;" class="card-img" alt="..."></td>
+                <td><a href="<?= base_url('admin/dokter/jadwal/' . $d['id_dokter']) ?>" style="color:black"><?php echo $d['nama_dokter']; ?></a><button type="button" class="button_tambah" data-toggle="modal" data-target="#tambahjadwal<?= $d['id_dokter'] ?>">Tambah Jadwal</button></td>
                 <td><?php echo $d['no_dokter']; ?></td>
                 <td><?php echo $d['email_dokter'] ?></td>
                 <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?> "><i class="fas fa-edit"></i></button></td>
@@ -117,12 +117,62 @@
               </div>
             </div>
 
+            <!-- Modal Tambah Jadwal -->
+            <div class="modal fade" id="tambahjadwal<?= $d['id_dokter'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <center>
+                      <h2>Tambah Jadwal Dokter</h2>
+                    </center>
+                  </div>
+                  <div class="modal-body">
+                    <form method="POST" action="<?= base_url(); ?>admin/dokter/tambahJadwal ">
+                      <input type="hidden" name="id_dokter" value="<?= $d['id_dokter'] ?>">
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Senin</label>
+                        <input type="text" class="form-control" placeholder="Masukkan jadwal senin" name="senin">
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Selasa</label>
+                        <input type="text" class="form-control" placeholder="Masukkan jadwal selasa" name="selasa">
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Rabu</label>
+                        <input type="text" class="form-control" placeholder="Masukkan jadwal rabu" name="rabu">
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Kamis</label>
+                        <input type="text" class="form-control" placeholder="Masukkan jadwal kamis" name="kamis">
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Jum'at</label>
+                        <input type="text" class="form-control" placeholder="Masukkan jadwal jum'at" name="jumat">
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Sabtu</label>
+                        <input type="text" class="form-control" placeholder="Masukkan jadwal sabtu" name="sabtu">
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Minggu</label>
+                        <input type="text" class="form-control" placeholder="Masukkan jadwal minggu" name="minggu">
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <input type="submit" class="btn btn-primary" id="tambah" value="Submit" placeholder="Simpan">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- Modal Ubah Dokter -->
             <div class="modal fade" id="edit<?= $d['id_dokter'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title"><?= "Update Data Dokter " . $d['nama_dokter'] ?></h5>
+                    <h5 class="modal-title"><?= $d['nama_dokter'] ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
