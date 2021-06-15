@@ -74,7 +74,6 @@ class Dokter extends CI_Controller
 	public function jadwal($id)
 	{
 		$data['title'] = 'Curiter | Admin';
-		$data['d'] = $this->model_dokter->get_dokter();
 		$data['jadwal'] = $this->model_jadwal->getjadwal($id);
 		$this->load->view('header_page_admin', $data);
 		$this->load->view('admin/v_jadwal_dokter', $data);

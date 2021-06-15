@@ -8,6 +8,8 @@ class Model_jadwal extends CI_Model
 {
     public function getjadwal($id)
     {
-        return $this->db->get_where('jadwal', array('id_dokter' => $id))->result_array();
+        $this->db->select('*');
+        $this->db->join('dokter', 'dokter.id_dokter = jadwal.id_dokter');
+        return $this->db->get_where('jadwal', array('jadwal.id_dokter' => $id))->result_array();
     }
 }
