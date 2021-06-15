@@ -50,7 +50,6 @@
             <th>No</th>
             <th>Foto</th>
             <th>Nama Dokter</th>
-            <th>Spesialis</th>
             <th>No Telp</th>
             <th>Email</th>
             <th>Edit</th>
@@ -66,7 +65,6 @@
                 <td><?= $no++; ?></td>
                 <td><img src="<?php echo base_url(); ?>/Assets/doctor.png" class="card-img" alt="..."></td>
                 <td><a href="<?= base_url('admin/dokter/jadwal/' . $d['id_dokter']) ?>" style="color:black"><?php echo $d['nama_dokter']; ?></a></td>
-                <td><?php echo $d['id_poli']; ?></td>
                 <td><?php echo $d['no_dokter']; ?></td>
                 <td><?php echo $d['email_dokter'] ?></td>
                 <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?> "><i class="fas fa-edit"></i></button></td>
@@ -138,14 +136,6 @@
                         <div class="form-group">
                           <label for="formGroupExampleInput">Nama Dokter</label>
                           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="nama" name="nama" value="<?php echo $d['nama_dokter'] ?>" required>
-                        </div>
-                        <div class="form-group">
-                          <label for="formGroupExampleInput">Spesisalis</label>
-                          <select multiple class="form-control" name="id_poli" id="id_poli" data-live-search="true" >
-                            <?php foreach ($poli as $pol) { ?>
-                              <option name="id_poli" value="<?php echo $pol['id_poli']; ?>"><?php echo $pol['nama_poli']; ?></option>
-                            <?php } ?>
-                          </select>
                         </div>
                         <div class="form-group">
                           <label for="formGroupExampleInput">Email</label>
