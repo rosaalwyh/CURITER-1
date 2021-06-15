@@ -57,10 +57,8 @@ class Dokter extends CI_Controller
 			'id_rs' => $this->input->post('rs', true),
 			'no_dokter' => $this->input->post('no', true),
 			'nama_dokter' => $this->input->post('nama', true),
-			'spesialis_dokter' => $this->input->post('spesialis', true),
-			'bio_dokter' => $this->input->post('bio', true),
 			'email_dokter' => $this->input->post('email', true),
-			'harga_dokter' => $this->input->post('harga', true)
+			
 		];
 		$this->model_dokter->update_dokter($id, $data);
 		redirect('admin/dokter/index');

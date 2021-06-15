@@ -50,7 +50,6 @@
             <th>No</th>
             <th>Foto</th>
             <th>Nama Dokter</th>
-            <th>Spesialis</th>
             <th>No Telp</th>
             <th>Email</th>
             <th>Edit</th>
@@ -66,7 +65,6 @@
                 <td><?= $no++; ?></td>
                 <td><img src="<?php echo base_url(); ?>/Assets/doctor.png" class="card-img" alt="..."></td>
                 <td><a href="<?= base_url('admin/dokter/jadwal/' . $d['id_dokter']) ?>" style="color:black"><?php echo $d['nama_dokter']; ?></a></td>
-                <td><?php echo $d['id_poli']; ?></td>
                 <td><?php echo $d['no_dokter']; ?></td>
                 <td><?php echo $d['email_dokter'] ?></td>
                 <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?> "><i class="fas fa-edit"></i></button></td>
@@ -140,20 +138,8 @@
                           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="nama" name="nama" value="<?php echo $d['nama_dokter'] ?>" required>
                         </div>
                         <div class="form-group">
-                          <label for="formGroupExampleInput">Spesisalis</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Spesisalis" name="spesialis" value="<?php echo $d['spesialis_dokter'] ?>" required>
-                        </div>
-                        <div class="form-group">
                           <label for="formGroupExampleInput">Email</label>
                           <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email" value="<?php echo $d['email_dokter'] ?>">
-                        </div>
-                        <div class="form-group">
-                          <label for="formGroupExampleInput2">Rumah Sakit</label>
-                          <select class="form-control" id="formGroupExampleInput2" name="rs" required>
-                            <?php foreach ($rs as $r) { ?>
-                              <option value="<?php echo $r->id_rs; ?>"><?php echo $r->nama_rs;  ?></option>
-                            <?php } ?>
-                          </select>
                         </div>
                         <button type="submit" name="tambah" class="btn btn-primary float-right">Ubah Data</button>
                       </form>
