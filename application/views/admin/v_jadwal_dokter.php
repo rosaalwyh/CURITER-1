@@ -42,6 +42,7 @@
             <h3>Daftar Jadwal</h3>
         <?php foreach($jadwal as $d) { ?>
             <h6><?php echo $d['nama_dokter']; ?></h6>
+
             <button type="button" class="button_tambah" data-toggle="modal" data-target="#tambah">Tambah Jadwal</button>
             <br></br>
             <table class="table table-bordered table-responsive" id="table">
@@ -82,6 +83,7 @@
                     <tr>
                         <td>Kami</td>
                         <td><?php echo $d['kamis']; ?></td>
+
                         <form>
                             <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></button></td>
                             <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
@@ -111,6 +113,58 @@
                             <td><a href="#" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
                         </form>
                     </tr>
+
+
+                    <!-- Modal Tambah Jadwal -->
+                    <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <center>
+                                        <h2>Tambah Jadwal Dokter</h2>
+                                    </center>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- <?php echo var_dump($dokter); ?> -->
+                                    <form method="POST" action="<?= base_url(); ?>admin/dokter/tambahJadwal">
+                                        <input type="hidden" name="id_dokter" value="<?= $dokter[0]['id_dokter'] ?>">
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Senin</label>
+                                            <input type="text" class="form-control" placeholder="Masukkan jadwal senin" name="senin">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Selasa</label>
+                                            <input type="text" class="form-control" placeholder="Masukkan jadwal selasa" name="selasa">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Rabu</label>
+                                            <input type="text" class="form-control" placeholder="Masukkan jadwal rabu" name="rabu">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Kamis</label>
+                                            <input type="text" class="form-control" placeholder="Masukkan jadwal kamis" name="kamis">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Jum'at</label>
+                                            <input type="text" class="form-control" placeholder="Masukkan jadwal jum'at" name="jumat">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Sabtu</label>
+                                            <input type="text" class="form-control" placeholder="Masukkan jadwal sabtu" name="sabtu">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput">Minggu</label>
+                                            <input type="text" class="form-control" placeholder="Masukkan jadwal minggu" name="minggu">
+                                        </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                    <input type="submit" class="btn btn-primary" id="tambah" value="Submit" placeholder="Simpan">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </tbody>
         <?php } ?>
             </table>

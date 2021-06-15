@@ -77,4 +77,20 @@ class Dokter extends CI_Controller
 		$this->load->view('admin/v_jadwal_dokter', $data);
 		$this->load->view('footer_page');
 	}
+
+	public function tambahJadwal()
+	{
+		$data = [
+			'id_dokter' => $this->input->post('id_dokter', true),
+			'senin' => $this->input->post('senin', true),
+			'selasa' => $this->input->post('selasa', true),
+			'rabu' => $this->input->post('rabu', true),
+			'kamis' => $this->input->post('kamis', true),
+			'jumat' => $this->input->post('jumat', true),
+			'sabtu' => $this->input->post('sabtu', true),
+			'minggu' => $this->input->post('minggu', true)
+		];
+		$this->model_jadwal->tambah_jadwal($data);
+		redirect('admin/dokter/jadwal/' . $data['id_dokter']);
+	}
 }
