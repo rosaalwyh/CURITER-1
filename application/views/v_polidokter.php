@@ -50,7 +50,7 @@
             <div class="card mt-6 mr-md-5" style="width: 18rem">
                 <a href="<?= base_url('caridokterrs/dokter/' . $poli['id_poli']); ?>" type="hidden"></a>
                 <center>
-                    <img class="card-img-top" src="<?php echo base_url(); ?>/Assets/anestesi.png" alt="Card image cap">
+                    <img class="card-img-top" src="<?php echo base_url(); ?>Assets/poli/<?= $poli['gambar']?>" alt="Card image cap">
                 </center>
                 <div class="card-body">
                     <p> <strong> <?= $poli['nama_poli'] ?></strong> </p>
