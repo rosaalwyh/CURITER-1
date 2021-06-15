@@ -50,7 +50,7 @@
       <div class="col-sm-4">
         <div class="card" style="width: 20rem;">
           <div class="card-body">
-            <img src="<?php echo base_url(); ?>/Assets/rs.jpeg" class="card-img" alt="..." width="200px">
+            <img src="<?php echo base_url(); ?>Assets/rs/<?=$rs['foto_rumahsakit']?>" class="card-img" alt="..." width="200px">
             <h4 class="card-title" style="text-align:center;"><?= "Rumah Sakit " . $rs['nama_rs'] ?></h4>
             <p class="card-text" style="text-align:center;opacity:0.7"> <img src="<?php echo base_url(); ?>/Assets/location.png" style="width:20px;height:20px;"> <?= "Kota " . $rs['kota'] ?></p>
             <p class="card-text" style="text-align:center;"><?= "Alamat : " . $rs['alamat_rs'] ?> </p>
