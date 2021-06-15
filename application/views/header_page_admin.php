@@ -68,7 +68,7 @@
 			text-decoration: none;
 			padding: 7px 25px;
 			margin: 1px;
-			font-size: 20px;
+			font-size: 17px;
 		}
 
 		a:hover,
