@@ -45,7 +45,7 @@
 		.fixed-footer {
 			width: 100%;
 			position: fixed;
-			background: #FFFFFF;
+			background: #dff0fe;
 			padding: 10px 0;
 			color: #7f91a1;
 			font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';
@@ -64,7 +64,7 @@
 		}
 
 		nav a {
-			color: #7f91a1;
+			color: #626d78;
 			text-decoration: none;
 			padding: 7px 25px;
 			margin: 1px;
@@ -73,7 +73,7 @@
 
 		a:hover,
 		a:active {
-			color: #ec4638;
+			color: #033D68;
 		}
 
 		a:link {
@@ -82,7 +82,7 @@
 
 		.search {
 			background-color: #FFFFFF;
-			border: 2px solid #7f91a1;
+			border: 2px solid #477A98;
 			padding: 5px 10px;
 			font-size: 15px;
 			border-radius: 50px 0 0 50px;
@@ -90,13 +90,13 @@
 		}
 
 		.search:hover {
-			border: 2px solid #ec4638;
+			border: 2px solid #365465;
 		}
 
 		#button {
 			background-color: #FFFFFF;
-			color: #ec4638;
-			border: 2px solid #ec4638;
+			color: #477A98;
+			border: 2px solid #477A98;
 			padding: 5px 10px;
 			margin: 0px 0px 4px 0px;
 			font-size: 15px;
@@ -104,14 +104,15 @@
 		}
 
 		#button:hover {
-			background-color: #ec4638;
+			background-color: #365465;
 			color: #FFFFFF;
 		}
 
 		.aidok {
-			color: #ec4638;
+			color: #477A98;
 			font-size: 25px;
 			padding: 2px 20px;
+			text-decoration: none;
 		}
 
 		/* .d-block.w-100{
@@ -190,7 +191,7 @@
 		}
 
 		.dropdown a:hover {
-			background-color: #ec4638;
+			background-color: #365465;
 			color: #FFFFFF;
 		}
 
@@ -226,7 +227,7 @@
 
 		.sticky a:hover,
 		a:active {
-			color: #ec4638;
+			color: #365465;
 		}
 
 		section {
@@ -298,26 +299,26 @@
 	<div class="fixed-header">
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light">
-				<a href="#" class="aidok">Curiter</a>
+				<a href="#" class="aidok" style="text-decoration:none;">Curiter</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
-							<a href="<?= base_url('admin/user/index') ?>">Data User</a>
-							<a href="<?= base_url('admin/dokter/index') ?>">Data Dokter</a>
-							<a href="<?= base_url('admin/rs/index') ?>">Data Rumah Sakit</a>
-							<a href="<?= base_url('admin/artikel/index') ?>">Data Artikel</a>
-							<!-- <a href="<?= base_url('about/') ?>">History</a> -->
-							<div class="float-right">
-								<input type="text" placeholder="Cari disini" class="search" name="keyword">
-								<button class="btn btn-success btn-lg" type="submit" id="button"><i class="fas fa-search"></i></button>
-								<div class="dropdown">
-									<button class="dropbtn" onclick="myFunction()"> <i class="fas fa-sign-out-alt "></i></button>
-									<div id="myDropdown" class="dropdown-content isidrop">
-										<a href="<?= base_url('admin/admin/logout') ?>">Keluar</a>
-									</div>
+						<a href="<?= base_url('admin/user/index') ?>" style="text-decoration:none;">Data User</a>
+						<a href="<?= base_url('admin/dokter/index') ?>" style="text-decoration:none;">Data Dokter</a>
+						<a href="<?= base_url('admin/rs/index') ?>" style="text-decoration:none;">Data Rumah Sakit</a>
+						<a href="<?= base_url('admin/artikel/index') ?>" style="text-decoration:none;">Data Artikel</a>
+						<!-- <a href="<?= base_url('about/') ?>">History</a> -->
+						<div class="float-right">
+							<input type="text" placeholder="Cari disini" class="search" name="keyword">
+							<button class="btn btn-success btn-lg" type="submit" id="button"><i class="fas fa-search"></i></button>
+							<div class="dropdown">
+								<button class="dropbtn" onclick="myFunction()"> <i class="fas fa-sign-out-alt "></i></button>
+								<div id="myDropdown" class="dropdown-content isidrop">
+									<a href="<?= base_url('admin/admin/logout') ?>">Keluar</a>
 								</div>
+							</div>
 					</ul>
 				</div>
 		</div>

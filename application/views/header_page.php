@@ -46,7 +46,7 @@
 		.fixed-footer {
 			width: 100%;
 			position: fixed;
-			background: #FFFFFF;
+			background: #dff0fe;
 			padding: 10px 0;
 			color: #7f91a1;
 			font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';
@@ -77,7 +77,7 @@
 		}
 
 		nav a {
-			color: #7f91a1;
+			color: #626d78;
 			text-decoration: none;
 			padding: 1px 5px;
 			margin: 1px 40px;
