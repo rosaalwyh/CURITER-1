@@ -103,6 +103,10 @@
                         <label for="formGroupExampleInput">Email</label>
                         <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email">
                       </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Gambar</label>
+                        <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Email" name="gambar">
+                      </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
