@@ -181,7 +181,6 @@
               <div class="col-md-6">
                 <div class="card-body">
                   <h5 class="card-title" style="text-align:left;"><?= $dr['nama_dokter'] ?></h5>
-                  <p class="card-text" style="text-align:left;opacity:0.7"> <?= "Spesialis " . $dr['spesialis_dokter'] ?> </p>
                 </div>
               </div>
               <!-- <div class="col-md-4"style="margin-top: 120px;" >

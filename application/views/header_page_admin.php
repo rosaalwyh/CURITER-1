@@ -66,7 +66,7 @@
 		nav a {
 			color: #626d78;
 			text-decoration: none;
-			padding: 7px 25px;
+			padding: 7px 60px;
 			margin: 1px;
 			font-size: 17px;
 		}
@@ -311,8 +311,6 @@
 						<a href="<?= base_url('admin/artikel/index') ?>" style="text-decoration:none;">Data Artikel</a>
 						<!-- <a href="<?= base_url('about/') ?>">History</a> -->
 						<div class="float-right">
-							<input type="text" placeholder="Cari disini" class="search" name="keyword">
-							<button class="btn btn-success btn-lg" type="submit" id="button"><i class="fas fa-search"></i></button>
 							<div class="dropdown">
 								<button class="dropbtn" onclick="myFunction()"> <i class="fas fa-sign-out-alt "></i></button>
 								<div id="myDropdown" class="dropdown-content isidrop">
