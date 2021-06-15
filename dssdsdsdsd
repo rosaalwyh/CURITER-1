@@ -1,0 +1,196 @@
+[33mcommit 97f2bce5008c7dd7acc936a1338b72665c77de47[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Taufik230301 <Taufiiqulhakim23@gmail.com>
+Date:   Tue Jun 15 15:08:27 2021 +0700
+
+    add tag br in data dokter
+
+[33mcommit 9d80a6c660557cc23372e846bf4bc85ebd74e222[m
+Merge: fbfb7d3 78c1300
+Author: Taufik230301 <Taufiiqulhakim23@gmail.com>
+Date:   Tue Jun 15 14:59:53 2021 +0700
+
+    Merge branch 'main' of https://github.com/taufik230301/CURITER into main
+
+[33mcommit fbfb7d3feb31e703e15fb7a685c7229709ca5328[m
+Author: Taufik230301 <Taufiiqulhakim23@gmail.com>
+Date:   Tue Jun 15 14:58:13 2021 +0700
+
+    add dokter image
+
+[33mcommit 78c1300a5d536bd01f3a218a42a389cd5c33e005[m
+Author: rosaalwyh <alawiyahrosa@gmail.com>
+Date:   Tue Jun 15 14:33:00 2021 +0700
+
+    Jadwal fixed
+
+[33mcommit cd34b9f7923c603d0a8e3c20a542e183b601edff[m
+Author: Taufik230301 <Taufiiqulhakim23@gmail.com>
+Date:   Tue Jun 15 13:25:29 2021 +0700
+
+    Add poli image
+
+[33mcommit 41eeacd4e8d0ec1b73c2df75c54e60af74fe9dd3[m
+Merge: 9a57973 ef245a2
+Author: rosaalwyh <alawiyahrosa@gmail.com>
+Date:   Tue Jun 15 12:36:59 2021 +0700
+
+    Merge branch 'main' of https://github.com/taufik230301/CURITER into main
+
+[33mcommit ef245a2540000a361743adfed9eac6e35db5b003[m
+Author: Taufik230301 <Taufiiqulhakim23@gmail.com>
+Date:   Tue Jun 15 12:36:30 2021 +0700
+
+    add database and new image rs
+
+[33mcommit 9a579730a8ee851f67b72d754b07c15354a2f882[m
+Merge: c02149f 87715a5
+Author: Taufiiqul Hakim <51141717+taufik230301@users.noreply.github.com>
+Date:   Tue Jun 15 12:14:43 2021 +0700
+
+    Merge pull request #8 from taufik230301/main
+    
+    add rs picture
+
+[33mcommit 87715a5610e3252b7ee049230b53c29d4d4c2b16[m
+Author: Taufik230301 <Taufiiqulhakim23@gmail.com>
+Date:   Tue Jun 15 12:09:14 2021 +0700
+
+    add rs picture
+
+[33mcommit c02149faa6373ec74160bffde7ef476617590399[m
+Merge: 049d770 6679e54
+Author: Taufiiqul Hakim <51141717+taufik230301@users.noreply.github.com>
+Date:   Tue Jun 15 11:34:25 2021 +0700
+
+    Merge pull request #7 from taufik230301/main
+    
+    fix data dokter
+
+[33mcommit 6679e544909f53372e4b06be0f6100c38fdf946f[m
+Merge: c3a98ca 049d770
+Author: Taufiiqul Hakim <51141717+taufik230301@users.noreply.github.com>
+Date:   Tue Jun 15 11:34:18 2021 +0700
+
+    Merge branch 'staging' into main
+
+[33mcommit c3a98ca2ba3c63eda0c041bc138d9dbf862d7331[m
+Author: Taufik230301 <Taufiiqulhakim23@gmail.com>
+Date:   Tue Jun 15 11:31:28 2021 +0700
+
+    fix data dokter
+
+[33mcommit 049d7706f7b06b39d5fe77e6e812753057df8ed0[m[33m ([m[1;32mstaging[m[33m)[m
+Merge: 337bf38 dfb3e27
+Author: Taufiiqul Hakim <51141717+taufik230301@users.noreply.github.com>
+Date:   Tue Jun 15 11:07:48 2021 +0700
+
+    Merge pull request #6 from taufik230301/main
+    
+     fix jadwal
+
+[33mcommit dfb3e2726999cfd78321346e23426eb393966a0b[m
+Merge: 69cce87 337bf38
+Author: Taufiiqul Hakim <51141717+taufik230301@users.noreply.github.com>
+Date:   Tue Jun 15 11:07:41 2021 +0700
+
+    Merge branch 'staging' into main
+
+[33mcommit 69cce8793e696e7997832b28244a2ac1deed3163[m
+Author: Taufik230301 <Taufiiqulhakim23@gmail.com>
+Date:   Tue Jun 15 11:03:27 2021 +0700
+
+     fix jadwal
+
+[33mcommit 337bf38f98d806b19d7c7f441f017842d4b09488[m
+Merge: fc61b61 402989c
+Author: Taufiiqul Hakim <51141717+taufik230301@users.noreply.github.com>
+Date:   Tue Jun 15 10:29:09 2021 +0700
+
+    Merge pull request #5 from rosaalwyh/jadwal
+    
+    tambah jadwal
+
+[33mcommit 402989c451dbf320de4a478cf9946e7ec06650a3[m
+Author: rosaalwyh <alawiyahrosa@gmail.com>
+Date:   Tue Jun 15 10:26:22 2021 +0700
+
+    tambah jadwal
+
+[33mcommit fc61b6124088dc6e90676233e4a8a5d967630bec[m
+Merge: 279f085 01c50fc
+Author: Taufiiqul Hakim <51141717+taufik230301@users.noreply.github.com>
+Date:   Tue Jun 15 10:14:56 2021 +0700
+
+    Merge pull request #4 from taufik230301/main
+    
+    Main
+
+[33mcommit 01c50fc5bbf94a12517216496df51d5600d1e294[m
+Merge: c803c9a 279f085
+Author: Taufik230301 <Taufiiqulhakim23@gmail.com>
+Date:   Tue Jun 15 10:14:03 2021 +0700
+
+    Merge branch 'main' of https://github.com/taufik230301/CURITER into main
+
+[33mcommit c803c9ad2a0711da5e20f6f753ee4f1a0aa8936b[m
+Author: Taufik230301 <Taufiiqulhakim23@gmail.com>
+Date:   Tue Jun 15 10:13:33 2021 +0700
+
+    font-size
+
+[33mcommit 279f08503c43e44acd01b0348898b6a8d525d125[m
+Author: Taufik230301 <Taufiiqulhakim23@gmail.com>
+Date:   Tue Jun 15 10:04:19 2021 +0700
+
+    add font size
+
+[33mcommit 8572fe87e2e8ada9a0d13650fc8bd1ac28e48464[m
+Merge: 02d0f43 eac87ad
+Author: Taufiiqul Hakim <51141717+taufik230301@users.noreply.github.com>
+Date:   Tue Jun 15 08:30:02 2021 +0700
+
+    Merge pull request #3 from taufik230301/main
+    
+    Merge pull request #1 from rosaalwyh/set_config
+
+[33mcommit 02d0f43143a10b8243c3641adb55150f34a18a38[m
+Merge: f5011e3 b6a0a1a
+Author: Taufiiqul Hakim <51141717+taufik230301@users.noreply.github.com>
+Date:   Tue Jun 15 08:28:35 2021 +0700
+
+    Merge pull request #2 from rosaalwyh/jadwal
+    
+    jadwal user
+
+[33mcommit b6a0a1a879d2fc7ef756c56868ef31531f0b4892[m
+Author: rosaalwyh <alawiyahrosa@gmail.com>
+Date:   Mon Jun 14 22:39:17 2021 +0700
+
+    memperbarui fitur jadwal
+
+[33mcommit eac87ad41e670a72e09f9dfe06a394d85a1edf2c[m
+Merge: f5011e3 6f37d30
+Author: Taufiiqul Hakim <51141717+taufik230301@users.noreply.github.com>
+Date:   Mon Jun 14 18:30:22 2021 +0700
+
+    Merge pull request #1 from rosaalwyh/set_config
+    
+    set config url dinamis
+
+[33mcommit 6f37d3016e1c36ae77ab3c2e2d3bdd2e6193099d[m
+Author: rosaalwyh <alawiyahrosa@gmail.com>
+Date:   Mon Jun 14 18:18:01 2021 +0700
+
+    set config url dinamis
+
+[33mcommit f5011e397796e139ce660dea08c296b3fce4097b[m
+Author: unknown <taufiiqulhakim23@gmail.com>
+Date:   Mon Jun 14 17:19:45 2021 +0700
+
+    Menambah Fitur Baru
+
+[33mcommit 7cca4e811951c9a685023f11de3920be5d5fe86f[m
+Author: Taufiiqul Hakim <51141717+taufik230301@users.noreply.github.com>
+Date:   Mon Jun 14 17:07:47 2021 +0700
+
+    Initial commit
