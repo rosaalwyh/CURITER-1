@@ -158,7 +158,7 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title" style="text-align:left;"><?php echo $d['nama_dokter']; ?> | <?php echo $d['spesialis_dokter'] ?></h5>
+        <h5 class="card-title" style="text-align:left;"><?php echo $d['nama_dokter']; ?> | <?php echo $d['nama_poli'] ?></h5>
         <!-- <h6 class="card-title">Jenis Spesialis</h6> -->
         <p class="card-text" style="text-align:left;"><?php echo "Rumah Sakit : ".$d['nama_rs']?></p>
         <!-- <a href="#" class="btn btn btn-primary btn-sm active" role="button" aria-pressed="true">Primary link</a> -->

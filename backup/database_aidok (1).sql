@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2021 at 04:37 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 5.6.38
+-- Waktu pembuatan: 15 Jun 2021 pada 07.35
+-- Versi server: 10.4.17-MariaDB
+-- Versi PHP: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `artikel`
+-- Struktur dari tabel `artikel`
 --
 
 CREATE TABLE `artikel` (
@@ -38,7 +37,7 @@ CREATE TABLE `artikel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `artikel`
+-- Dumping data untuk tabel `artikel`
 --
 
 INSERT INTO `artikel` (`id_artikel`, `kategori_artikel`, `judul_artikel`, `konten_artikel`, `sumber_artikel`, `gambar_artikel`) VALUES
@@ -55,7 +54,7 @@ INSERT INTO `artikel` (`id_artikel`, `kategori_artikel`, `judul_artikel`, `konte
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dokter`
+-- Struktur dari tabel `dokter`
 --
 
 CREATE TABLE `dokter` (
@@ -63,31 +62,32 @@ CREATE TABLE `dokter` (
   `id_rs` int(11) NOT NULL,
   `id_poli` int(11) NOT NULL,
   `nama_dokter` varchar(50) NOT NULL,
-  `spesialis_dokter` varchar(25) NOT NULL,
   `no_dokter` varchar(15) DEFAULT NULL,
   `email_dokter` varchar(30) DEFAULT NULL,
   `foto_dokter` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `dokter`
+-- Dumping data untuk tabel `dokter`
 --
 
-INSERT INTO `dokter` (`id_dokter`, `id_rs`, `id_poli`, `nama_dokter`, `spesialis_dokter`, `no_dokter`, `email_dokter`, `foto_dokter`) VALUES
-(47, 7, 1, ' dr. Yusni Puspita, Sp. An, KAKV, KIC, M. Kes', '', '6281373100915', 'yusnipuspita@yahoo.com', 0),
-(48, 7, 2, 'taufiiqulhakim', '', '082176350289', 'taufiiqulhakim23@gmail.com', 0);
+INSERT INTO `dokter` (`id_dokter`, `id_rs`, `id_poli`, `nama_dokter`, `no_dokter`, `email_dokter`, `foto_dokter`) VALUES
+(47, 0, 1, ' dr. Yusni Puspita, Sp. An, KAKV, KIC, M. Kes', '6281373100915', 'yusnipuspita@gmail.com', 0),
+(49, 7, 1, ' dr. Agustina Br Haloho, Sp. An, M. Kes', '', '', 0),
+(50, 7, 1, 'dr. Andi Miarti, Sp.An', '', '', 0),
+(51, 7, 1, 'dr. Ferriansyah Gunawan, Sp.An', '', '', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jadwal`
+-- Struktur dari tabel `jadwal`
 --
 
 CREATE TABLE `jadwal` (
   `id` int(250) NOT NULL,
   `senin` varchar(100) NOT NULL,
   `selasa` varchar(100) NOT NULL,
-  `rabu` varchar(10050) NOT NULL,
+  `rabu` varchar(100) NOT NULL,
   `kamis` varchar(100) NOT NULL,
   `jumat` varchar(100) NOT NULL,
   `sabtu` varchar(100) NOT NULL,
@@ -95,10 +95,17 @@ CREATE TABLE `jadwal` (
   `id_dokter` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `jadwal`
+--
+
+INSERT INTO `jadwal` (`id`, `senin`, `selasa`, `rabu`, `kamis`, `jumat`, `sabtu`, `minggu`, `id_dokter`) VALUES
+(1, '10.00-12.15', '08.30-11.45', '08.30-11.45', '08.30-11.45', '08.30-11.45', '08.30-11.45', '08.30-11.45', 47);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `janji`
+-- Struktur dari tabel `janji`
 --
 
 CREATE TABLE `janji` (
@@ -114,7 +121,7 @@ CREATE TABLE `janji` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `poliklinik`
+-- Struktur dari tabel `poliklinik`
 --
 
 CREATE TABLE `poliklinik` (
@@ -126,7 +133,7 @@ CREATE TABLE `poliklinik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `poliklinik`
+-- Dumping data untuk tabel `poliklinik`
 --
 
 INSERT INTO `poliklinik` (`id_poli`, `id_rs`, `nama_poli`, `tentang_poli`, `gambar`) VALUES
@@ -147,7 +154,7 @@ INSERT INTO `poliklinik` (`id_poli`, `id_rs`, `nama_poli`, `tentang_poli`, `gamb
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rumahsakit`
+-- Struktur dari tabel `rumahsakit`
 --
 
 CREATE TABLE `rumahsakit` (
@@ -163,22 +170,22 @@ CREATE TABLE `rumahsakit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `rumahsakit`
+-- Dumping data untuk tabel `rumahsakit`
 --
 
 INSERT INTO `rumahsakit` (`id_rs`, `nama_rs`, `alamat_rs`, `website`, `kota`, `telp_rs`, `fasilitas_rs`, `tentang_rs`, `foto_rumahsakit`) VALUES
-(0, 'Rumah Sakit Bunda', ' Jl. Demang Lebar Daun, Demang Lebar Daun, Kec. Ilir Bar. I, Kota Palembang, Sumatera Selatan', 'https://www.instagram.com/rsbundapalembang/?hl=en', 'Palembang', '0711 311866', 'Farmasi, Ambulans, Instalasi Bersalin, Instalasi Bedah, Instalasi Rawat Inap, Instalasi Rawat Jalan, Instalasi Fisioterapi, Kafetaria, Area Parkir, Medical Check Up, Instalasi Laboratorium, Instalasi Radiologi, Ruang Tunggu, Neonate Intensive Care Unit (NICU), Instalasi Gawat Darurat (IGD), Instalasi Tumbuh Kembang Anak', 'Rumah Sakit Bunda Palembang yang beroperasi sejak tanggal 6 Agustus 1990, dibawah naungan PT. Bundamedik. Rumah Sakit Bunda Palembang memiliki Visi mewujudkan Rumah Sakit pilihan utama masyarakat dengan pelayanan yang berkualitas. Dengan Misi memberikan pelayanan yang berkualitas, meningkatkan kualitas SDM yang sakit.', ''),
-(7, 'RSUP Dr. Mohammad Hoesin', 'Jl. Jend. Sudirman No.Km, RW.5, Sekip Jaya, Kec. Kemuning, Kota Palembang, Sumatera Selatan 30126', 'https://www.rsmh.co.id', 'Palembang', '0711 354088', 'IGD, Rawat Jalan, Rawat Inap', 'RSMH merupakan Rumah Sakit Pendidikan Utama Fakultas Kedokteran Universitas Sriwijaya sesuai SK MENKES Nomor:HK.02.02/MENKES/192/2015 tanggal 27 Mei 2015 dengan mewujudkan Academic Health System &#40;AHS&#41;, selain itu sesuai dengan PERMENKES Nomor:HK.02.02/MENKES/390/2019 tanggal 17 Otober 2014 ditetapkan menjadi Rumah Sakit Rujukan Nasional. Dalam upaya menjamin mutu dan keselamtan pelayanan, maka RSMH sudah meraih akreditasi paripurna KARS dan akan meraih akreditasi International JCI ditahun 2016.', ''),
-(9, 'Rumah Sakit Siloam', 'Jl. POM IX Palembang, Sumatera Selatan', 'https://www.siloamhospitals.com/', 'Palembang', '0711 522 9100', 'Gawat Darurat, Rawat Inap, Layanan Diagnostik, Radiologi, Laboratorium, ', 'Siloam Sriwijaya Palembang menyediakan beragam layanan kesehatan, terutama layanan kebidanan dan kandungan, kedokteran anak, penyakit dalam, dan radiologi. Rumah sakit ini telah dilengkapi dengan teknologi yang kedokteran yang canggih dan tim tenaga medis yang berpengalaman. Terletak di lokasi strategis di jantung Kota Palembang, Rumah Sakit Siloam Sriwijaya terkenal sebagai pusat layanan kesehatan andalan bagi masyarakat Kota Palembang dan kota-kota lain di sekitarnya.', ''),
-(10, 'Rumah Sakit RK Charitas', 'Jl. Jendral Sudirman No. 1054 Palembang, Sumatera Selatan', 'http://charitashospital.com/palembang', 'Palembang', '62-0711-353374', 'Home Care, Pastoral Care, Rumah Duka, Rumah Singgah, Auditorium, Kantin, ATM Center, Area Parkir, Tempat Ibadah, Credit Card & Debit ATM dan Medical Information', 'Rumah sakit yang didirikan para Suster Charitas ini merupakan rumah sakit pertama yang ada di Palembang, mempunyai 59 tempat tidur. Disamping itu , pelayanan kunjungan dan persalinan di rumah tetap dilaksanakan oleh suster - suster rumah sakit yang berkendaraan sepeda.  Selama penjajahan Jepang rumah sakit diambil dan dijadikan markas tentara Jepang. Para suster dan pastor diinternir/ditawan di berbagai tempat. Pada waktu kemerdekaan rumah sakit Charitas dikembalikan kepada Konggregasi Suster Charitas dan terus dibenahi hingga menjadi rumah sakit seperti saat ini.', ''),
-(11, 'Rumah Sakit Siti Khadijah', ' Jl. Demang Lebar Daun, Pakjo Palembang Palembang 30137', 'http://rsi-sitikhadijah.com', 'Palembang', ' 0711 – 356008', 'UGD, Rawat Inap, Rawat Jalan, Medical Check-up, Laboratorium, Farmasi, Radiologi, Fisioterapi, Hemodialisa, Bedah dan Kateterisasi Jantung & Angiografi ', 'Yayasan Islam Siti Khadijah Palembang, dibentuk dengan SK gubernur KDH TK I Sumatera Selatan, tertanggal 14 Desember 1974, Nomor 593/KPTS/VII/1974, dan disahkan melalui Akte Notaris Aminus Palembang, Tangggal 29 Januari 1975 Nomor 62 dan didaftarkan pada Pengeadilan Negeri (PN) Palembang, tanggal 5 Februari 1975, Nomor 32/1975, RS. Islam Siti Khadijah Palembang, mulai beroprasional secara defenitif pada tanggal 28 Februari 1980.', ''),
-(12, 'RSUD Siti Fatimah ', ' Jl. Kol. H. Burlian, Suka Bangun, Kec. Sukarami, Kota Palembang, Sumatera Selatan 30151', 'http://rsud.sumselprov.go.id', 'Palembang', ' 0711 5718883', 'Farmasi, Instalasi Rawat Inap, Instalasi Rawat Jalan, Area Parkir, Medical Check Up, Instalasi Laboratorium, Instalasi Radiologi, Ruang Tunggu, Instalasi Gawat Darurat (IGD)', 'Merupakan rumah sakit milik permerintah daerah terbesar di indonesia, yg berdiri di atas lahan seluas 4,1 Hektar dengan area bangunan seluas 52,952,11 m2. Lahir sebagai bukti keseriusan pemerintah daerah untuk meningkatkan derajat kesehatan masyarakat khususnya di wilayah Provinsi Sumatera Selatan.  Di resmikan oleh Gubernur Sumatera Selatan dan di saksikan oleh Menteri Kesehatan Republik Indonesia tahun 2018', ''),
-(15, 'Rumah Sakit Hermina', 'Jl. Basuki Rahmat No. 897, Sumatera Selatan, Indonesia', 'https://herminahospitals.com', 'Palembang', ' +62 711 352 525', 'CT Scan Hemodialisa KTK (Klinik Tumbuh Kembang), Gigi Spesialistik, PICU (Unit Perawatan Intensif Anak), ICU/NICU (Unit Perawatan Intensif/Unit Perawatan Intensif Neonatal), Audiometri Spirometri Thalassemia Perina', 'RS Hermina Palembang dibangun pada tahun 2011, yang menyediakan layanan khusus obgyn, pediatrik dan perawatan kecantikan. Rumah sakit ini memiliki 150 tempat tidur, termasuk fasilitas ICU, PICU, NICU, Hemodialisis, Kemoterapi, Bobath, dan Sperm Washing.', '');
+(0, 'Rumah Sakit Bunda', ' Jl. Demang Lebar Daun, Demang Lebar Daun, Kec. Ilir Bar. I, Kota Palembang, Sumatera Selatan', 'https://www.instagram.com/rsbundapalembang/?hl=en', 'Palembang', '0711 311866', 'Farmasi, Ambulans, Instalasi Bersalin, Instalasi Bedah, Instalasi Rawat Inap, Instalasi Rawat Jalan, Instalasi Fisioterapi, Kafetaria, Area Parkir, Medical Check Up, Instalasi Laboratorium, Instalasi Radiologi, Ruang Tunggu, Neonate Intensive Care Unit (NICU), Instalasi Gawat Darurat (IGD), Instalasi Tumbuh Kembang Anak', 'Rumah Sakit Bunda Palembang yang beroperasi sejak tanggal 6 Agustus 1990, dibawah naungan PT. Bundamedik. Rumah Sakit Bunda Palembang memiliki Visi mewujudkan Rumah Sakit pilihan utama masyarakat dengan pelayanan yang berkualitas. Dengan Misi memberikan pelayanan yang berkualitas, meningkatkan kualitas SDM yang sakit.', 'rsbunda.jpg'),
+(7, 'RSUP Dr. Mohammad Hoesin', 'Jl. Jend. Sudirman No.Km, RW.5, Sekip Jaya, Kec. Kemuning, Kota Palembang, Sumatera Selatan 30126', 'https://www.rsmh.co.id', 'Palembang', '0711 354088', 'IGD, Rawat Jalan, Rawat Inap', 'RSMH merupakan Rumah Sakit Pendidikan Utama Fakultas Kedokteran Universitas Sriwijaya sesuai SK MENKES Nomor:HK.02.02/MENKES/192/2015 tanggal 27 Mei 2015 dengan mewujudkan Academic Health System &#40;AHS&#41;, selain itu sesuai dengan PERMENKES Nomor:HK.02.02/MENKES/390/2019 tanggal 17 Otober 2014 ditetapkan menjadi Rumah Sakit Rujukan Nasional. Dalam upaya menjamin mutu dan keselamtan pelayanan, maka RSMH sudah meraih akreditasi paripurna KARS dan akan meraih akreditasi International JCI ditahun 2016.', 'rshusein.jpg'),
+(9, 'Rumah Sakit Siloam', 'Jl. POM IX Palembang, Sumatera Selatan', 'https://www.siloamhospitals.com/', 'Palembang', '0711 522 9100', 'Gawat Darurat, Rawat Inap, Layanan Diagnostik, Radiologi, Laboratorium, ', 'Siloam Sriwijaya Palembang menyediakan beragam layanan kesehatan, terutama layanan kebidanan dan kandungan, kedokteran anak, penyakit dalam, dan radiologi. Rumah sakit ini telah dilengkapi dengan teknologi yang kedokteran yang canggih dan tim tenaga medis yang berpengalaman. Terletak di lokasi strategis di jantung Kota Palembang, Rumah Sakit Siloam Sriwijaya terkenal sebagai pusat layanan kesehatan andalan bagi masyarakat Kota Palembang dan kota-kota lain di sekitarnya.', 'rssiloam.jpg'),
+(10, 'Rumah Sakit RK Charitas', 'Jl. Jendral Sudirman No. 1054 Palembang, Sumatera Selatan', 'http://charitashospital.com/palembang', 'Palembang', '62-0711-353374', 'Home Care, Pastoral Care, Rumah Duka, Rumah Singgah, Auditorium, Kantin, ATM Center, Area Parkir, Tempat Ibadah, Credit Card & Debit ATM dan Medical Information', 'Rumah sakit yang didirikan para Suster Charitas ini merupakan rumah sakit pertama yang ada di Palembang, mempunyai 59 tempat tidur. Disamping itu , pelayanan kunjungan dan persalinan di rumah tetap dilaksanakan oleh suster - suster rumah sakit yang berkendaraan sepeda.  Selama penjajahan Jepang rumah sakit diambil dan dijadikan markas tentara Jepang. Para suster dan pastor diinternir/ditawan di berbagai tempat. Pada waktu kemerdekaan rumah sakit Charitas dikembalikan kepada Konggregasi Suster Charitas dan terus dibenahi hingga menjadi rumah sakit seperti saat ini.', 'rkcharitas.jpg'),
+(11, 'Rumah Sakit Siti Khadijah', ' Jl. Demang Lebar Daun, Pakjo Palembang Palembang 30137', 'http://rsi-sitikhadijah.com', 'Palembang', ' 0711 – 356008', 'UGD, Rawat Inap, Rawat Jalan, Medical Check-up, Laboratorium, Farmasi, Radiologi, Fisioterapi, Hemodialisa, Bedah dan Kateterisasi Jantung & Angiografi ', 'Yayasan Islam Siti Khadijah Palembang, dibentuk dengan SK gubernur KDH TK I Sumatera Selatan, tertanggal 14 Desember 1974, Nomor 593/KPTS/VII/1974, dan disahkan melalui Akte Notaris Aminus Palembang, Tangggal 29 Januari 1975 Nomor 62 dan didaftarkan pada Pengeadilan Negeri (PN) Palembang, tanggal 5 Februari 1975, Nomor 32/1975, RS. Islam Siti Khadijah Palembang, mulai beroprasional secara defenitif pada tanggal 28 Februari 1980.', 'rssitikhodijah.jpg'),
+(12, 'RSUD Siti Fatimah ', ' Jl. Kol. H. Burlian, Suka Bangun, Kec. Sukarami, Kota Palembang, Sumatera Selatan 30151', 'http://rsud.sumselprov.go.id', 'Palembang', ' 0711 5718883', 'Farmasi, Instalasi Rawat Inap, Instalasi Rawat Jalan, Area Parkir, Medical Check Up, Instalasi Laboratorium, Instalasi Radiologi, Ruang Tunggu, Instalasi Gawat Darurat (IGD)', 'Merupakan rumah sakit milik permerintah daerah terbesar di indonesia, yg berdiri di atas lahan seluas 4,1 Hektar dengan area bangunan seluas 52,952,11 m2. Lahir sebagai bukti keseriusan pemerintah daerah untuk meningkatkan derajat kesehatan masyarakat khususnya di wilayah Provinsi Sumatera Selatan.  Di resmikan oleh Gubernur Sumatera Selatan dan di saksikan oleh Menteri Kesehatan Republik Indonesia tahun 2018', 'rssitifatimah.jpg'),
+(15, 'Rumah Sakit Hermina', 'Jl. Basuki Rahmat No. 897, Sumatera Selatan, Indonesia', 'https://herminahospitals.com', 'Palembang', ' +62 711 352 525', 'CT Scan Hemodialisa KTK (Klinik Tumbuh Kembang), Gigi Spesialistik, PICU (Unit Perawatan Intensif Anak), ICU/NICU (Unit Perawatan Intensif/Unit Perawatan Intensif Neonatal), Audiometri Spirometri Thalassemia Perina', 'RS Hermina Palembang dibangun pada tahun 2011, yang menyediakan layanan khusus obgyn, pediatrik dan perawatan kecantikan. Rumah sakit ini memiliki 150 tempat tidur, termasuk fasilitas ICU, PICU, NICU, Hemodialisis, Kemoterapi, Bobath, dan Sperm Washing.', 'rssitihermina.jpeg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -189,7 +196,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`) VALUES
@@ -201,13 +208,13 @@ INSERT INTO `user` (`id_user`, `nama_user`, `email_user`, `password_user`) VALUE
 --
 
 --
--- Indexes for table `artikel`
+-- Indeks untuk tabel `artikel`
 --
 ALTER TABLE `artikel`
   ADD PRIMARY KEY (`id_artikel`);
 
 --
--- Indexes for table `dokter`
+-- Indeks untuk tabel `dokter`
 --
 ALTER TABLE `dokter`
   ADD PRIMARY KEY (`id_dokter`),
@@ -215,13 +222,14 @@ ALTER TABLE `dokter`
   ADD KEY `id_poli` (`id_poli`);
 
 --
--- Indexes for table `jadwal`
+-- Indeks untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_dokter` (`id_dokter`);
 
 --
--- Indexes for table `janji`
+-- Indeks untuk tabel `janji`
 --
 ALTER TABLE `janji`
   ADD PRIMARY KEY (`id_janji`),
@@ -229,90 +237,96 @@ ALTER TABLE `janji`
   ADD KEY `fk_janji_user` (`id_user`);
 
 --
--- Indexes for table `poliklinik`
+-- Indeks untuk tabel `poliklinik`
 --
 ALTER TABLE `poliklinik`
   ADD PRIMARY KEY (`id_poli`),
   ADD KEY `fk_poli_rs` (`id_rs`);
 
 --
--- Indexes for table `rumahsakit`
+-- Indeks untuk tabel `rumahsakit`
 --
 ALTER TABLE `rumahsakit`
   ADD PRIMARY KEY (`id_rs`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `artikel`
+-- AUTO_INCREMENT untuk tabel `artikel`
 --
 ALTER TABLE `artikel`
   MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `dokter`
+-- AUTO_INCREMENT untuk tabel `dokter`
 --
 ALTER TABLE `dokter`
-  MODIFY `id_dokter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_dokter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
--- AUTO_INCREMENT for table `jadwal`
+-- AUTO_INCREMENT untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `janji`
+-- AUTO_INCREMENT untuk tabel `janji`
 --
 ALTER TABLE `janji`
   MODIFY `id_janji` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `poliklinik`
+-- AUTO_INCREMENT untuk tabel `poliklinik`
 --
 ALTER TABLE `poliklinik`
   MODIFY `id_poli` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `rumahsakit`
+-- AUTO_INCREMENT untuk tabel `rumahsakit`
 --
 ALTER TABLE `rumahsakit`
   MODIFY `id_rs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `dokter`
+-- Ketidakleluasaan untuk tabel `dokter`
 --
 ALTER TABLE `dokter`
   ADD CONSTRAINT `dokter_ibfk_1` FOREIGN KEY (`id_poli`) REFERENCES `poliklinik` (`id_poli`),
   ADD CONSTRAINT `fk_dokter_rs` FOREIGN KEY (`id_rs`) REFERENCES `rumahsakit` (`id_rs`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `janji`
+-- Ketidakleluasaan untuk tabel `jadwal`
+--
+ALTER TABLE `jadwal`
+  ADD CONSTRAINT `jadwal_ibfk_1` FOREIGN KEY (`id_dokter`) REFERENCES `dokter` (`id_dokter`);
+
+--
+-- Ketidakleluasaan untuk tabel `janji`
 --
 ALTER TABLE `janji`
   ADD CONSTRAINT `fk_janji_dokter` FOREIGN KEY (`id_dokter`) REFERENCES `dokter` (`id_dokter`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_janji_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `poliklinik`
+-- Ketidakleluasaan untuk tabel `poliklinik`
 --
 ALTER TABLE `poliklinik`
   ADD CONSTRAINT `fk_poli_rs` FOREIGN KEY (`id_rs`) REFERENCES `rumahsakit` (`id_rs`) ON DELETE CASCADE ON UPDATE CASCADE;
