@@ -75,7 +75,7 @@
   </div>
   <div class="konten-atas">
   <section id='konten-kiri-atas' class ="konten-sisikiri"style="margin-top:10px;">
-        <img src="<?php echo base_url(); ?>/Assets/rs.jpeg" class="card-img" alt="..." >
+  <img src="<?php echo base_url(); ?>Assets/rs/<?=$rsid['foto_rumahsakit']?>" class="card-img" alt="..." width="200px">
   </section>
   <div class="Tentang">
     <h4> <?="Tentang Rumah Sakit ".$rsid['nama_rs']?></h4>
@@ -161,7 +161,6 @@
     <div class="col-md-6">
       <div class="card-body">
         <h5 class="card-title" style="text-align:left;"><?= $dr['nama_dokter']?></h5>
-        <p class="card-text" style="text-align:left;opacity:0.7"> <?= "Spesialis ".$dr['spesialis_dokter']?> </p>
       </div>
   </div>
   <div class="col-md-4"style="margin-top: 120px;" >
