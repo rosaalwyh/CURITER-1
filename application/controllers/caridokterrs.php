@@ -38,7 +38,7 @@ class caridokterrs extends CI_Controller
     {
         $data['title'] = "Curiter | Cari Dokter";
         $data['dokter'] = $this->m_dokter->get_dokterbyidpoli($id);
-        $data['jadwal'] = $this->model_jadwal->getjadwall();
+        $data['jadwal'] = $this->model_jadwal->getjadwal($id);
         $data['poli'] = $this->m_poli->get_poli();
         $this->load->view('header_page', $data);
         $this->load->view('v_dokter_bypoli', $data);

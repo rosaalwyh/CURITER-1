@@ -91,53 +91,46 @@
                   <div class="modal-body">
                     <div class="boxsetting">
                       <br>
-                      <form action="<?= base_url(); ?>admin/rs/edit/<?= $r['id_rs'] ?>" method="post">
+                      <form action="<?= base_url(); ?>admin/rs/edit/<?= $r['id_rs'] ?>" method="post" enctype='multipart/form-data'>
                         <input type="hidden" name="id" value="<?= $r['id_rs'] ?>">
 
                         <div class="form-group">
                           <label for="formGroupExampleInput">Nama</label>
                           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama RS" name="nama" value="<?php echo $r['nama_rs'] ?>" required>
-                          <!-- <label for="nim">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $r['nama_rs']; ?>">
-                            <small class="form-text text-danger"><?= form_error('nama_rs') ?>.</small> -->
                         </div>
                         <div class="form-group">
                           <label for="formGroupExampleInput">Alamat</label>
                           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Alamat RS" name="alamat" value="<?php echo $r['alamat_rs'] ?>" required>
-                          <!-- <label for="text">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $r['alamat_rs']; ?>">
-                            <small class="form-text text-danger"><?= form_error('alamat_rs') ?>.</small> -->
                         </div>
                         <div class="form-group">
                           <label for="formGroupExampleInput">Alamat Website</label>
                           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Website" name="website" value="<?php echo $r['website'] ?>" required>
-                          <!-- <label for="text">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $r['website']; ?>">
-                            <small class="form-text text-danger"><?= form_error('website') ?>.</small> -->
                         </div>
                         <div class="form-group">
                           <label for="formGroupExampleInput">Kota</label>
                           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Kota" name="kota" value="<?php echo $r['kota'] ?>" required>
-                          <!-- <label for="text">Kota</label>
-                            <input type="text" class="form-control" id="kota" name="kota" value="<?= $r['kota']; ?>">
-                            <small class="form-text text-danger"><?= form_error('kota') ?>.</small> -->
                         </div>
                         <div class="form-group">
                           <label for="formGroupExampleInput">NO Telp</label>
                           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="No Telp" name="no" value="<?php echo $r['telp_rs'] ?>" required>
-                          <!-- <label for="nama">No Telp</label>
-                            <input type="text" class="form-control" id="telp" name="telp" value="<?= $r['telp_rs']; ?>">
-                            <small class="form-text text-danger"><?= form_error('telp_rs') ?>.</small> -->
                         </div>
                         <div class="form-group">
                           <label for="formGroupExampleInput">Tentang</label>
                           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Tentang RS" name="tentang" value="<?php echo $r['tentang_rs'] ?>" required>
-                          <!-- <label for="text">Fasilitas</label>
-                            <input type="text" class="form-control" id="fasilitas" name="fasilitas" value="<?= $r['fasilitas_rs']; ?>">
-                            <small class="form-text text-danger"><?= form_error('fasilitas_rs') ?>.</small> -->
                         </div>
+                        <div class="form-group">
+                          <label for="formGroupExampleInput">Gambar Rumah Sakit</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Tentang RS" name="tentang" value="<?php echo $r['tentang_rs'] ?>" required>
+                        </div>
+                        <div class="form-gorup">
                         <label for="formGroupExampleInput">Fasilitas</label>
                         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Fasilitas RS" name="fasilitas" value="<?php echo $r['fasilitas_rs'] ?>" required>
+                        </div>
+                        <div class="form-gorup">
+                        <label for="formGroupExampleInput">Gambar Rumah Sakit</label>
+                        <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Fasilitas RS" name="gambar" value="<?php echo $r['foto_rumahsakit'] ?>" required>
+                        </div>
+                        <br>
                         <button type="submit" name="tambah" class="btn btn-primary float-right">Ubah Data</button>
                       </form>
                       <br>
