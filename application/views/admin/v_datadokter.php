@@ -73,7 +73,7 @@
                 <td><a href="<?= base_url('admin/dokter/jadwal/' . $d['id_dokter']) ?>" style="color:black"><?php echo $d['nama_dokter']; ?></a><br><button type="button" class="button_tambah" data-toggle="modal" data-target="#tambahjadwal<?= $d['id_dokter'] ?>">Tambah Jadwal</button></td>
                 <td><?php echo $d['no_dokter']; ?></td>
                 <td><?php echo $d['email_dokter'] ?></td>
-                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?> "><i class="fas fa-edit"></i></button></td>
+                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?>"><i class="fas fa-edit"></i></button></td>
                 <td><a href="<?= base_url(); ?>admin/dokter/hapus/<?= $d['id_dokter'] ?>" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
               </form>
             </tr>
