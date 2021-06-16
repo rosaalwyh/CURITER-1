@@ -16,10 +16,13 @@ class Dokter extends CI_Controller
 		$this->load->model('m_rs');
 		$this->load->model('admin/model_rs');
 		$this->load->library('form_validation');
+		$this->load->model('admin/m_admin');
+		$this->load->library('session');
 	}
 
 	public function index()
 	{
+		$this->m_admin->checklogin();
 		$data['title'] = 'Curiter | Admin';
 		$data['d'] = $this->model_dokter->get_dokter();
 		$data['rs'] = $this->model_dokter->get_rs();

@@ -9,8 +9,11 @@ class Artikel extends CI_Controller
         parent::__construct();
 		$this->load->model('admin/model_artikel');
 		$this->load->library('upload');
+		$this->load->library('session');
+		$this->load->model('admin/m_admin');
     }
     public function index(){
+		$this->m_admin->checklogin();
 		$data['title'] = 'Curiter | Data Artikel';
 		$data['artikel'] = $this->model_artikel->get_artikel();
 		$this->load->view('header_page_admin',$data);
