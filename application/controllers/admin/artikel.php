@@ -23,10 +23,10 @@ class Artikel extends CI_Controller
 
 	public function tambah(){
 
-		$kategori_artikel = $this->input->post('kategori_artikel', true);
-		$judul_artikel = $this->input->post('judul_artikel', true);
-		$konten_artikel = $this->input->post('konten_artikel', true);
-		$sumber_artikel = $this->input->post('sumber_artikel', true);
+	  $kategori_artikel = $this->input->post('kategori_artikel', true);
+	  $judul_artikel = $this->input->post('judul_artikel', true);
+	  $konten_artikel = $this->input->post('konten_artikel', true);
+	  $sumber_artikel = $this->input->post('sumber_artikel', true);
 		 
 	  $config['upload_path'] = './assets/artikel';
       $config['allowed_types'] = 'jpg|png|jpeg|gif';

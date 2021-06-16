@@ -284,6 +284,16 @@
 
 
 		}
+		.button-poli {
+			border-radius: 13px;
+			font-size: 13px;
+			background-color: #477A98;
+			border-color: #477A98;
+			color: white;
+			margin-bottom: 10px;
+			/* margin-right: 4px; */
+			width: 110px;
+		}
 
 		@media screen and (max-width: 700px) {
 

@@ -18,6 +18,7 @@ class Dokter extends CI_Controller
 		$this->load->library('form_validation');
 		$this->load->model('admin/m_admin');
 		$this->load->library('session');
+		$this->load->library('upload');
 	}
 
 	public function index()
@@ -44,15 +45,50 @@ class Dokter extends CI_Controller
 
 	public function tambah()
 	{
-		$data = [
-			'id_rs' => $this->input->post('id_rs', true),
-			'no_dokter' => $this->input->post('no', true),
-			'nama_dokter' => $this->input->post('nama', true),
-			'id_poli' => $this->input->post('id_poli', true),
-			'email_dokter' => $this->input->post('email', true)
-		];
-		$this->model_dokter->tambah_dokter($data);
-		redirect('admin/dokter/detaildokter/' . $data['id_rs']);
+		$id_rs = $this->input->post('id_rs', true);
+		$no_dokter = $this->input->post('no', true);
+		$nama_dokter = $this->input->post('nama', true);
+		$id_poli = $this->input->post('id_poli', true);
+		$email_dokter = $this->input->post('email', true);
+
+		$config['upload_path'] = './assets/dokter';
+		$config['allowed_types'] = 'jpg|png|jpeg|gif';
+		$config['max_size'] = '2048';  //2MB max
+		$config['max_width'] = '4480'; // pixel
+		$config['max_height'] = '4480'; // pixel
+		$config['file_name'] = $_FILES['gambar']['name'];
+
+		$this->upload->initialize($config);
+
+	    if (!empty($_FILES['gambar']['name'])) {
+	        if ( $this->upload->do_upload('gambar') ) {
+	            $foto = $this->upload->data();
+	            $data = array(
+	                    	'id_rs'       => $id_rs,
+							  'no_dokter'			=> $no_dokter,
+							  'nama_dokter'			=> $nama_dokter,
+							  'id_poli'			=> $id_poli,
+							  'email_dokter'	=> $email_dokter,
+							  'foto_dokter'       => $foto['file_name'],
+	                        );
+							$this->model_dokter->tambah_dokter($data);
+              redirect('admin/dokter/detaildokter/' . $data['id_rs']);
+	        }else {
+                 $this->load->view('gagal');
+	        }
+	    }else {
+         
+          $this->load->view('gagal');
+	    }
+		// $data = [
+		// 	'id_rs' => $this->input->post('id_rs', true),
+		// 	'no_dokter' => $this->input->post('no', true),
+		// 	'nama_dokter' => $this->input->post('nama', true),
+		// 	'id_poli' => $this->input->post('id_poli', true),
+		// 	'email_dokter' => $this->input->post('email', true)
+		// ];
+		// $this->model_dokter->tambah_dokter($data);
+		// redirect('admin/dokter/detaildokter/' . $data['id_rs']);
 	}
 	public function edit($id)
 	{
