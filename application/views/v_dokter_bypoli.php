@@ -154,10 +154,8 @@
             }
         }
 </style>
-
 <div class="container" style="margin-top: 100px">
-    <!-- <?= var_dump($jadwal); ?> -->
-    <h5> <?php echo $dokter[0]['nama_poli']; ?> </h5>
+   <?php echo $dokter[0]['nama_poli']; ?> 
     <?php foreach ($dokter as $d) { ?>
         <div class="konten-dokter" style="overflow:auto; height:auto;">
             <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
@@ -201,73 +199,43 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <!-- <?= var_dump($jadwal); ?> -->
+                                
                                     <th scope="col">Hari</th>
                                     <th scope="col">Waktu</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if (empty($d['foto_dokter'])) { ?>
-                                    <tr>
-                                        <th scope="row">Senin</th>
-                                        <td><?= $jadwal['senin'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Selasa</th>
-                                        <td><?= $jadwal['selasa'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Rabu</th>
-                                        <td><?= $jadwal['rabu'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Kamis</th>
-                                        <td><?= $jadwal['kamis'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Jum'at</th>
-                                        <td><?= $jadwal['jumat'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Sabtu</th>
-                                        <td><?= $jadwal['sabtu'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Minggu</th>
-                                        <td><?= $jadwal['minggu'] ?></td>
-                                    </tr>
-                                <?php } else { ?>
-                                    <?php foreach ($jadwal as $jadwal) { ?>
+                                    
                                         <tr>
                                             <th scope="row">Senin</th>
-                                            <td><?= $jadwal['senin'] ?></td>
+                                            <td><?= $d['senin'] ?></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Selasa</th>
-                                            <td><?= $jadwal['selasa'] ?></td>
+                                            <td><?= $d['selasa'] ?></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Rabu</th>
-                                            <td><?= $jadwal['rabu'] ?></td>
+                                            <td><?= $d['rabu'] ?></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Kamis</th>
-                                            <td><?= $jadwal['kamis'] ?></td>
+                                            <td><?= $d['kamis'] ?></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Jum'at</th>
-                                            <td><?= $jadwal['jumat'] ?></td>
+                                            <td><?= $d['jumat'] ?></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Sabtu</th>
-                                            <td><?= $jadwal['sabtu'] ?></td>
+                                            <td><?= $d['sabtu'] ?></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Minggu</th>
-                                            <td><?= $jadwal['minggu'] ?></td>
+                                            <td><?= $d['minggu'] ?></td>
                                         </tr>
-                                    <?php } ?>
-                                <?php } ?>
+                                
+                            
                             </tbody>
                         </table>
                     </div>
