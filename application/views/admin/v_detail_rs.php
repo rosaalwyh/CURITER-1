@@ -74,8 +74,8 @@
 
   .button_tambah {
     background-color: #FFFFFF;
-    color: #ec4638;
-    border: 2px solid #ec4638;
+    color: #365465;
+    border: 2px solid #365465;
     padding: 5px 10px;
     margin: 0px 0px 4px 0px;
     font-size: 15px;
@@ -176,7 +176,11 @@
           <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
             <div class="row no-gutters">
               <div class="col-md-2">
-                <img src="<?php echo base_url(); ?>/Assets/doctor.png" class="card-img" alt="...">
+              <?php if(empty($dr['foto_dokter']) ){?>
+              <img src="<?php echo base_url(); ?>Assets/dokter.png" class="card-img" alt="..." >
+              <?php } else {?>
+                <img src="<?php echo base_url(); ?>Assets/dokter/<?= $dr['foto_dokter']?>" class="card-img" alt="..." >
+              <?php }?>
               </div>
               <div class="col-md-6">
                 <div class="card-body">

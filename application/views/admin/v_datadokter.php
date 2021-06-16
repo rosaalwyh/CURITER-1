@@ -63,16 +63,22 @@
             <tr>
               <form>
                 <td><?= $no++; ?></td>
-                <td><img src="<?php echo base_url(); ?>/Assets/doctor.png" style="width: 120px;" class="card-img" alt="..."></td>
+                <td>
+                <?php if(empty($d['foto_dokter']) ){?>
+                <img src="<?php echo base_url(); ?>Assets/dokter.png" style="width: 120px;" class="card-img" alt="..." >
+                <?php } else {?>
+                  <img src="<?php echo base_url(); ?>Assets/dokter/<?= $d['foto_dokter']?>" style="width: 120px;"  class="card-img" alt="..." >
+                <?php }?>
+                </td>
                 <td><a href="<?= base_url('admin/dokter/jadwal/' . $d['id_dokter']) ?>" style="color:black"><?php echo $d['nama_dokter']; ?></a><br><button type="button" class="button_tambah" data-toggle="modal" data-target="#tambahjadwal<?= $d['id_dokter'] ?>">Tambah Jadwal</button></td>
                 <td><?php echo $d['no_dokter']; ?></td>
                 <td><?php echo $d['email_dokter'] ?></td>
-                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?> "><i class="fas fa-edit"></i></button></td>
+                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?>"><i class="fas fa-edit"></i></button></td>
                 <td><a href="<?= base_url(); ?>admin/dokter/hapus/<?= $d['id_dokter'] ?>" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
               </form>
             </tr>
             <!-- Modal Tambah Dokter -->
-            <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+            <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true" enctype="multipart/form-data">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -81,7 +87,7 @@
                     </center>
                   </div>
                   <div class="modal-body">
-                    <form method="POST" action="<?= base_url(); ?>admin/dokter/tambah">
+                    <form method="POST" action="<?= base_url(); ?>admin/dokter/tambah" enctype="multipart/form-data">
                       <input type="hidden" name="id_rs" value="<?= $rs['id_rs'] ?>">
                       <div class="form-group">
                         <label for="formGroupExampleInput">Nama Dokter</label>
@@ -194,6 +200,10 @@
                         <div class="form-group">
                           <label for="formGroupExampleInput">Email</label>
                           <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email" value="<?php echo $d['email_dokter'] ?>">
+                        </div>
+                        <div class="form-group">
+                          <label for="formGroupExampleInput">Gambar</label>
+                          <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Email" name="gambar" value="<?php echo $d['email_dokter'] ?>">
                         </div>
                         <button type="submit" name="tambah" class="btn btn-primary float-right">Ubah Data</button>
                       </form>

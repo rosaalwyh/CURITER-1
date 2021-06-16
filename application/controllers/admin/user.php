@@ -9,10 +9,13 @@ class User extends CI_Controller
 	
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('admin/model_user');
+        $this->load->model('admin/model_user');
+        $this->load->model('admin/m_admin');
+        $this->load->library('session');
 	}
 
 	public function index(){
+        $this->m_admin->checklogin();
 		$data['title'] = 'Curiter | Data User';
 		$data['u'] = $this->model_user->get_user();
 		$this->load->view('header_page_admin',$data);

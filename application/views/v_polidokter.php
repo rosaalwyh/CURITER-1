@@ -45,12 +45,13 @@
     }
 </style>
 <div class="container" style="margin-top: 90px">
+    <!-- <?= var_dump($jadwal); ?> -->
     <div class="row justify-content-center" style="margin-left: 15px;">
         <?php foreach ($poli as $poli) { ?>
             <div class="card mt-6 mr-md-5" style="width: 18rem">
                 <a href="<?= base_url('caridokterrs/dokter/' . $poli['id_poli']); ?>" type="hidden"></a>
                 <center>
-                    <img class="card-img-top" src="<?php echo base_url(); ?>Assets/poli/<?= $poli['gambar']?>" alt="Card image cap">
+                    <img class="card-img-top" src="<?php echo base_url(); ?>Assets/poli/<?= $poli['gambar'] ?>" alt="Card image cap">
                 </center>
                 <div class="card-body">
                     <p> <strong> <?= $poli['nama_poli'] ?></strong> </p>

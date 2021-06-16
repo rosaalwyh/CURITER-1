@@ -156,19 +156,18 @@
 </style>
 
 <div class="container" style="margin-top: 100px">
-    <!-- <?= var_dump($dokter); ?> -->
-
-    <?php if(empty($dokter)) {?>
-    <h5> Dokter Tidak Ditemukan </h5>
-    <?php }else{?>
+    <!-- <?= var_dump($jadwal); ?> -->
     <h5> <?php echo $dokter[0]['nama_poli']; ?> </h5>
-    <?php }?>
     <?php foreach ($dokter as $d) { ?>
         <div class="konten-dokter" style="overflow:auto; height:auto;">
             <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
                 <div class="row no-gutters">
                     <div class="col-md-2">
-                        <img src="<?php echo base_url(); ?>/Assets/dokter.png" class="card-img" alt="...">
+                        <?php if (empty($d['foto_dokter'])) { ?>
+                            <img src="<?php echo base_url(); ?>Assets/dokter.png" class="card-img" alt="...">
+                        <?php } else { ?>
+                            <img src="<?php echo base_url(); ?>Assets/dokter/<?= $d['foto_dokter'] ?>" class="card-img" alt="...">
+                        <?php } ?>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -179,64 +178,101 @@
 
                     <div class="col-md-2" style="margin-top: 120px;">
                         <button type="button" class="ml-auto btn btn-primary text-uppercase" data-toggle="modal" data-target="#modalJadwal<?= $d['id_dokter'] ?>" style="border-radius:13px;font-size:13px;background-color:#033D68;border-color:#033D68;" name="button_call">
-                            Jadwal Dokter <?= $d['id_dokter'] ?>
+                            Jadwal Dokter
                         </button>
                     </div>
                 </div>
+
             </div>
-            <!-- Modal Form Jadwal -->
-            <div class="modal fade" id="modalJadwal<?= $d['id_dokter'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Jadwal Dokter <?= $d['id_dokter'] ?></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Hari</th>
-                                        <th scope="col">Waktu</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+        </div>
+
+        <!-- Modal Form Jadwal -->
+        <div class="modal fade" id="modalJadwal<?= $d['id_dokter'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle"><?= $d['nama_dokter'] ?></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <!-- <?= var_dump($jadwal); ?> -->
+                                    <th scope="col">Hari</th>
+                                    <th scope="col">Waktu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (empty($d['foto_dokter'])) { ?>
                                     <tr>
                                         <th scope="row">Senin</th>
-                                        <td><?= var_dump($jadwal); ?></td>
+                                        <td><?= $jadwal['senin'] ?></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Selasa</th>
-                                        <td></td>
+                                        <td><?= $jadwal['selasa'] ?></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Rabu</th>
-                                        <td></td>
+                                        <td><?= $jadwal['rabu'] ?></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Kamis</th>
-                                        <td></td>
+                                        <td><?= $jadwal['kamis'] ?></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Jum'at</th>
-                                        <td></td>
+                                        <td><?= $jadwal['jumat'] ?></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Sabtu</th>
-                                        <td></td>
+                                        <td><?= $jadwal['sabtu'] ?></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Minggu</th>
-                                        <td></td>
+                                        <td><?= $jadwal['minggu'] ?></td>
                                     </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+                                <?php } else { ?>
+                                    <?php foreach ($jadwal as $jadwal) { ?>
+                                        <tr>
+                                            <th scope="row">Senin</th>
+                                            <td><?= $jadwal['senin'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Selasa</th>
+                                            <td><?= $jadwal['selasa'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Rabu</th>
+                                            <td><?= $jadwal['rabu'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Kamis</th>
+                                            <td><?= $jadwal['kamis'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Jum'at</th>
+                                            <td><?= $jadwal['jumat'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Sabtu</th>
+                                            <td><?= $jadwal['sabtu'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Minggu</th>
+                                            <td><?= $jadwal['minggu'] ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
