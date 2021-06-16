@@ -154,6 +154,11 @@
             }
         }
 </style>
+        <?php if(empty($dokter)) {?>
+            <div class="container" style="margin-top: 100px">
+                <h2>Dokter Tidak Ditemukan</h2>
+            </div>
+        <?php } else{?>
 <div class="container" style="margin-top: 100px">
    <?php echo $dokter[0]['nama_poli']; ?> 
     <?php foreach ($dokter as $d) { ?>
@@ -195,8 +200,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-
-                        <table class="table table-bordered">
+<?php if(!empty($d)){?>
+    <table class="table table-bordered">
                             <thead>
                                 <tr>
                                 
@@ -238,6 +243,50 @@
                             
                             </tbody>
                         </table>
+<?php }else{?>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                
+                                    <th scope="col">Hari</th>
+                                    <th scope="col">Waktu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    
+                                        <tr>
+                                            <th scope="row">Senin</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Selasa</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Rabu</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Kamis</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Jum'at</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Sabtu</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Minggu</th>
+                                            <td></td>
+                                        </tr>
+                                
+                            
+                            </tbody>
+                        </table>
+<?php }?>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -275,4 +324,6 @@
 
         </script>
     <?php } ?>
+  
 </div>
+        <?php }?>

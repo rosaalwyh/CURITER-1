@@ -19,7 +19,6 @@ class M_dokter extends CI_Model
     public function get_dokterbyidpoli($id)
     {
         $this->db->select('*');
-        
         $this->db->join('poliklinik', 'poliklinik.id_poli = dokter.id_poli');
         $this->db->join('jadwal', 'jadwal.id_dokter = dokter.id_dokter');
         return $this->db->get_where('dokter', array('dokter.id_poli' => $id))->result_array();

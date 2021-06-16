@@ -79,9 +79,7 @@ class Rs extends CI_Controller
 		$telp_rs = $this->input->post('no', true);
 		$fasilitas_rs = $this->input->post('fasilitas', true);
 		$tentang_rs = $this->input->post('tentang', true);
-
-
-
+		
 		$data = [
 			'nama_rs' => $nama_rs,
 			'alamat_rs' =>$alamat_rs,
