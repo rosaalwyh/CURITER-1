@@ -17,7 +17,7 @@ class M_User extends CI_Model {
         if (!$this->session->has_userdata('user')){
             $this->session->set_flashdata('flash', 
 								 'sesi anda berakhir silahkan login kembali');			
-			redirect('user/signin');
+			redirect('admin/admin/login');
 			exit;
 		}
     }

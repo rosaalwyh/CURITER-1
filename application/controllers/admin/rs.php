@@ -16,9 +16,12 @@ class Rs extends CI_Controller
         $this->load->model('m_poli');
 		$this->load->library('form_validation');
 		$this->load->library('upload');
+		$this->load->library('session');
+		$this->load->model('admin/m_admin');
 	}
 
 	public function index(){
+		$this->m_admin->checklogin();
 		$data['title'] = 'Curiter | Data Rumah Sakit';
 		$data['rs'] = $this->model_rs->get_rs();
 		$data['poli'] = $this->model_rs->get_poli();

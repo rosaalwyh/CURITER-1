@@ -6,8 +6,12 @@ class Admin extends CI_Controller {
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('admin/m_admin');
-        $this->load->model('m_user');
+        $this->load->library('session');
+        // if ($this->session->has_userdata('admin')){
+        //     redirect('admin/admin/login');
+        // }
     }
+
     public function login(){
         $data['title'] = 'Curiter | Sign In';
         $this->form_validation->set_rules('username','Username','required|trim');
@@ -17,25 +21,24 @@ class Admin extends CI_Controller {
         }else{
             $username = $this->input->post('username');
             $password = $this->input->post('password');
-            if ($username === 'admin'){
+            $admin = $this->m_admin->verifikasi($username);
+            if ($admin){
                 // user ada
-                if($password === "123"){
-                    $dataA = [
-                    	"nama" => 'admin',
-                        "username" => '123'
+                if($password === $admin['password']){
+                    $dataA['admin'] = [
+                        "id" => $admin['id'],
+                    	"username" => $admin['username'],
+                        "password" => $admin['password']
                     ];
                     $this->session->set_userdata($dataA);
-                    //$data['title'] = 'Curiter | Admin';
-                    // redirect('home');
-                    redirect('admin/dokter/index');
-                    //$cek['d'] = $this->m_user->get_dokter();
-                    //$this->load->view('header_page_admin',$data);
-                    //$this->load->view('admin/v_datadokter',$cek);
-                    //$this->load->view('footer_page');
+                    redirect('admin/user/index');
                 }else{
                     $this->session->set_flashdata('flash','Wrong Password !');
                     redirect('admin/admin/login');
                 }
+            }else{
+                $this->session->set_flashdata('flash','Unregistered user !');
+                redirect('admin/admin/login');
             }
         }
     }
