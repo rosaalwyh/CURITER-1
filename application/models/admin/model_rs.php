@@ -25,16 +25,8 @@ class Model_rs extends CI_Model
 		$this->db->insert('rumahsakit', $data);
 	}
 	public function update_rs($id, $data){
-		/*$data = [
-			'nama_rs' => $this->input->post('nama',true),
-			'alamat_rs' => $this->input->post('alamat',true),
-			'kota' => $this->input->post('kota',true),
-			'telp_rs' =>$this->input->post('telp',true),
-			'fasilitas_rs' =>$this->input->post('fasilitas',true),
-			//'poliklinik_rs' => $this->input->post('poli',true),
-		];*/
-		$this->db->where('id_rs', $id);
-		$this->db->update('rumahsakit',$data);
+		$this->db->update('rumahsakit',$data,$id);
+		return TRUE;
 	}
 	public function delete_rs($id){
 		$this->db->where('id_rs',$id);
@@ -50,15 +42,14 @@ class Model_rs extends CI_Model
 		return $this->db->get()->result();
 	}
 		public function tambah_poliklinik($data){
-		/*$data = [
-			'nama_rs' => $this->input->post('nama',true),
-			'alamat_rs' => $this->input->post('alamat',true),
-			'kota' => $this->input->post('kota',true),
-			'telp_rs' =>$this->input->post('telp',true),
-			'fasilitas_rs' =>$this->input->post('fasilitas',true),
-			//'poliklinik_rs' => $this->input->post('poli',true),
-			'tentang_rs' => $this->input->post('tentang',true)
-		];*/
 		$this->db->insert('poliklinik', $data);
+	}
+	public function update_poliklinik($id, $data){
+		$this->db->update('poliklinik',$data,$id);
+		return TRUE;
+	}
+	public function delete_poli($id){
+		$this->db->where('id_poli',$id);
+		return $this->db->delete('poliklinik');
 	}
 }
