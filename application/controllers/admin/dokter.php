@@ -79,31 +79,67 @@ class Dokter extends CI_Controller
 	    }else {
          
           $this->load->view('gagal');
-	    }
-		// $data = [
-		// 	'id_rs' => $this->input->post('id_rs', true),
-		// 	'no_dokter' => $this->input->post('no', true),
-		// 	'nama_dokter' => $this->input->post('nama', true),
-		// 	'id_poli' => $this->input->post('id_poli', true),
-		// 	'email_dokter' => $this->input->post('email', true)
-		// ];
-		// $this->model_dokter->tambah_dokter($data);
-		// redirect('admin/dokter/detaildokter/' . $data['id_rs']);
+		}
+		
 	}
 	public function edit($id)
 	{
-		$data = [
-			'id_rs' => $this->input->post('rs', true),
-			'no_dokter' => $this->input->post('no', true),
-			'nama_dokter' => $this->input->post('nama', true),
-			'email_dokter' => $this->input->post('email', true),
+		$id_rs = $this->input->post('rs', true);
+		$no_dokter = $this->input->post('no', true);
+		$nama_dokter = $this->input->post('nama', true);
+		$email_dokter = $this->input->post('email', true);
+		
+		$path = './assets/dokter/';
+		$kondisi = array('id_dokter' => $id);
 
-		];
-		$this->model_dokter->update_dokter($id, $data);
-		redirect('admin/dokter/index');
+		// ambil foto
+		$config['upload_path'] = './assets/dokter';
+		$config['allowed_types'] = 'jpg|png|jpeg|gif';
+		$config['max_size'] = '2048'; // 2MB
+		$config['max_widht'] = '4480'; // Pixel
+		$config['max_height'] = '4480'; //Pixel
+	$config['file_name'] = $_FILES['gambar']['name'];
+
+      $this->upload->initialize($config);
+
+	    if (!empty($_FILES['gambar']['name'])) {
+	        if ( $this->upload->do_upload('gambar') ) {
+	            $foto = $this->upload->data();
+	            $data = array(
+	                          'id_rs'       => $id_rs,
+							  'no_dokter'			=> $no_dokter,
+							  'nama_dokter'			=> $nama_dokter,
+							  'email_dokter'		=> $email_dokter,
+							  'foto_dokter'       => $foto['file_name'],
+	                        );
+              // hapus foto pada direktori
+              @unlink($path.$this->input->post('filelama'));
+
+			$this->model_dokter->update_dokter($kondisi,$data);
+			redirect('admin/dokter/detaildokter/' . $data['id_rs']);
+	        }else {
+                 echo "Upload Gagal";
+	        }
+	    }else {
+	          $this->load->view('gagal');
+	    }
+
+
+		// $data = [
+		// 	'id_rs' => $this->input->post('rs', true),
+		// 	'no_dokter' => $this->input->post('no', true),
+		// 	'nama_dokter' => $this->input->post('nama', true),
+		// 	'email_dokter' => $this->input->post('email', true),
+
+		// ];
+		// $this->model_dokter->update_dokter($id, $data);
+		// redirect('admin/dokter/index');
 	}
-	public function hapus($id)
+	public function hapus($id, $data)
 	{
+		$path = './assets/dokter/';
+		@unlink($path.$data);
+		$this->model_rs->delete_poli($id);
 		$this->model_dokter->delete_dokter($id);
 		redirect('admin/dokter/index');
 	}

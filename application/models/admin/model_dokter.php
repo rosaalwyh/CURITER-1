@@ -37,8 +37,8 @@ class Model_dokter extends CI_Model
 	}
 	public function update_dokter($id, $data)
 	{
-		$this->db->where('id_dokter', $id);
-		$this->db->update('dokter', $data);
+		$this->db->update('dokter',$data,$id);
+		return TRUE;
 	}
 	public function delete_dokter($id)
 	{

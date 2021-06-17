@@ -12,8 +12,8 @@
             <?php foreach ($rs as $rs) {?>
             <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
   <div class="row no-gutters" >
-  <div class="col-md-2" >
-      <img src="<?php echo base_url(); ?>Assets/rs/<?=$rs['foto_rumahsakit']?>" class="card-img" alt="<?= $rs['nama_rs']?>" >
+  <div class="col" style="display: flex; align-items: center; overflow: hidden; justify-content: center;">
+      <img src="<?php echo base_url(); ?>Assets/rs/<?=$rs['foto_rumahsakit']?>" class="card-img" alt="<?= $rs['nama_rs']?>" style=" object-fit: cover; min-width: 100%; min-height: 100%" >
     </div>
     <div class="col-md-8">
       <div class="card-body">
