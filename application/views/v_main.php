@@ -16,11 +16,22 @@
   .card {
     border: 2px solid rgba(0, 0, 0, .125);
   }
+
+  @media screen and (max-width: 1000px) {
+  .table1{
+    display: none;
+  }
+  .cards{
+    align-content: space-around;
+    justify-content:center;
+    flex-direction: column;
+  }
+}
 </style>
 <div class="container" style="margin-top: 90px">
   <center>
-    <table style="width:100%;">
-      <tr>
+    <table style="width:100%;" class="table1">
+      <tr >
         <td> <a href="<?= base_url('home/index/corona') ?>" style="font-size: 150%;text-decoration:none;"><button class="btn btn-outline-info buton" style="border-radius:25px;width:9em;">Corona</button></a> </td>
         <td> <a href="<?= base_url('home/index/vitamin') ?>" style="font-size: 150%;text-decoration:none;"><button class="btn btn-outline-info buton" style="border-radius:25px;width:9em;">Vitamin</button></a> </td>
         <td> <a href="<?= base_url('home/index/obat') ?>" style="font-size: 150%;text-decoration:none;"><button class="btn btn-outline-info buton" style="border-radius:25px;width:9em;">Obat</button></a> </td>
@@ -63,7 +74,7 @@
 </div>
 
 <div class="container" style="margin-top: 10px;margin-bottom:150px;">
-  <section class="cards">
+  <div class="cards">
 
     <div class="card" style="width: 18rem;">
       <a href="<?= base_url('caridokter/') ?>"></a>
@@ -95,7 +106,7 @@
         <p class="card-text">Kenali kami lebih dekat.</p>
       </div>
     </div>
-  </section>
+  </div>
 </div>
 
 <div class="main">
