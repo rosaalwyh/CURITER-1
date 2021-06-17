@@ -80,7 +80,7 @@
 
 
 
-            <!-- Modal Ubah Dokter -->
+            <!-- Modal Ubah Artikel -->
             <div class="modal fade" id="edit<?= $a['id_artikel'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">

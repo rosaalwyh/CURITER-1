@@ -41,7 +41,11 @@
     <div class="box">
       <h3>Daftar Dokter</h3>
       <br>
+      <?php if(empty($poli)) {?>
       <button type="button" class="button_tambah" data-toggle="modal" data-target="#tambah">Tambah Dokter</button>
+      <?php }else{?>
+      <button type="button" class="button_tambah" data-toggle="modal" data-target="#tambah">Tambah Dokter</button>
+      <?php }?>
       <br></br>
       <table class="table table-bordered table-responsive" id="table">
         <thead>
@@ -70,15 +74,18 @@
                   <img src="<?php echo base_url(); ?>Assets/dokter/<?= $d['foto_dokter']?>" style="width: 120px;"  class="card-img" alt="..." >
                 <?php }?>
                 </td>
-                <td><a href="<?= base_url('admin/dokter/jadwal/' . $d['id_dokter']) ?>" style="color:black"><?php echo $d['nama_dokter']; ?></a><br><button type="button" class="button_tambah" data-toggle="modal" data-target="#tambahjadwal<?= $d['id_dokter'] ?>">Tambah Jadwal</button></td>
+                <td><a href="<?= base_url('admin/dokter/jadwal/' . $d['id_dokter']) ?>" style="color:black"><?php echo $d['nama_dokter']; ?></a><br>
+                <button type="button" class="button_tambah" data-toggle="modal" data-target="#tambahjadwal<?= $d['id_dokter'] ?>">Tambah Jadwal</button>
+                </td>
                 <td><?php echo $d['no_dokter']; ?></td>
                 <td><?php echo $d['email_dokter'] ?></td>
                 <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?>"><i class="fas fa-edit"></i></button></td>
                 <td><a href="<?= base_url(); ?>admin/dokter/hapus/<?= $d['id_dokter'] ?>" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
               </form>
             </tr>
-            <!-- Modal Tambah Dokter -->
-            <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true" enctype="multipart/form-data">
+            
+ <!-- Modal Tambah Dokter -->
+ <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true" enctype="multipart/form-data">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -122,7 +129,6 @@
                 </div>
               </div>
             </div>
-
             <!-- Modal Tambah Jadwal -->
             <div class="modal fade" id="tambahjadwal<?= $d['id_dokter'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -215,6 +221,52 @@
             </div>
 
           <?php } ?>
+
+          <!-- Modal Tambah Dokter -->
+          <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true" enctype="multipart/form-data">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <center>
+                      <h2>TAMBAH DATA DOKTER</h2>
+                    </center>
+                  </div>
+                  <div class="modal-body">
+                    <form method="POST" action="<?= base_url(); ?>admin/dokter/tambah" enctype="multipart/form-data">
+                      <input type="hidden" name="id_rs" value="<?= $rs['id_rs'] ?>">
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Nama Dokter</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Dokter" name="nama" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect2">Spesialis Dokter</label>
+                        <select multiple class="form-control" name="id_poli" id="exampleFormControlSelect2">
+                          <?php foreach ($poli as $pol) { ?>
+                            <option name value="<?php echo $pol['id_poli']; ?>"><?php echo $pol['nama_poli']; ?></option>
+                          <?php } ?>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">No Telp</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="No Telp" name="no">
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Email</label>
+                        <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Gambar</label>
+                        <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Email" name="gambar">
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <input type="submit" class="btn btn-primary" id="tambah" value="Submit" placeholder="Simpan">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
         </tbody>
       </table>
     </div>
