@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?= $title ?></title>
 	<link rel="icon" href="<?php echo base_url(); ?>/assets/Curiter.ico">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -485,8 +485,9 @@ width: 18rem;
 
 			.row,
 			.navbar {
-				flex-direction: column;
+				flex-direction: none;
 			}
+
 		}
 	</style>
 </head>

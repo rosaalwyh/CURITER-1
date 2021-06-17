@@ -8,11 +8,11 @@
 </div>
 
 
-      <div class="konten-dokter" style="overflow:auto; height:auto;">
-            <?php foreach ($rs as $rs) {?>
-            <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
+<div class="konten-dokter" style="overflow:auto; height:auto;">
+  <?php foreach ($rs as $rs) {?>
+  <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
   <div class="row no-gutters" >
-  <div class="col" style="display: flex; align-items: center; overflow: hidden; justify-content: center;">
+  <div class="col" style="display: flex; align-items: center; justify-content: center;">
       <img src="<?php echo base_url(); ?>Assets/rs/<?=$rs['foto_rumahsakit']?>" class="card-img" alt="<?= $rs['nama_rs']?>" style=" object-fit: cover; min-width: 100%; min-height: 100%" >
     </div>
     <div class="col-md-8">

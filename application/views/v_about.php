@@ -36,6 +36,14 @@
       display: flex;
       margin: auto;
     }
+
+    @media screen and (max-width: 770px) {
+        .container-about{
+            align-content: space-around;
+            justify-content:center;
+            flex-direction: column;
+        }
+    }
   </style>
 </head>
 

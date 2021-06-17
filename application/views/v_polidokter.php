@@ -28,11 +28,17 @@
     }
 
     /* Responsive columns */
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 770px) {
         .column {
             width: 100%;
             display: block;
             margin-bottom: 20px;
+        }
+
+        .row{
+            align-content: space-around;
+            justify-content:center;
+            flex-direction: column;
         }
     }
 
