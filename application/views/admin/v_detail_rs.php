@@ -113,11 +113,18 @@
                   <!-- <p class="card-text" style="text-align:left;">Diisi deskripsi ringan dari tiap jenis polinya</p> -->
                 </div>
               </div>
-              <div class="row-md-3" style="margin-top: 10px; margin-left: 100px;">
-                <button class="button-poli" type="button" name="lihat_detail" data-toggle="modal" data-target="#poli<?= $p['id_poli'] ?>" style="">Lihat Detail</button>
-                <button class="button-poli" type="button" name="lihat_detail" data-toggle="modal" data-target="#edit<?= $p['id_poli'] ?>" style="">Ubah Data</button>
-                <button class="button-poli" type="button"><a href="<?= base_url(); ?>admin/rs/hapus_poli/<?= $p['id_poli'] ?>/<?= $p['gambar'] ?>" onClick="return confirm('Apakah Anda Yakin?')"></a>Hapus
-                </button>
+              <div class="container" style="margin-top: 10px; margin-left: 100px;">
+                <div class="row">
+                  <div class="col-sm">
+                  <button class="button-poli" type="button" name="lihat_detail" data-toggle="modal" data-target="#poli<?= $p['id_poli'] ?>" style="">Lihat Detail</button>
+                  </div>
+                  <div class="col-sm">
+                  <button class="button-poli" type="button" name="lihat_detail" data-toggle="modal" data-target="#edit<?= $p['id_poli'] ?>" style="">Ubah Data</button>
+                  </div>
+                  <div class="col-sm">
+                  <a type="button"><a href="<?= base_url(); ?>admin/rs/hapus_poli/<?= $p['id_poli'] ?>/<?= $p['gambar'] ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -169,13 +176,13 @@
                         <label for="formGroupExampleInput">Deskripsi Poliklinik</label>
                         <br>
                         <small>Minimal 200 Kata</small>
-                        <textarea id="konten_artikel" name="tentang_poli" rows="4" cols="50" value=""><?php echo $p['tentang_poli'] ?>"
+                        <textarea id="konten_artikel" name="tentang_poli" rows="4" cols="50" value="" required><?php echo $p['tentang_poli'] ?>
                         </textarea>
                         </div>
                         <div class="form-gorup">
                         <label for="formGroupExampleInput">Gambar PoliKlinik</label>
                         <input type="hidden" name="filelama" value="<?php echo $p['gambar']?>">
-                        <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Gambar Poliklinik" name="gambar">
+                        <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Gambar Poliklinik" name="gambar" required>
                         </div>
                         <br>
                         <button type="submit" name="tambah" class="btn btn-primary float-right">Ubah Data</button>
