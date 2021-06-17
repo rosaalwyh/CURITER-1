@@ -6,6 +6,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
  */
 class Model_jadwal extends CI_Model
 {
+    public function tes($id)
+    {
+        $this->db->select('*');
+        $this->db->from('dokter');
+        $this->db->join('jadwal', 'dokter.id_dokter = jadwal.id_dokter');
+        $this->db->where('jadwal.id_dokter = ' . $id);
+        return $this->db->get();
+    }
     public function getjadwal($id)
     {
         $this->db->select('*');
@@ -13,7 +21,7 @@ class Model_jadwal extends CI_Model
         return $this->db->get_where('jadwal', array('jadwal.id_dokter' => $id))->result_array();
     }
 
-    public function getjadwall($id)
+    public function getjadwall()
     {
         // $this->db->select('*');
         // $this->db->join('dokter', 'dokter.id_dokter = jadwal.id_dokter');
