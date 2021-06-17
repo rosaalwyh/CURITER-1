@@ -38,20 +38,17 @@ class caridokterrs extends CI_Controller
     {
         $data['title'] = "Curiter | Cari Dokter";
         $data['dokter'] = $this->m_dokter->get_dokterbyidpoli($id);
-        $data['jadwal'] = $this->model_jadwal->getjadwal($id);
+        $data['jadwal'] = $this->model_jadwal->tes($id);
         $data['poli'] = $this->m_poli->get_poli();
         $this->load->view('header_page', $data);
         $this->load->view('v_dokter_bypoli', $data);
         $this->load->view('footer_page', $data);
     }
 
-    public function jadwal($id)
+    public function jadwal()
     {
-        $data['title'] = "Curiter | Cari Dokter";
-        $data['jadwal'] = $this->model_jadwal->getjadwal($id);
-        $data['dokter'] = $this->model_dokter->get_dokter();
-        $this->load->view('header_page', $data);
-        $this->load->view('v_dokter_bypoli', $data);
-        $this->load->view('footer_page');
+        $id = $this->input->get('id_dokter');
+        $result = $this->model_jadwal->tes($id)->result();
+        echo json_encode($result);
     }
 }

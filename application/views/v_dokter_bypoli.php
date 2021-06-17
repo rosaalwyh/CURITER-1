@@ -154,13 +154,8 @@
             }
         }
 </style>
-        <?php if(empty($dokter)) {?>
-            <div class="container" style="margin-top: 100px">
-                <h2>Dokter Tidak Ditemukan</h2>
-            </div>
-        <?php } else{?>
 <div class="container" style="margin-top: 100px">
-   <?php echo $dokter[0]['nama_poli']; ?> 
+    <h5><?php echo $dokter[0]['nama_poli']; ?></h5>
     <?php foreach ($dokter as $d) { ?>
         <div class="konten-dokter" style="overflow:auto; height:auto;">
             <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
@@ -178,152 +173,136 @@
                             <p class="card-title" style="text-align:left;"><?= $d['email_dokter']; ?></p>
                         </div>
                     </div>
-
                     <div class="col-md-2" style="margin-top: 120px;">
-                        <button type="button" class="ml-auto btn btn-primary text-uppercase" data-toggle="modal" data-target="#modalJadwal<?= $d['id_dokter'] ?>" style="border-radius:13px;font-size:13px;background-color:#033D68;border-color:#033D68;" name="button_call">
+                        <button type="button" class="ml-auto btn btn-primary text-uppercase jadwal" data-toggle="modal" data-target="#modalJadwal" data-id="<?php echo $d['id_dokter']; ?>" data-url="<?php echo base_url('caridokterrs/jadwal') ?>" style="border-radius:13px;font-size:13px;background-color:#033D68;border-color:#033D68;" name="button_call">
                             Jadwal Dokter
                         </button>
                     </div>
+
                 </div>
 
             </div>
         </div>
-
-        <!-- Modal Form Jadwal -->
-        <div class="modal fade" id="modalJadwal<?= $d['id_dokter'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle"><?= $d['nama_dokter'] ?></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-<?php if(!empty($d)){?>
-    <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                
-                                    <th scope="col">Hari</th>
-                                    <th scope="col">Waktu</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                    
-                                        <tr>
-                                            <th scope="row">Senin</th>
-                                            <td><?= $d['senin'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Selasa</th>
-                                            <td><?= $d['selasa'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Rabu</th>
-                                            <td><?= $d['rabu'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Kamis</th>
-                                            <td><?= $d['kamis'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Jum'at</th>
-                                            <td><?= $d['jumat'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Sabtu</th>
-                                            <td><?= $d['sabtu'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Minggu</th>
-                                            <td><?= $d['minggu'] ?></td>
-                                        </tr>
-                                
-                            
-                            </tbody>
-                        </table>
-<?php }else{?>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                
-                                    <th scope="col">Hari</th>
-                                    <th scope="col">Waktu</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                    
-                                        <tr>
-                                            <th scope="row">Senin</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Selasa</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Rabu</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Kamis</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Jum'at</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Sabtu</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Minggu</th>
-                                            <td></td>
-                                        </tr>
-                                
-                            
-                            </tbody>
-                        </table>
-<?php }?>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <script>
-            $("input:radio").change(function() {
-                $("#bayar-btn<?= $d['id_dokter'] ?>").prop("disabled", false);
-            });
-            $("input:radio").change(function() {
-                $("#bayar-btn-janji<?= $d['id_dokter'] ?>").prop("disabled", false);
-            });
-            $(".button_bayar").prop("disabled", true);
-
-            // $(document).ready(function(){
-            //     $(".close").click(function(){
-            //         location.reload(true);
-            //     });
-            // });
-
-            $('#acc-bayar<?= $d['id_dokter'] ?>').on('hidden.bs.modal', function() {
-                location.reload(true);
-            });
-            $('#edit<?= $d['id_dokter'] ?>').on('hidden.bs.modal', function() {
-                location.reload(true);
-            });
-        </script>
-        <script>
-
-        </script>
     <?php } ?>
-  
-</div>
-        <?php }?>
+
+    <!-- Modal Form Jadwal -->
+    <div class="modal fade" id="modalJadwal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title nama-dokter" id="nama-dokter">Jadwal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Hari</th>
+                                <th scope="col">Waktu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Senin</th>
+                                <td id="hari_senin">Jadwal Kosong</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Selasa</th>
+                                <td id="hari_selasa">Jadwal Kosong</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Rabu</th>
+                                <td id="hari_rabu">Jadwal Kosong</td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Kamis</th>
+                                <td id="hari_kamis">Jadwal Kosong</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Jum'at</th>
+                                <td id="hari_jumat">Jadwal Kosong</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sabtu</th>
+                                <td id="hari_sabtu">Jadwal Kosong</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Minggu</th>
+                                <td id="hari_minggu">Jadwal Kosong</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("input:radio").change(function() {
+            $("#bayar-btn<?= $d['id_dokter'] ?>").prop("disabled", false);
+        });
+        $("input:radio").change(function() {
+            $("#bayar-btn-janji<?= $d['id_dokter'] ?>").prop("disabled", false);
+        });
+        $(".button_bayar").prop("disabled", true);
+
+        // $(document).ready(function(){
+        //     $(".close").click(function(){
+        //         location.reload(true);
+        //     });
+        // });
+
+        $('#acc-bayar<?= $d['id_dokter'] ?>').on('hidden.bs.modal', function() {
+            location.reload(true);
+        });
+        $('#edit<?= $d['id_dokter'] ?>').on('hidden.bs.modal', function() {
+            location.reload(true);
+        });
+
+        $(document).ready(function() {
+            $('#modalJadwal').on('show.bs.modal', function(e) {
+                var id_dokter = $(e.relatedTarget).data('id');
+                var url_data = $(e.relatedTarget).data('url');
+                /* fungsi AJAX untuk melakukan fetch data */
+                $.ajax({
+                    method: 'get',
+                    url: url_data,
+                    data: {
+                        id_dokter: id_dokter
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        if (data.length > 0) {
+                            $('.nama-dokter').html(data[0].nama_dokter)
+                            $('#hari_senin').html(data[0].senin)
+                            $('#hari_selasa').html(data[0].selasa)
+                            $('#hari_rabu').html(data[0].rabu)
+                            $('#hari_kamis').html(data[0].kamis)
+                            $('#hari_jumat').html(data[0].jumat)
+                            $('#hari_sabtu').html(data[0].sabtu)
+                            $('#hari_minggu').html(data[0].minggu)
+                        } else {
+                            $('.nama-dokter').html("Jadwal Dokter")
+                            $('#hari_senin').html("Tidak Ada Jadwal")
+                            $('#hari_selasa').html("Tidak Ada Jadwal")
+                            $('#hari_rabu').html("Tidak Ada Jadwal")
+                            $('#hari_kamis').html("Tidak Ada Jadwal")
+                            $('#hari_jumat').html("Tidak Ada Jadwal")
+                            $('#hari_sabtu').html("Tidak Ada Jadwal")
+                            $('#hari_minggu').html("Tidak Ada Jadwal")
+                        }
+
+                    },
+                    error: function() {
+                        alert('Could not displaying data');
+                    }
+                });
+            });
+        });
+    </script>
