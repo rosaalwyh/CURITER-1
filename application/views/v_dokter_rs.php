@@ -40,7 +40,6 @@
   }
 
   .container1 {
-
     flex-direction: row;
     width: 80%;
     margin: 0px auto;
@@ -72,7 +71,7 @@
   }
   }
 </style>
-<div class="container" style="margin-top: 90px; margin-bottom:50px">
+<div class="container1" style="margin-top: 90px; margin-bottom:50px">
   <div class="row">
     <?php foreach ($rs as $rs) { ?>
       <div class="col">
