@@ -92,16 +92,6 @@
             margin: 10px;
         }
 
-    /* p {
-  font-family: sans-serif;
-  color: pink;
-  font-size: 30px;
-  font-weight: bold;
-  margin: 20px auto;
-  text-align: center;
-  animation: text .5s linear .4s;
-  -webkit-animation: text .4s linear .3s;
-} */
 
     @-webkit-keyframes dash {
         0% {
@@ -163,6 +153,7 @@
             opacity: 1;
         }
     }
+}
 </style>
 <div class="container" style="margin-top: 100px">
     <h5><?php echo $dokter[0]['nama_poli']; ?></h5>
