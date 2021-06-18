@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="<?php echo base_url(); ?>/assets/gopay.jpg">
 <title><?= $title ?></title>
 	<style>
@@ -99,6 +99,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 		.email, .password{
 			border-bottom: 1px solid #477A98;
+		}
+
+		@media screen and (max-width: 800px){
+			.background{
+				display: flex;
+				justify-content: center;
+			}
+			.box{
+			width: 100%;
+			align-content: center;
+			margin-right: 65%;
+			}
+			
 		}
 	</style>
 </head>

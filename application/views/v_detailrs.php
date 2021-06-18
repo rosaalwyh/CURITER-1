@@ -71,6 +71,21 @@
     color: #fff;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 770px) {
+    .konten-atas{
+      display: flex;
+      flex-direction: column;
+      
+    }
+    .Tentang{
+      margin: 0px;
+    }
+    .konten-sisikiri{
+      margin: 50% auto;
+      margin-bottom: 20px;
+    }
+  }
 </style>
 <div class="container">
   <div class="sticky">
@@ -78,9 +93,9 @@
     <a href="#" style="margin-right:78%">Informasi RS</a>
   </div>
   <div class="konten-atas">
-    <section id='konten-kiri-atas' class="konten-sisikiri" style="margin-top:10px;">
-      <img src="<?php echo base_url(); ?>Assets/rs/<?= $rsid['foto_rumahsakit'] ?>" class="card-img" alt="..." width="200px">
-    </section>
+    <div id='konten-kiri-atas' class="konten-sisikiri" style="margin-top:10px;">
+      <img src="<?php echo base_url(); ?>Assets/rs/<?= $rsid['foto_rumahsakit'] ?>" class="card-img" alt="..." width="100%">
+    </div>
     <div class="Tentang">
       <h4> <?= "Tentang Rumah Sakit " . $rsid['nama_rs'] ?></h4>
       <p><?= $rsid['tentang_rs'] ?></p>

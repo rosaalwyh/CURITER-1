@@ -36,9 +36,11 @@
         }
 
         .row{
+            display: flex;
             align-content: space-around;
             justify-content:center;
             flex-direction: column;
+            flex-wrap: wrap;
         }
     }
 
