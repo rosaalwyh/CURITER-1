@@ -74,7 +74,7 @@
                 <td><?php echo $r['fasilitas_rs']; ?></td>
                 <td><a type="button" class="btn btn-warning" href="<?= base_url('admin/rs/detail_rs/' . $r['id_rs']) ?>"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
                 <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $r['id_rs'] ?>"><i class="fas fa-edit"></i></button></td>
-                <td><a href="<?= base_url(); ?>admin/rs/hapus/<?= $r['id_rs'] ?>" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
+                <td><a href="<?= base_url(); ?>admin/rs/hapus/<?= $r['id_rs'] ?>/<?= $r['foto_rumahsakit'] ?>" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
               </form>
             </tr>
             <!-- ubah -->
@@ -91,7 +91,7 @@
                   <div class="modal-body">
                     <div class="boxsetting">
                       <br>
-                      <form action="<?= base_url(); ?>admin/rs/edit/<?= $r['id_rs'] ?>" method="post" enctype='multipart/form-data'>
+                      <form action="<?= base_url(); ?>admin/rs/edit" method="post" enctype='multipart/form-data'>
                         <input type="hidden" name="id" value="<?= $r['id_rs'] ?>">
 
                         <div class="form-group">
@@ -128,6 +128,7 @@
                         </div>
                         <div class="form-gorup">
                         <label for="formGroupExampleInput">Gambar Rumah Sakit</label>
+                        <input type="hidden" name="filelama" value="<?= $r['foto_rumahsakit'] ?>">
                         <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Fasilitas RS" name="gambar" value="<?php echo $r['foto_rumahsakit'] ?>" required>
                         </div>
                         <br>

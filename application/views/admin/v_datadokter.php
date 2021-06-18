@@ -65,7 +65,7 @@
           foreach ($d as $d) {
           ?>
             <tr>
-              <form>
+             
                 <td><?= $no++; ?></td>
                 <td>
                 <?php if(empty($d['foto_dokter']) ){?>
@@ -80,8 +80,8 @@
                 <td><?php echo $d['no_dokter']; ?></td>
                 <td><?php echo $d['email_dokter'] ?></td>
                 <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $d['id_dokter'] ?>"><i class="fas fa-edit"></i></button></td>
-                <td><a href="<?= base_url(); ?>admin/dokter/hapus/<?= $d['id_dokter'] ?>" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
-              </form>
+                <td><a href="<?= base_url(); ?>admin/dokter/hapus/<?= $d['id_dokter'] ?>/<?= $d['foto_dokter']?>" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></td>
+          
             </tr>
             
  <!-- Modal Tambah Dokter -->
@@ -193,8 +193,8 @@
                   <div class="modal-body">
                     <div class="boxsetting">
                       <br>
-                      <form action="<?= base_url() ?>admin/dokter/edit/<?= $d['id_dokter'] ?>" method="post">
-                        <input type="hidden" name="id" value="<?= $d['id_dokter'] ?>">
+                      <form action="<?= base_url() ?>admin/dokter/edit/<?= $d['id_dokter'] ?>" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="rs" value="<?= $rs['id_rs'] ?>">
                         <div class="form-group">
                           <label for="formGroupExampleInput">No Telp</label>
                           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="no" name="no" value="<?php echo $d['no_dokter'] ?>">
@@ -209,7 +209,8 @@
                         </div>
                         <div class="form-group">
                           <label for="formGroupExampleInput">Gambar</label>
-                          <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Email" name="gambar" value="<?php echo $d['email_dokter'] ?>">
+                          <input type="hidden" name="filelama" value="<?= $d['foto_dokter'] ?>">
+                          <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Email" name="gambar" value="<?= $d['foto_dokter'] ?>" required>
                         </div>
                         <button type="submit" name="tambah" class="btn btn-primary float-right">Ubah Data</button>
                       </form>

@@ -142,17 +142,18 @@
         100% {
             opacity: 1;
         }
+    }
 
 
-        @keyframes text {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
+    @keyframes text {
+        0% {
+            opacity: 0;
         }
+
+        100% {
+            opacity: 1;
+        }
+    }
 </style>
 <div class="container" style="margin-top: 100px">
     <h5><?php echo $dokter[0]['nama_poli']; ?></h5>

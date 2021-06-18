@@ -34,7 +34,14 @@
       display: block;
       margin-bottom: 20px;
     }
+
+    
+    
   }
+  .container1 {
+			width: 90%;
+			margin: 0 auto;
+		}
 
   /* Style the counter cards */
   .card {
@@ -43,8 +50,17 @@
     text-align: center;
     background-color: #f1f1f1;
   }
+  @media screen and (max-width: 1000px) {
+      .row{
+    align-content: space-around;
+    justify-content:center;
+    flex-direction: column;
+    }
+    
+  }
+
 </style>
-<div class="container" style="margin-top: 90px">
+<div class="container1" style="margin-top: 90px">
   <div class="row">
     <?php foreach ($rs as $rs) { ?>
       <div class="col-sm-4">

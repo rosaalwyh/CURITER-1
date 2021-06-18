@@ -71,7 +71,8 @@ class Rs extends CI_Controller
 			$this->load->view('gagal');
 		}
 	}
-	public function edit($id){
+	public function edit(){
+		$id_rs = $this->input->post('id', true);
 		$nama_rs = $this->input->post('nama', true);
 		$alamat_rs = $this->input->post('alamat', true);
 		$website = $this->input->post('website', true);
@@ -80,19 +81,48 @@ class Rs extends CI_Controller
 		$fasilitas_rs = $this->input->post('fasilitas', true);
 		$tentang_rs = $this->input->post('tentang', true);
 		
-		$data = [
-			'nama_rs' => $nama_rs,
-			'alamat_rs' =>$alamat_rs,
-			'website' =>$website,
-			'kota' => $kota,
-			'telp_rs' => $telp_rs,
-			'fasilitas_rs' => $fasilitas_rs,
-			'tentang_rs' => $tentang_rs
-		];
-		$this->model_rs->update_rs($id, $data);
-		redirect('admin/rs/index');
+		$path = './assets/rs/';
+		$kondisi = array('id_rs' => $id_rs);
+
+		// ambil foto
+		$config['upload_path'] = './assets/rs';
+		$config['allowed_types'] = 'jpg|png|jpeg|gif';
+		$config['max_size'] = '2048'; // 2MB
+		$config['max_widht'] = '4480'; // Pixel
+		$config['max_height'] = '4480'; //Pixel
+		$config['file_name'] = $_FILES['gambar']['name'];
+
+      $this->upload->initialize($config);
+
+	    if (!empty($_FILES['gambar']['name'])) {
+	        if ( $this->upload->do_upload('gambar') ) {
+	            $foto = $this->upload->data();
+	            $data = array(
+	                        'nama_rs'       => $nama_rs,
+							  'alamat_rs'			=> $alamat_rs,
+							  'website'			=> $website,
+							  'kota'			=> $kota,
+							  'telp_rs'			=> $telp_rs,
+							  'fasilitas_rs'			=> $fasilitas_rs,
+							  'tentang_rs'			=> $tentang_rs,
+							  'foto_rumahsakit'       => $foto['file_name'],
+	                        );
+              // hapus foto pada direktori
+              @unlink($path.$this->input->post('filelama'));
+
+							$this->model_rs->update_rs($kondisi,$data);
+              redirect('admin/rs/index');
+	        }else {
+                 echo "Upload Gagal";
+	        }
+	    }else {
+	          $this->load->view('gagal');
+		}
 	}
-	public function hapus($id){
+
+	public function hapus($id, $data){
+		$path = './assets/rs/';
+		@unlink($path.$data);
 		$this->model_rs->delete_rs($id);
 		redirect('admin/rs/index');
 	}
@@ -140,7 +170,54 @@ class Rs extends CI_Controller
 
 			$this->load->view('gagal');
 		}
-		
-		
 	}
+
+	public function edit_poliklinik(){
+		$id_rs = $this->input->post('id_rs', true);
+		$id_poli = $this->input->post('id', true);
+		$nama_poli = $this->input->post('nama_poli', true);
+		$deskripsi = $this->input->post('tentang_poli', true);
+		
+		$path = './assets/poli/';
+		$kondisi = array('id_poli' => $id_poli);
+
+		// ambil foto
+		$config['upload_path'] = './assets/poli';
+		$config['allowed_types'] = 'jpg|png|jpeg|gif';
+		$config['max_size'] = '2048'; // 2MB
+		$config['max_widht'] = '4480'; // Pixel
+		$config['max_height'] = '4480'; //Pixel
+		$config['file_name'] = $_FILES['gambar']['name'];
+
+      $this->upload->initialize($config);
+
+	    if (!empty($_FILES['gambar']['name'])) {
+	        if ( $this->upload->do_upload('gambar') ) {
+	            $foto = $this->upload->data();
+	            $data = array(
+							  'id_rs'       => $id_rs,
+	                          'nama_poli'       => $nama_poli,
+							  'tentang_poli'	=> $deskripsi,
+							  'gambar'       => $foto['file_name'],
+	                        );
+              // hapus foto pada direktori
+              @unlink($path.$this->input->post('filelama'));
+
+							$this->model_rs->update_poliklinik($kondisi,$data);
+              redirect('admin/rs/detail_rs/'.$data['id_rs']);
+	        }else {
+                 echo "Upload Gagal";
+	        }
+	    }else {
+	          $this->load->view('gagal');
+		}
+	}
+
+	public function hapus_poli($id, $data){
+		$path = './assets/poli/';
+		@unlink($path.$data);
+		$this->model_rs->delete_poli($id);
+		redirect('admin/rs/index');
+	}
+
 }
