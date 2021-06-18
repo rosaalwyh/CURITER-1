@@ -1,4 +1,4 @@
-<div class="footer mt-4" style="background-color: #dff0fe; width:100%">
+<div class="footer mt-4" style="background-color: #dff0fe; width:100%;background-position:absolute; background-size:cover">
   <div class="row">
     <div class="col-sm">
       <img class="ml-3" src="<?= base_url('assets/curiterlogooo.png') ?>" style="width:150px" alt="">
