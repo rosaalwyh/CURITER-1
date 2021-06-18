@@ -466,6 +466,11 @@
 			border-radius: 20px;
 			text-align: center;
 
+
+		}
+
+		.checked {
+			color: orange;
 		}
 
 
@@ -529,4 +534,3 @@ width: 18rem;
 			</nav>
 		</div>
 	</div>
-</body>
