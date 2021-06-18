@@ -101,11 +101,11 @@
     <div class="Tentang">
       <h4> <?= "Tentang Rumah Sakit " . $rsid['nama_rs'] ?></h4>
       <p><?= $rsid['tentang_rs'] ?></p>
-      <?php if ($rsid['rating'] > 1) { ?>
+      <?php if ($rsid['rating'] >= 4) { ?>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
+        <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
       <?php } ?>
       <p><?= $rsid['rating'] . " (Google Review)" ?></p>

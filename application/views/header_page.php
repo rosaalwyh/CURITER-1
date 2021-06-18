@@ -119,7 +119,7 @@
 			background-color: #477A98;
 			color: #FFFFFF;
 		} */
-		.aidok {
+		.curiter {
 			color: #477A98;
 			font-size: 26px;
 			padding-right: 20px;
@@ -501,7 +501,7 @@ width: 18rem;
 	<div class="topnav">
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light">
-				<a class="aidok" href="<?= base_url('home/') ?>">Curiter</a>
+				<a class="curiter" href="<?= base_url('home/') ?>">Curiter</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
