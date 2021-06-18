@@ -39,8 +39,10 @@
     
   }
   .container1 {
-			width: 90%;
-			margin: 0 auto;
+     
+      flex-direction: row;
+			width: 80%;
+			margin: 0px auto;
 		}
 
   /* Style the counter cards */
@@ -50,21 +52,29 @@
     text-align: center;
     background-color: #f1f1f1;
   }
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1130px) {
       .row{
     align-content: space-around;
-    justify-content:center;
-    flex-direction: column;
+  
+    }
+    .col{
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-content: space-around;
+      flex-wrap: wrap;
+     
     }
     
+  }
   }
 
 </style>
 <div class="container1" style="margin-top: 90px">
   <div class="row">
     <?php foreach ($rs as $rs) { ?>
-      <div class="col-sm-4">
-        <div class="card" style="width: 20rem;">
+      <div class="col">
+        <div class="card mt-6 mr-md-5" style="width: 20rem;">
           <div class="card-body">
             <img src="<?php echo base_url(); ?>Assets/rs/<?=$rs['foto_rumahsakit']?>" class="card-img" alt="..." width="200px">
             <h4 class="card-title" style="text-align:center;"><?= "Rumah Sakit " . $rs['nama_rs'] ?></h4>

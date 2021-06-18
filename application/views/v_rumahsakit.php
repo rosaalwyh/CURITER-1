@@ -1,7 +1,14 @@
 <style>
-  .card-img {
-    width: 100%;
-    height: auto;
+  .button-rs {
+    margin-top: 15%;
+    margin-bottom: 5%;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .button-rs {
+      margin: 10px;
+    }
+
   }
 </style>
 <div class="container" style="margin-top: 90px">
@@ -18,7 +25,7 @@
     <?php foreach ($rs as $rs) { ?>
       <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
         <div class="row no-gutters">
-          <div class="col" style="display: flex; align-items: center; justify-content: center;">
+          <div class="col-md-2">
             <img src="<?php echo base_url(); ?>Assets/rs/<?= $rs['foto_rumahsakit'] ?>" class="card-img" alt="<?= $rs['nama_rs'] ?>" style=" object-fit: cover; min-width: 100%; min-height: 100%">
           </div>
           <div class="col-md-8">
@@ -31,7 +38,7 @@
               <!-- <a href="#" class="btn btn btn-primary btn-sm active" role="button" aria-pressed="true">Primary link</a> -->
             </div>
           </div>
-          <div class="col-md-2" style="margin-top: 120px;">
+          <div class="button-rs">
             <button class="ml-auto btn btn-primary text-uppercase" type="button" name="button_janji" style="border-radius:13px;font-size:13px;background-color:#033D68;border-color:#033D68;"> <a href="<?= base_url('rumahsakit/DetailRS/' . $rs['id_rs']) ?>"></a> Lihat Detail</button>
 
           </div>
