@@ -1,4 +1,8 @@
 <style>
+.footer{
+  bottom:0;
+  padding-top: 10px;
+}
 .row{
   margin:0px;
 }
@@ -20,7 +24,7 @@
 
 </style>
 
-<div class="footer" style="background-color: #dff0fe; width:100%">
+<div class="footer" id="footer" style="background-color: #dff0fe; width:100%">
   <div class="row">
     <div class="col">
       <img class="img" src="<?= base_url('assets/curiterlogooo.png') ?>" style="width:150px" alt="">
