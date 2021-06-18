@@ -71,6 +71,10 @@
     color: #fff;
     cursor: pointer;
   }
+
+  .checked {
+    color: orange;
+  }
 </style>
 <div class="container">
   <div class="sticky">
@@ -84,6 +88,14 @@
     <div class="Tentang">
       <h4> <?= "Tentang Rumah Sakit " . $rsid['nama_rs'] ?></h4>
       <p><?= $rsid['tentang_rs'] ?></p>
+      <?php if ($rsid['rating'] > 1) { ?>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+      <?php } ?>
+      <p><?= $rsid['rating'] . " (Google Review)" ?></p>
       <div style="margin-top: 12px;">
         <a href="<?= $rsid['website'] ?>" class="ml-auto btn btn-primary text-uppercase" type="button" name="button_janji" style="border-radius:13px;font-size:13px;background-color:#033D68;border-color:#033D68;" target="_blank">Kunjungi Website</a>
 
