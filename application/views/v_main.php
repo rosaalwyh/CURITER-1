@@ -121,7 +121,8 @@
           $split = explode('.', $ar['konten_artikel'])
           ?>
           <p class="artikel"><?= $split[0] . "." . $split[1] . "..." ?></p>
-          <a href="<?= base_url('home/artikel/' . $ar['id_artikel']) ?>" class="artikel" target="_blank">Read More</a>
+          <a href="<?= base_url('home/artikel/' . $ar['id_artikel']) ?>" class="artikel" id="readmore" target="_blank" >Read More</a>
+          <textarea class="textarea" style="display:none;"><?=$ar['konten_artikel']?></textarea>
         </div>
         <br>
         <hr>
@@ -136,3 +137,4 @@
     <?php } ?>
   </div>
 </div>
+

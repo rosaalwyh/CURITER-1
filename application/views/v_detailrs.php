@@ -72,7 +72,7 @@
     cursor: pointer;
   }
 
-  @media screen and (max-width: 770px) {
+  @media screen and (max-width: 900px) {
     .konten-atas {
       display: flex;
       flex-direction: column;
@@ -86,6 +86,22 @@
     .konten-sisikiri {
       margin: 50% auto;
       margin-bottom: 20px;
+    }
+    .kolom-fasilitas{
+      font-size: 14px;
+      padding: 14px;  
+    }
+ 
+
+  }
+
+  @media screen and (max-width: 1250px) {
+    .kolom-fasilitas {
+			float: left;
+			width: 25%;
+			padding: 2px;
+			margin: 12px;
+	  	}
     }
   }
 </style>

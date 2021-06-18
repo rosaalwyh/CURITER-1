@@ -46,7 +46,10 @@
     <center>
       <h3 class="judulartikel"> <?= $artikel['judul_artikel']?> </h3>
       <img class="card-img-top w-40" src="<?php echo base_url(); ?>/assets/artikel/<?= $artikel['gambar_artikel']?>" alt="">
-      <p class="konten-artikel"><?=$artikel['konten_artikel']?></p>
+      <p class="konten-artikel" id="konten-artikel">
+      <?= $this->typography->nl2br_except_pre($artikel['konten_artikel'])?>
+      </p>
+      <!-- <p class="konten-artikel" id="navigation"></p> -->
     </center>
     <table>
       <tr>
@@ -60,3 +63,10 @@
 
   </body>
 </html>
+
+<script>
+replaced = document.getElementById("konten-artikel").innerHTML;
+  text = replaced.replace(/(.{300}[^\.]*)(\.)+/g, '</p>$1.<p>');
+  document.getElementById("navigation").innerHTML = text;
+</script>
+

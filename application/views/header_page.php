@@ -263,8 +263,9 @@
 
 		.kolom-fasilitas {
 			float: left;
-			width: 25%;
-
+			width: 20%;
+			padding: 3px;
+			margin: 5px;
 		}
 
 		.konten-atas {

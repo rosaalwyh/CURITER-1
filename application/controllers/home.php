@@ -7,6 +7,7 @@ class Home extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->library('session');
         $this->load->model('m_user');
+        $this->load->library('typography');
     }
 
     public function welcome(){
