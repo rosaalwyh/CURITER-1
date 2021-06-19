@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?= $title ?></title>
 	<link rel="icon" href="<?php echo base_url(); ?>/assets/Curiter.ico">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css') ?>">
@@ -32,8 +32,11 @@
 		}
 	</script>
 	<style>
-		body {
-			padding-top: 60px padding-bottom: 40px;
+		body {	
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+			
 		}
 
 		.container {

@@ -100,7 +100,7 @@
   <div class="konten-bawah">
     <div class="konten-bawah-poliklinik">
       <h3>Poliklinik</h3>
-      <div class="konten-poli" style="overflow:auto; height:700px;">
+      <div class="konten-poli" style="overflow:auto;">
         <?php foreach ($poli as $p) { ?>
           <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
             <div class="row no-gutters">
@@ -126,8 +126,7 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+        
 
           <div class="modal fade" id="poli<?= $p['id_poli'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -195,34 +194,9 @@
               </div>
             </div>
     <?php } ?>
-
-    <div class="konten-bawah-dokter">
-      <h3>Dokter</h3>
-      <div class="konten-dokter" style="overflow:auto; height:700px;">
-        <?php foreach ($drrs as $dr) { ?>
-          <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
-            <div class="row no-gutters">
-              <div class="col-md-2">
-              <?php if(empty($dr['foto_dokter']) ){?>
-              <img src="<?php echo base_url(); ?>Assets/dokter.png" class="card-img" alt="..." >
-              <?php } else {?>
-                <img src="<?php echo base_url(); ?>Assets/dokter/<?= $dr['foto_dokter']?>" class="card-img" alt="..." >
-              <?php }?>
-              </div>
-              <div class="col-md-6">
-                <div class="card-body">
-                  <h5 class="card-title" style="text-align:left;"><?= $dr['nama_dokter'] ?></h5>
-                </div>
-              </div>
-      
-            </div>
-          </div>
-        <?php } ?>
-      </div>
-    </div>
-
   </div>
 </div>
+
 <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
