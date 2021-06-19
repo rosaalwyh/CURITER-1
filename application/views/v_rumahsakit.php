@@ -9,6 +9,15 @@
       margin: 10px;
     }
 
+
+
+  }
+
+  @media screen and (max-width: 500px) {
+    .konten-dokter {
+      margin: 10px;
+      font-size: 14px;
+    }
   }
 </style>
 <div class="container" style="margin-top: 90px">
@@ -38,9 +47,8 @@
               <!-- <a href="#" class="btn btn btn-primary btn-sm active" role="button" aria-pressed="true">Primary link</a> -->
             </div>
           </div>
-          <div class="button-rs">
+          <div class="col-md-2 button-rs">
             <button class="ml-auto btn btn-primary text-uppercase" type="button" name="button_janji" style="border-radius:13px;font-size:13px;background-color:#033D68;border-color:#033D68;"> <a href="<?= base_url('rumahsakit/DetailRS/' . $rs['id_rs']) ?>"></a> Lihat Detail</button>
-
           </div>
         </div>
       </div>

@@ -480,29 +480,27 @@
 		.checked {
 			color: orange;
 		}
-
-
-
-		/* .artikel-main{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.artikel-main .card{
-  flex: 0 1 40%;
-border-radius: 20px;
-text-align: center;
-width: 18rem;
-} */
+		
 		@media screen and (max-width: 700px) {
 
 			.row,
 			.navbar {
 				flex-direction: none;
 			}
-
+			
 		}
+		@media screen and (max-width: 850px) {
+				body {
+				margin: 0;
+				padding-bottom: 20%;
+			}
+		}
+		@media screen and (max-width: 500px) {
+				body {
+				margin: 0;
+				padding-bottom: 40%;
+				}
+			}
 	</style>
 </head>
 

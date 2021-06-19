@@ -2,6 +2,7 @@
 .footer{
   bottom:0;
   padding-top: 10px;
+  margin-top: 10px;
 }
 .row{
   margin:0px;
