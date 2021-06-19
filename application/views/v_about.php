@@ -39,9 +39,16 @@
 
     @media screen and (max-width: 770px) {
         .container-about{
+            display: flex;
+            flex-wrap: wrap;
             align-content: space-around;
             justify-content:center;
             flex-direction: column;
+            margin: 10px;
+        }
+
+        .card-about{
+          margin: 10px;
         }
     }
   </style>

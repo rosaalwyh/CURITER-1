@@ -35,13 +35,15 @@
       margin-bottom: 20px;
     }
 
-    
-    
+
+
   }
+
   .container1 {
-			width: 90%;
-			margin: 0 auto;
-		}
+    flex-direction: row;
+    width: 80%;
+    margin: 0px auto;
+  }
 
   /* Style the counter cards */
   .card {
@@ -50,23 +52,32 @@
     text-align: center;
     background-color: #f1f1f1;
   }
-  @media screen and (max-width: 1000px) {
-      .row{
-    align-content: space-around;
-    justify-content:center;
-    flex-direction: column;
-    }
-    
-  }
 
+  @media screen and (max-width: 1130px) {
+    .row {
+      align-content: space-around;
+
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: space-around;
+      flex-wrap: wrap;
+
+    }
+
+  }
+  }
 </style>
-<div class="container1" style="margin-top: 90px">
+<div class="container1" style="margin-top: 90px; margin-bottom:50px">
   <div class="row">
     <?php foreach ($rs as $rs) { ?>
-      <div class="col-sm-4">
-        <div class="card" style="width: 20rem;">
+      <div class="col">
+        <div class="card mt-6 mr-md-5" style="width: 20rem;">
           <div class="card-body">
-            <img src="<?php echo base_url(); ?>Assets/rs/<?=$rs['foto_rumahsakit']?>" class="card-img" alt="..." width="200px">
+            <img src="<?php echo base_url(); ?>Assets/rs/<?= $rs['foto_rumahsakit'] ?>" class="card-img" alt="..." width="200px">
             <h4 class="card-title" style="text-align:center;"><?= "Rumah Sakit " . $rs['nama_rs'] ?></h4>
             <p class="card-text" style="text-align:center;opacity:0.7"> <img src="<?php echo base_url(); ?>/Assets/location.png" style="width:20px;height:20px;"> <?= "Kota " . $rs['kota'] ?></p>
             <p class="card-text" style="text-align:center;"><?= "Alamat : " . $rs['alamat_rs'] ?> </p>
@@ -77,3 +88,4 @@
       </div>
     <?php } ?>
   </div>
+</div>

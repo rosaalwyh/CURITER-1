@@ -83,16 +83,15 @@
         -webkit-transform-origin: 50% 50%;
     }
 
-    /* p {
-  font-family: sans-serif;
-  color: pink;
-  font-size: 30px;
-  font-weight: bold;
-  margin: 20px auto;
-  text-align: center;
-  animation: text .5s linear .4s;
-  -webkit-animation: text .4s linear .3s;
-} */
+    .button-dokter{
+        margin-top:15%;
+        margin-bottom:5%;
+        }
+        @media screen and (max-width: 1000px) {
+        .button-dokter{
+            margin: 10px;
+        }
+
 
     @-webkit-keyframes dash {
         0% {
@@ -142,18 +141,26 @@
         100% {
             opacity: 1;
         }
+    }
 
 
-        @keyframes text {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
+    @keyframes text {
+        0% {
+            opacity: 0;
         }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
 </style>
+
+<?php if(empty($dokter)){?>
+<div class="container" style="margin-top: 100px">
+<h3>Dokter Tidak Ditemukan</h3>
+</div>
+<?php } else { ?>
 <div class="container" style="margin-top: 100px">
     <h5><?php echo $dokter[0]['nama_poli']; ?></h5>
     <?php foreach ($dokter as $d) { ?>
@@ -162,9 +169,9 @@
                 <div class="row no-gutters">
                     <div class="col-md-2">
                         <?php if (empty($d['foto_dokter'])) { ?>
-                            <img src="<?php echo base_url(); ?>Assets/dokter.png" class="card-img" alt="...">
+                            <img src="<?php echo base_url(); ?>Assets/dokter.png" class="card-img" alt="..."  style=" object-fit: cover; min-width: 100%; min-height: 100%">
                         <?php } else { ?>
-                            <img src="<?php echo base_url(); ?>Assets/dokter/<?= $d['foto_dokter'] ?>" class="card-img" alt="...">
+                            <img src="<?php echo base_url(); ?>Assets/dokter/<?= $d['foto_dokter'] ?>" class="card-img" alt="..." style=" object-fit: cover; min-width: 100%; min-height: 100%">
                         <?php } ?>
                     </div>
                     <div class="col-md-8">
@@ -173,7 +180,7 @@
                             <p class="card-title" style="text-align:left;"><?= $d['email_dokter']; ?></p>
                         </div>
                     </div>
-                    <div class="col-md-2" style="margin-top: 120px;">
+                    <div class="button-dokter">
                         <button type="button" class="ml-auto btn btn-primary text-uppercase jadwal" data-toggle="modal" data-target="#modalJadwal" data-id="<?php echo $d['id_dokter']; ?>" data-url="<?php echo base_url('caridokterrs/jadwal') ?>" style="border-radius:13px;font-size:13px;background-color:#033D68;border-color:#033D68;" name="button_call">
                             Jadwal Dokter
                         </button>
@@ -242,7 +249,7 @@
             </div>
         </div>
     </div>
-
+                        <?php } ?>
     <script>
         $("input:radio").change(function() {
             $("#bayar-btn<?= $d['id_dokter'] ?>").prop("disabled", false);

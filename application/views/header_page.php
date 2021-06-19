@@ -34,7 +34,12 @@
 	</script>
 	<style>
 		body {
-			padding-top: 60px padding-bottom: 40px;
+			min-height: 100vh;
+    		display: flex;
+    		flex-direction: column;
+			position: relative;
+  			margin: 0;
+  			padding-bottom: 10%;
 		}
 
 		.container {
@@ -64,6 +69,7 @@
 		}
 
 		.footer {
+			position: absolute;
 			width: 100%;
 			bottom: 0;
 			color: #7f91a1;
@@ -119,7 +125,7 @@
 			background-color: #477A98;
 			color: #FFFFFF;
 		} */
-		.aidok {
+		.curiter {
 			color: #477A98;
 			font-size: 26px;
 			padding-right: 20px;
@@ -263,8 +269,9 @@
 
 		.kolom-fasilitas {
 			float: left;
-			width: 25%;
-
+			width: 20%;
+			padding: 3px;
+			margin: 5px;
 		}
 
 		.konten-atas {
@@ -465,6 +472,11 @@
 			border-radius: 20px;
 			text-align: center;
 
+
+		}
+
+		.checked {
+			color: orange;
 		}
 
 
@@ -496,7 +508,7 @@ width: 18rem;
 	<div class="topnav">
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light">
-				<a class="aidok" href="<?= base_url('home/') ?>">Curiter</a>
+				<a class="curiter" href="<?= base_url('home/') ?>">Curiter</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>

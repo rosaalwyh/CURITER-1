@@ -23,7 +23,7 @@ class User extends CI_Controller {
             $password = $this->input->post('password');
             $user = $this->m_user->verify($email);
             if ($user){
-                if($password === $user['password_user']){
+                if(password_verify($password,  $user['password_user'])){
                     $data['user'] = [
                         "id" => $user['id_user'],
                         "fullname" => $user['nama_user'],

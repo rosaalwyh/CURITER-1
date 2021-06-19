@@ -22,7 +22,6 @@ class M_dokter extends CI_Model
     {
         $this->db->select('*');
         $this->db->join('poliklinik', 'poliklinik.id_poli = dokter.id_poli');
-
         return $this->db->get_where('dokter', array('dokter.id_poli' => $id))->result_array();
     }
     public function searchdokter($keyword)
