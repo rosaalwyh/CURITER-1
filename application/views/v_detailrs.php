@@ -123,20 +123,19 @@
     <div class="Tentang">
       <h4> <?= "Tentang Rumah Sakit " . $rsid['nama_rs'] ?></h4>
       <p><?= $rsid['tentang_rs'] ?></p>
-      <?php if ($rsid['rating'] <= 1.5) { ?>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star "></span>
-        <span class="fa fa-star "></span>
-        <span class="fa fa-star "></span>
-        <span class="fa fa-star"></span>
-      <?php } else if ($rsid['rating'] = 4.5) { ?>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star "></span>
-      <?php } ?>
-      <p><?= $rsid['rating'] . " (Google Review)" ?></p>
+      <p class="card-text" data-rating="<?= $rsid['rating'] ?>" title="Average Rating - <?= $rsid['rating'] ?>"><?= $rsid['rating'] ?>
+        <?php
+        for ($count = 1; $count <= 5; $count++) {
+          $rating = $rsid['rating'];
+          if ($count <= $rating) {
+            $color = 'color:#ffcc00;';
+          } else {
+            $color = 'color:#ccc;';
+          }
+          echo '<span title="' . $count . '" id_rs="' . $rsid['id_rs'] . '-' . $count . '" data-index="' . $count . '" data-id_rs="' . $rsid["id_rs"] . '" data-rating="' . $rating . '" class="rating" style="cursor:pointer; ' . $color . ' font-size:24px;">&#9733;</span>';
+        }
+        ?>
+        (Google Review)</p>
       <div style="margin-top: 12px;">
         <a href="<?= $rsid['website'] ?>" class="ml-auto btn btn-primary text-uppercase" type="button" name="button_janji" style="border-radius:13px;font-size:13px;background-color:#033D68;border-color:#033D68;" target="_blank">Kunjungi Website</a>
 

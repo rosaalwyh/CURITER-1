@@ -41,6 +41,7 @@ class Model_rating extends CI_Model
             $output .= '</td>';
         }
         echo $output;
+        exit;
     }
 
     function insert_rating($data)

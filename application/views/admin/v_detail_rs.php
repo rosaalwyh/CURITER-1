@@ -83,7 +83,7 @@
   }
 
   .button_tambah:hover {
-    background-color: #ec4638;
+    background-color: #365465;
     color: #FFFFFF;
   }
 </style>
@@ -97,36 +97,32 @@
     <button type="button" class="button_tambah" data-toggle="modal" data-target="#tambah">Tambah PoliKlinik</button>
     <br></br>
   </div>
-  <div class="konten-bawah">
-    <div class="konten-bawah-poliklinik">
-      <h3>Poliklinik</h3>
-      <div class="konten-poli" style="overflow:auto;">
-        <?php foreach ($poli as $p) { ?>
-          <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
-            <div class="row no-gutters">
-              <div class="col-md-2">
-                <img src="<?php echo base_url(); ?>/Assets/rs.jpeg" class="card-img" alt="...">
-              </div>
-              <div class="col-md-6">
-                <div class="card-body">
-                  <h5 class="card-title" style="text-align:left;"><?= $p['nama_poli'] ?></h5>
-                  <!-- <p class="card-text" style="text-align:left;">Diisi deskripsi ringan dari tiap jenis polinya</p> -->
-                </div>
-              </div>
-              <div class="container" style="margin-top: 10px; margin-left: 100px;">
-                <div class="row">
-                  <div class="col-sm">
-                  <button class="button-poli" type="button" name="lihat_detail" data-toggle="modal" data-target="#poli<?= $p['id_poli'] ?>" style="">Lihat Detail</button>
-                  </div>
-                  <div class="col-sm">
-                  <button class="button-poli" type="button" name="lihat_detail" data-toggle="modal" data-target="#edit<?= $p['id_poli'] ?>" style="">Ubah Data</button>
-                  </div>
-                  <div class="col-sm">
-                  <a type="button"><a href="<?= base_url(); ?>admin/rs/hapus_poli/<?= $p['id_poli'] ?>/<?= $p['gambar'] ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></a>
-                  </div>
-                </div>
-              </div>
-        
+  <h3>Poliklinik</h3>
+  <div class="konten-poli" style="overflow:auto;">
+    <?php foreach ($poli as $p) { ?>
+      <div class="card mb-4" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
+        <div class="row no-gutters">
+          <div class="col-md-2">
+            <img src="<?php echo base_url('assets/poli/') . $p['gambar']; ?>" class="card-img m-2" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title" style="text-align:center;"><?= $p['nama_poli'] ?></h5>
+              <!-- <p class="card-text" style="text-align:left;">Diisi deskripsi ringan dari tiap jenis polinya</p> -->
+            </div>
+          </div>
+          <div class="row justify-content-end" style="margin-left: 650px;">
+            <div class="col-md">
+              <button class="button-poli" type="button" name="lihat_detail" data-toggle="modal" data-target="#poli<?= $p['id_poli'] ?>" style="">Lihat Detail</button>
+            </div>
+            <div class="col-md">
+              <button class="button-poli" type="button" name="lihat_detail" data-toggle="modal" data-target="#edit<?= $p['id_poli'] ?>" style="">Ubah Data</button>
+            </div>
+            <div class="col-md">
+              <a type="button"><a href="<?= base_url(); ?>admin/rs/hapus_poli/<?= $p['id_poli'] ?>/<?= $p['gambar'] ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-trash"></i></a></a>
+            </div>
+          </div>
+
 
           <div class="modal fade" id="poli<?= $p['id_poli'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -146,90 +142,87 @@
               </div>
             </div>
           </div>
-          
-        
+        </div>
       </div>
 
-    </div>
-    <div class="modal fade" id="edit<?= $p['id_poli'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title"> "Update Data PoliKlinik"</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-
-                  <div class="modal-body">
-                
-                      <br>
-                      <form action="<?= base_url(); ?>admin/rs/edit_poliklinik" method="post" enctype='multipart/form-data'>
-                        <input type="hidden" name="id" value="<?= $p['id_poli']?>">
-                        <input type="hidden" name="id_rs" value="<?= $rsid['id_rs'] ?>">
-                        <div class="form-group">
-                          <label for="formGroupExampleInput">Nama Poliklinik</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Poliklinik" name="nama_poli" value="<?php echo $p['nama_poli'] ?>" required>
-                        </div>
-                        <div class="form-gorup">
-                        <label for="formGroupExampleInput">Deskripsi Poliklinik</label>
-                        <br>
-                        <small>Minimal 200 Kata</small>
-                        <textarea id="konten_artikel" name="tentang_poli" rows="4" cols="50" value="" required><?php echo $p['tentang_poli'] ?>
-                        </textarea>
-                        </div>
-                        <div class="form-gorup">
-                        <label for="formGroupExampleInput">Gambar PoliKlinik</label>
-                        <input type="hidden" name="filelama" value="<?php echo $p['gambar']?>">
-                        <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Gambar Poliklinik" name="gambar" required>
-                        </div>
-                        <br>
-                        <button type="submit" name="tambah" class="btn btn-primary float-right">Ubah Data</button>
-                      </form>
-                      <br>
-                
-                  </div>
-
-                </div>
-              </div>
+      <div class="modal fade" id="edit<?= $p['id_poli'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"> "Update Data PoliKlinik"</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
+
+            <div class="modal-body">
+
+              <br>
+              <form action="<?= base_url(); ?>admin/rs/edit_poliklinik" method="post" enctype='multipart/form-data'>
+                <input type="hidden" name="id" value="<?= $p['id_poli'] ?>">
+                <input type="hidden" name="id_rs" value="<?= $rsid['id_rs'] ?>">
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Nama Poliklinik</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Poliklinik" name="nama_poli" value="<?php echo $p['nama_poli'] ?>" required>
+                </div>
+                <div class="form-gorup">
+                  <label for="formGroupExampleInput">Deskripsi Poliklinik</label>
+                  <br>
+                  <small>Minimal 200 Kata</small>
+                  <textarea id="konten_artikel" name="tentang_poli" rows="4" cols="50" value="" required><?php echo $p['tentang_poli'] ?>
+                        </textarea>
+                </div>
+                <div class="form-gorup">
+                  <label for="formGroupExampleInput">Gambar PoliKlinik</label>
+                  <input type="hidden" name="filelama" value="<?php echo $p['gambar'] ?>">
+                  <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Gambar Poliklinik" name="gambar" required>
+                </div>
+                <br>
+                <button type="submit" name="tambah" class="btn btn-primary float-right">Ubah Data</button>
+              </form>
+              <br>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
     <?php } ?>
   </div>
-</div>
 
-<div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <center>
-          <h2>TAMBAH DATA POLIKLINIK</h2>
-        </center>
-      </div>
-      <div class="modal-body">
-        <!-- isi form ini -->
-        <?php echo form_open_multipart('admin/rs/tambah_poliklinik'); ?>
-        <input type="hidden" name="id" value="<?= $rsid['id_rs'] ?>">
-        <div class="form-group">
-          <label for="formGroupExampleInput2">Poliklinik</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Poliklinik" name="nama_poli" required>
+  <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <center>
+            <h2>TAMBAH DATA POLIKLINIK</h2>
+          </center>
         </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput">Deskripsi Poliklinik</label>
-          <br>
-          <small>Minimal 200 Kata</small>
-          <textarea id="konten_artikel" name="deskripsi" rows="4" cols="50">
+        <div class="modal-body">
+          <!-- isi form ini -->
+          <?php echo form_open_multipart('admin/rs/tambah_poliklinik'); ?>
+          <input type="hidden" name="id" value="<?= $rsid['id_rs'] ?>">
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Poliklinik</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Poliklinik" name="nama_poli" required>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Deskripsi Poliklinik</label>
+            <br>
+            <small>Minimal 200 Kata</small>
+            <textarea id="konten_artikel" name="deskripsi" rows="4" cols="50">
                 </textarea>
-        </div>
-        <div class="form-group">
-          <label for="formGroupExampleInput">Gambar Poliklinik</label>
-          <br>
-          <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Gambar" name="gambar">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-          <input type="submit" class="btn btn-primary" id="tambah" value="Submit" placeholder="Simpan">
-          <?= form_close(); ?>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Gambar Poliklinik</label>
+            <br>
+            <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Gambar" name="gambar">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+            <input type="submit" class="btn btn-primary" id="tambah" value="Submit" placeholder="Simpan">
+            <?= form_close(); ?>
+          </div>
         </div>
       </div>
     </div>
-  </div>

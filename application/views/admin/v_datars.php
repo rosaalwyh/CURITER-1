@@ -62,13 +62,25 @@
         <tbody>
           <?php $no = 1;
           foreach ($rs as $r) {
-
           ?>
             <tr>
               <form>
                 <td><?= $no++;  ?></td>
                 <td><?php echo $r['nama_rs']; ?></td>
-                <td id="rating_list"><span id="rating_list"></span></td>
+                <td class="list-inline" data-rating="<?= $r['rating'] ?>" title="Average Rating - <?= $r['rating'] ?>"><?= $r['rating'] ?>
+                  <?php
+                  for ($count = 1; $count <= 5; $count++) {
+                    $rating = $r['rating'];
+                    if ($count <= $rating) {
+                      $color = 'color:#ffcc00;';
+                    } else {
+                      $color = 'color:#ccc;';
+                    }
+                    echo '<span title="' . $count . '" id_rs="' . $r['id_rs'] . '-' . $count . '" data-index="' . $count . '" data-id_rs="' . $r["id_rs"] . '" data-rating="' . $rating . '" class="rating" style="cursor:pointer; ' . $color . ' font-size:24px;">&#9733;</span>';
+                  }
+                  ?>
+                  (Google Review)</td>
+                <!-- <td id="rating_list"><span id="rating_list"></span></td> -->
                 <td><?php echo $r['alamat_rs']; ?></td>
                 <td><?php echo $r['website']; ?></td>
                 <td><?php echo $r['telp_rs']; ?></td>
@@ -98,7 +110,11 @@
 
                         <div class="form-group">
                           <label for="formGroupExampleInput">Nama</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama RS" name="nama" value="<?php echo $r['nama_rs'] ?>" required>
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Rumah Sakit" name="nama" value="<?php echo $r['nama_rs'] ?>" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="formGroupExampleInput">Rating</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Rating Rumah Sakit" name="rating" value="<?php echo $r['rating'] ?>" required>
                         </div>
                         <div class="form-group">
                           <label for="formGroupExampleInput">Alamat</label>
@@ -163,41 +179,45 @@
           <!-- isi form ini -->
           <form method="POST" action="<?= base_url(); ?>admin/rs/tambah" enctype='multipart/form-data'>
             <div class="form-group">
-              <label for="formGroupExampleInput">Nama Rumah Sakit</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Rumah Sakit" name="nama" required>
+              <label for="nama">Nama Rumah Sakit</label>
+              <input type="text" class="form-control" id="nama" placeholder="Nama Rumah Sakit" name="nama" required>
             </div>
             <div class="form-group">
-              <label for="formGroupExampleInput">Poliklinik</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Poliklinik" name="nama_poli" required>
+              <label for="rating">Rating Rumah Sakit</label>
+              <input type="text" class="form-control" id="rating" placeholder="Rating Rumah Sakit" name="rating">
             </div>
             <div class="form-group">
-              <label for="formGroupExampleInput">Alamat</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Alamat" name="alamat" required>
+              <label for="nama_poli">Poliklinik</label>
+              <input type="text" class="form-control" id="nama_poli" placeholder="Poliklinik" name="nama_poli" required>
             </div>
             <div class="form-group">
-              <label for="formGroupExampleInput">Alamat Website</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Alamat Website" name="website" required>
+              <label for="alamat">Alamat</label>
+              <input type="text" class="form-control" id="alamat" placeholder="Alamat" name="alamat" required>
             </div>
             <div class="form-group">
-              <label for="formGroupExampleInput">Kota</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Kota" name="kota" required>
+              <label for="website">Alamat Website</label>
+              <input type="text" class="form-control" id="website" placeholder="Alamat Website" name="website" required>
+            </div>
+            <div class="form-group">
+              <label for="kota">Kota</label>
+              <input type="text" class="form-control" id="kota" placeholder="Kota" name="kota" required>
             </div>
             <div class="form-group">
               <!-- ini gatau kan increment yak -->
-              <label for="formGroupExampleInput">No Telp</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="No Telp" name="no" required>
+              <label for="no_telp">No Telp</label>
+              <input type="text" class="form-control" id="no_telp" placeholder="No Telp" name="no" required>
             </div>
             <div class="form-group">
-              <label for="formGroupExampleInput">Tentang</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Tentang RS" name="tentang" required>
+              <label for="tentang">Tentang</label>
+              <input type="text" class="form-control" id="tentang" placeholder="Tentang RS" name="tentang" required>
             </div>
             <div class="form-group">
-              <label for="formGroupExampleInput">Fasilitas</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Fasilitas RS" name="fasilitas" required>
+              <label for="fasilitas">Fasilitas</label>
+              <input type="text" class="form-control" id="fasilitas" placeholder="Fasilitas RS" name="fasilitas" required>
             </div>
             <div class="form-group">
-              <label for="formGroupExampleInput">Gambar</label>
-              <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Fasilitas RS" name="gambar" required>
+              <label for="gambar">Gambar</label>
+              <input type="file" class="form-control" id="gambar" placeholder="Fasilitas RS" name="gambar" required>
             </div>
         </div>
         <div class="modal-footer">

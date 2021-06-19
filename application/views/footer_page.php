@@ -1,20 +1,11 @@
 <style>
-.footer{
-  bottom:0;
-  padding-top: 10px;
-}
-.row{
-  margin:0px;
-}
-.img{
-  margin-left:5rem;
-}
-@media screen and (max-width: 586px) {
-  .col{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content: center;
+  .footer {
+    bottom: 0;
+    padding-top: 10px;
+  }
 
+  .row {
+    margin: 0px;
   }
 
   .img {
@@ -22,10 +13,7 @@
   }
 
   @media screen and (max-width: 586px) {
-
-    .col,
-    .col p,
-    i {
+    .col {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -33,10 +21,25 @@
     }
 
     .img {
-      margin: 0;
+      margin-left: 5rem;
     }
 
-  }
+    @media screen and (max-width: 586px) {
+
+      .col,
+      .col p,
+      i {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+      }
+
+      .img {
+        margin: 0;
+      }
+
+    }
 </style>
 
 <div class="footer" id="footer" style="background-color: #dff0fe; width:100%">

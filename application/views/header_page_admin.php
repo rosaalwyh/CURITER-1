@@ -33,11 +33,11 @@
 		}
 	</script>
 	<style>
-		body {	
+		body {
 			display: flex;
 			flex-direction: column;
 			min-height: 100vh;
-			
+
 		}
 
 		.container {
