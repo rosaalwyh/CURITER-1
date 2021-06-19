@@ -44,6 +44,19 @@
               <p class="card-text" style="text-align:left;opacity:0.7"> <img src="<?php echo base_url(); ?>/Assets/location.png" style="width:20px;height:20px;"> <?= "Kota " . $rs['kota'] ?></p>
               <p class="card-text" style="text-align:left;"><?= "Alamat : " . $rs['alamat_rs'] ?> </p>
               <p class="card-text" style="text-align:left;"><?= "Telpon : " . $rs['telp_rs'] ?> </p>
+              <p class="card-text" data-rating="<?= $rs['rating'] ?>" title="Average Rating - <?= $rs['rating'] ?>"><?= $rs['rating'] ?>
+                <?php
+                for ($count = 1; $count <= 5; $count++) {
+                  $rating = $rs['rating'];
+                  if ($count <= $rating) {
+                    $color = 'color:#ffcc00;';
+                  } else {
+                    $color = 'color:#ccc;';
+                  }
+                  echo '<span title="' . $count . '" id_rs="' . $rs['id_rs'] . '-' . $count . '" data-index="' . $count . '" data-id_rs="' . $rs["id_rs"] . '" data-rating="' . $rating . '" class="rating" style="cursor:pointer; ' . $color . ' font-size:24px;">&#9733;</span>';
+                }
+                ?>
+                (Google Review)</p>
               <!-- <a href="#" class="btn btn btn-primary btn-sm active" role="button" aria-pressed="true">Primary link</a> -->
             </div>
           </div>
@@ -55,3 +68,19 @@
     <?php } ?>
   </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+    load_data();
+
+    function load_data() {
+      $.ajax({
+        url: "<?php echo base_url(); ?>admin/rs/fetch",
+        method: "POST",
+        success: function(data) {
+          $('#rating_list').html(data);
+        }
+      })
+    }
+  });
+</script>

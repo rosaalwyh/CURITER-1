@@ -16,6 +16,8 @@
     flex-wrap:wrap;
     justify-content: center;
 
+  .row {
+    margin: 0px;
   }
 
   .img {
@@ -23,10 +25,7 @@
   }
 
   @media screen and (max-width: 586px) {
-
-    .col,
-    .col p,
-    i {
+    .col {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -34,7 +33,7 @@
     }
 
     .img {
-      margin: 0;
+      margin-left: 5rem;
     }
 
   }

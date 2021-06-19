@@ -56,31 +56,30 @@ class Dokter extends CI_Controller
 		$config['max_size'] = '2048';  //2MB max
 		$config['max_width'] = '4480'; // pixel
 		$config['max_height'] = '4480'; // pixel
-		$config['file_name'] = $_FILES['gambar']['name'];
+		$config['file_name'] = $_FILES['foto_dokter']['name'];
 
 		$this->upload->initialize($config);
 
-	    if (!empty($_FILES['gambar']['name'])) {
-	        if ( $this->upload->do_upload('gambar') ) {
-	            $foto = $this->upload->data();
-	            $data = array(
-	                    	'id_rs'       => $id_rs,
-							  'no_dokter'			=> $no_dokter,
-							  'nama_dokter'			=> $nama_dokter,
-							  'id_poli'			=> $id_poli,
-							  'email_dokter'	=> $email_dokter,
-							  'foto_dokter'       => $foto['file_name'],
-	                        );
-							$this->model_dokter->tambah_dokter($data);
-              redirect('admin/dokter/detaildokter/' . $data['id_rs']);
-	        }else {
-                 $this->load->view('gagal');
-	        }
-	    }else {
-         
-          $this->load->view('gagal');
+		if (!empty($_FILES['foto_dokter']['name'])) {
+			if ($this->upload->do_upload('foto_dokter')) {
+				$foto = $this->upload->data();
+				$data = array(
+					'id_rs'       => $id_rs,
+					'no_dokter'			=> $no_dokter,
+					'nama_dokter'			=> $nama_dokter,
+					'id_poli'			=> $id_poli,
+					'email_dokter'	=> $email_dokter,
+					'foto_dokter'       => $foto['file_name'],
+				);
+				$this->model_dokter->tambah_dokter($data);
+				redirect('admin/dokter/detaildokter/' . $data['id_rs']);
+			} else {
+				$this->load->view('gagal');
+			}
+		} else {
+
+			$this->load->view('gagal');
 		}
-		
 	}
 	public function edit($id)
 	{
@@ -88,7 +87,7 @@ class Dokter extends CI_Controller
 		$no_dokter = $this->input->post('no', true);
 		$nama_dokter = $this->input->post('nama', true);
 		$email_dokter = $this->input->post('email', true);
-		
+
 		$path = './assets/dokter/';
 		$kondisi = array('id_dokter' => $id);
 
@@ -98,31 +97,31 @@ class Dokter extends CI_Controller
 		$config['max_size'] = '2048'; // 2MB
 		$config['max_widht'] = '4480'; // Pixel
 		$config['max_height'] = '4480'; //Pixel
-	$config['file_name'] = $_FILES['gambar']['name'];
+		$config['file_name'] = $_FILES['foto_dokter']['name'];
 
-      $this->upload->initialize($config);
+		$this->upload->initialize($config);
 
-	    if (!empty($_FILES['gambar']['name'])) {
-	        if ( $this->upload->do_upload('gambar') ) {
-	            $foto = $this->upload->data();
-	            $data = array(
-	                          'id_rs'       => $id_rs,
-							  'no_dokter'			=> $no_dokter,
-							  'nama_dokter'			=> $nama_dokter,
-							  'email_dokter'		=> $email_dokter,
-							  'foto_dokter'       => $foto['file_name'],
-	                        );
-              // hapus foto pada direktori
-              @unlink($path.$this->input->post('filelama'));
+		if (!empty($_FILES['foto_dokter']['name'])) {
+			if ($this->upload->do_upload('foto_dokter')) {
+				$foto = $this->upload->data();
+				$data = array(
+					'id_rs'       => $id_rs,
+					'no_dokter'			=> $no_dokter,
+					'nama_dokter'			=> $nama_dokter,
+					'email_dokter'		=> $email_dokter,
+					'foto_dokter'       => $foto['file_name'],
+				);
+				// hapus foto pada direktori
+				@unlink($path . $this->input->post('filelama'));
 
-			$this->model_dokter->update_dokter($kondisi,$data);
-			redirect('admin/dokter/detaildokter/' . $data['id_rs']);
-	        }else {
-                 echo "Upload Gagal";
-	        }
-	    }else {
-	          $this->load->view('gagal');
-	    }
+				$this->model_dokter->update_dokter($kondisi, $data);
+				redirect('admin/dokter/detaildokter/' . $data['id_rs']);
+			} else {
+				echo "Upload Gagal";
+			}
+		} else {
+			$this->load->view('gagal');
+		}
 
 
 		// $data = [
@@ -138,7 +137,7 @@ class Dokter extends CI_Controller
 	public function hapus($id, $data)
 	{
 		$path = './assets/dokter/';
-		@unlink($path.$data);
+		@unlink($path . $data);
 		$this->model_rs->delete_poli($id);
 		$this->model_dokter->delete_dokter($id);
 		redirect('admin/dokter/index');

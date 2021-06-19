@@ -35,6 +35,7 @@ class Rs extends CI_Controller
 	public function tambah()
 	{
 		$nama_rs = $this->input->post('nama', true);
+		$rating = $this->input->post('rating', true);
 		$alamat_rs = $this->input->post('alamat', true);
 		$website = $this->input->post('website', true);
 		$kota = $this->input->post('kota', true);
@@ -79,6 +80,7 @@ class Rs extends CI_Controller
 	{
 		$id_rs = $this->input->post('id', true);
 		$nama_rs = $this->input->post('nama', true);
+		$rating = $this->input->post('rating', true);
 		$alamat_rs = $this->input->post('alamat', true);
 		$website = $this->input->post('website', true);
 		$kota = $this->input->post('kota', true);
