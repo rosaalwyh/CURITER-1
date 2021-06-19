@@ -37,6 +37,7 @@
     }
 
   }
+}
 </style>
 
 <div class="footer" id="footer" style="background-color: #dff0fe; width:100%">
@@ -46,8 +47,8 @@
     </div>
     <div class="col-sm text-center m-auto" style="margin-bottom:0px; color:#477A98">Copyright &copy; Curiter 2021
     </div>
-    <div class="col-sm m-auto" style="color:#477A98;">
-      <p><i class="fas fa-map-marker-alt"></i>&ensp;Palembang, Sumatera Selatan</p>
+    <div class="col-sm text-center m-auto" style="margin-bottom:0px; color:#477A98;">
+      <i class="fas fa-map-marker-alt"></i>&ensp;Palembang, Sumatera Selatan
     </div>
   </div>
 

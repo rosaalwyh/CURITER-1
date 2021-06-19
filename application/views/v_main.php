@@ -73,7 +73,7 @@
     </div>
 </div>
 
-<div class="container" style="margin-top: 10px;margin-bottom:150px;">
+<div class="container" style="margin-top: 10px;margin-bottom:50px;">
   <div class="cards">
 
     <div class="card" style="width: 18rem;">
