@@ -210,7 +210,7 @@
                         <div class="form-group">
                           <label for="formGroupExampleInput">Gambar</label>
                           <input type="hidden" name="filelama" value="<?= $d['foto_dokter'] ?>">
-                          <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Email" name="gambar" value="<?= $d['foto_dokter'] ?>" required>
+                          <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Email" name="foto_dokter" value="<?= $d['foto_dokter'] ?>" required>
                         </div>
                         <button type="submit" name="tambah" class="btn btn-primary float-right">Ubah Data</button>
                       </form>
