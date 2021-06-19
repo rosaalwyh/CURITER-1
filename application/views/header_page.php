@@ -36,7 +36,12 @@
 	</script>
 	<style>
 		body {
-			padding-top: 60px padding-bottom: 40px;
+			min-height: 100vh;
+    		display: flex;
+    		flex-direction: column;
+			position: relative;
+  			margin: 0;
+  			padding-bottom: 10%;
 		}
 
 		.container {
@@ -66,6 +71,7 @@
 		}
 
 		.footer {
+			position: absolute;
 			width: 100%;
 			bottom: 0;
 			color: #7f91a1;

@@ -1,6 +1,25 @@
 <style>
+<<<<<<< HEAD
   .row {
     margin: 0px;
+=======
+.footer{
+  bottom:0;
+  padding-top: 10px;
+}
+.row{
+  margin:0px;
+}
+.img{
+  margin-left:5rem;
+}
+@media screen and (max-width: 586px) {
+  .col{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+
+>>>>>>> ce92cd1d93968e7ac887c311f48077e3396fa5b1
   }
 
   .img {
@@ -25,7 +44,7 @@
   }
 </style>
 
-<div class="footer" style="background-color: #dff0fe; width:100%">
+<div class="footer" id="footer" style="background-color: #dff0fe; width:100%">
   <div class="row">
     <div class="col">
       <img class="img mb-2" src="<?= base_url('assets/curiterlogooo.png') ?>" style="width:150px" alt="">

@@ -6,7 +6,7 @@ class M_User extends CI_Model {
         $data = [
             "nama_user" => $this->input->post("fullname"),
             "email_user" => $this->input->post("email"),
-            "password_user" => $this->input->post("password"),
+            "password_user" => password_hash($this->input->post("password"), PASSWORD_DEFAULT),
         ];
         return $this->db->insert('user',$data);
     }

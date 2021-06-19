@@ -68,7 +68,7 @@
               <form>
                 <td><?= $no++;  ?></td>
                 <td><?php echo $r['nama_rs']; ?></td>
-                <td><span id="rating_list"></span></td>
+                <td id="rating_list"><span id="rating_list"></span></td>
                 <td><?php echo $r['alamat_rs']; ?></td>
                 <td><?php echo $r['website']; ?></td>
                 <td><?php echo $r['telp_rs']; ?></td>

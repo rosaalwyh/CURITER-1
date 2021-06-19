@@ -155,6 +155,12 @@
     }
 }
 </style>
+
+<?php if(empty($dokter)){?>
+<div class="container" style="margin-top: 100px">
+<h3>Dokter Tidak Ditemukan</h3>
+</div>
+<?php } else { ?>
 <div class="container" style="margin-top: 100px">
     <h5><?php echo $dokter[0]['nama_poli']; ?></h5>
     <?php foreach ($dokter as $d) { ?>
@@ -243,7 +249,7 @@
             </div>
         </div>
     </div>
-
+                        <?php } ?>
     <script>
         $("input:radio").change(function() {
             $("#bayar-btn<?= $d['id_dokter'] ?>").prop("disabled", false);
