@@ -48,6 +48,7 @@
           <tr>
             <th>No</th>
             <th>Nama RS</th>
+            <th>Rating</th>
             <th>Alamat</th>
             <th>Alamat Website</th>
             <th>Nomor</th>
@@ -67,6 +68,7 @@
               <form>
                 <td><?= $no++;  ?></td>
                 <td><?php echo $r['nama_rs']; ?></td>
+                <td id="rating_list"><span id="rating_list"></span></td>
                 <td><?php echo $r['alamat_rs']; ?></td>
                 <td><?php echo $r['website']; ?></td>
                 <td><?php echo $r['telp_rs']; ?></td>
@@ -123,13 +125,13 @@
                           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Tentang RS" name="tentang" value="<?php echo $r['tentang_rs'] ?>" required>
                         </div>
                         <div class="form-gorup">
-                        <label for="formGroupExampleInput">Fasilitas</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Fasilitas RS" name="fasilitas" value="<?php echo $r['fasilitas_rs'] ?>" required>
+                          <label for="formGroupExampleInput">Fasilitas</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Fasilitas RS" name="fasilitas" value="<?php echo $r['fasilitas_rs'] ?>" required>
                         </div>
                         <div class="form-gorup">
-                        <label for="formGroupExampleInput">Gambar Rumah Sakit</label>
-                        <input type="hidden" name="filelama" value="<?= $r['foto_rumahsakit'] ?>">
-                        <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Fasilitas RS" name="gambar" value="<?php echo $r['foto_rumahsakit'] ?>" required>
+                          <label for="formGroupExampleInput">Gambar Rumah Sakit</label>
+                          <input type="hidden" name="filelama" value="<?= $r['foto_rumahsakit'] ?>">
+                          <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Fasilitas RS" name="gambar" value="<?php echo $r['foto_rumahsakit'] ?>" required>
                         </div>
                         <br>
                         <button type="submit" name="tambah" class="btn btn-primary float-right">Ubah Data</button>
@@ -209,3 +211,61 @@
 </body>
 
 </html>
+
+<script>
+  $(document).ready(function() {
+    load_data();
+
+    function load_data() {
+      $.ajax({
+        url: "<?php echo base_url(); ?>admin/rs/fetch",
+        method: "POST",
+        success: function(data) {
+          $('#rating_list').html(data);
+        }
+      })
+    }
+
+    $(document).on('mouseenter', '.rating', function() {
+      var index = $(this).data('index');
+      var id_rs = $(this).data('id_rs');
+      remove_background(id_rs);
+      for (var count = 1; count <= index; count++) {
+        $('#' + id_rs + '-' + count).css('color', '#ffcc00');
+      }
+    });
+
+    function remove_background(id_rs) {
+      for (var count = 1; count <= 5; count++) {
+        $('#' + id_rs + '-' + count).css('color', '#ccc');
+      }
+    }
+
+    $(document).on('click', '.rating', function() {
+      var index = $(this).data('index');
+      var id_rs = $(this).data('id_rs');
+      $.ajax({
+        url: "<?php echo base_url(); ?>admin/rs/insert",
+        method: "POST",
+        data: {
+          index: index,
+          id_rs: id_rs
+        },
+        success: function(data) {
+          load_data();
+          alert("You have rate " + index + " out of 5");
+        }
+      })
+    });
+
+    $(document).on('mouseleave', '.rating', function() {
+      var index = $(this).data('index');
+      var id_rs = $(this).data('id_rs');
+      var rating = $(this).data('rating');
+      remove_background(id_rs);
+      for (var count = 1; count <= rating; count++) {
+        $('#' + id_rs + '-' + count).css('color', '#ffcc00');
+      }
+    });
+  });
+</script>

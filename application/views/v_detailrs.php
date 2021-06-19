@@ -87,21 +87,27 @@
       margin: 50% auto;
       margin-bottom: 20px;
     }
-    .kolom-fasilitas{
-      font-size: 14px;
-      padding: 14px;  
-    }
- 
 
-  }
-
-  @media screen and (max-width: 1250px) {
     .kolom-fasilitas {
-			float: left;
-			width: 25%;
-			padding: 2px;
-			margin: 12px;
-	  	}
+      font-size: 14px;
+      padding: 14px;
+    }
+
+    div .konten-atas {
+      margin-bottom: -200px;
+    }
+
+    @media screen and (max-width: 1250px) {
+      .kolom-fasilitas {
+        float: left;
+        width: 25%;
+        padding: 2px;
+        margin: 12px;
+      }
+
+      div .konten-atas {
+        margin-bottom: -200px;
+      }
     }
   }
 </style>
@@ -110,19 +116,25 @@
     <h3> <?= "Rumah Sakit " . $rsid['nama_rs'] ?> </h3>
     <a href="#" style="margin-right:78%">Informasi RS</a>
   </div>
-  <div class="konten-atas">
+  <div class="konten-atas" style="margin-bottom: 200px;">
     <div id='konten-kiri-atas' class="konten-sisikiri" style="margin-top:10px;">
       <img src="<?php echo base_url(); ?>Assets/rs/<?= $rsid['foto_rumahsakit'] ?>" class="card-img" alt="..." width="100%">
     </div>
     <div class="Tentang">
       <h4> <?= "Tentang Rumah Sakit " . $rsid['nama_rs'] ?></h4>
       <p><?= $rsid['tentang_rs'] ?></p>
-      <?php if ($rsid['rating'] >= 4) { ?>
+      <?php if ($rsid['rating'] <= 1.5) { ?>
         <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star "></span>
+        <span class="fa fa-star "></span>
+        <span class="fa fa-star "></span>
         <span class="fa fa-star"></span>
+      <?php } else if ($rsid['rating'] = 4.5) { ?>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star "></span>
       <?php } ?>
       <p><?= $rsid['rating'] . " (Google Review)" ?></p>
       <div style="margin-top: 12px;">
