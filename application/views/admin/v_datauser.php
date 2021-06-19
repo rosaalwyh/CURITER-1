@@ -2,7 +2,7 @@
 <html lang="" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css') ?>">
     <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
@@ -52,16 +52,11 @@
         <div class="col-md-6">
           <div class="alert alert-success alert-dismissible fade show" role="alert">
             <?= $this->session->flashdata('flash'); ?>
-            <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button> -->
           </div>
         </div>
       </div>
     <?php endif; ?>
 
-    <!-- Modal Tambah User -->
-    <div class="box">
 
       <h3>Daftar User</h3>
       <br>
@@ -92,10 +87,8 @@
                 <td><a href="<?= base_url(); ?>admin/user/hapus/<?= $u['id_user'] ?>" type="button" class="btn btn-danger" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
               </form>
             </tr>
-
-
-    </div>
   </div>
+
   <!-- Modal Tambah Mahasiswa -->
   <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
     <div class="modal-dialog" role="document">
