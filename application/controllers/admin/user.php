@@ -54,7 +54,7 @@ class User extends CI_Controller
 			'id_user' => $this->input->post('id', true),
 			'nama_user' => $this->input->post('fullname', true),
 			'email_user' =>$this->input->post('email', true),
-    		'password_user' => $this->input->post('password',true),
+    		'password_user' => password_hash($this->input->post('password',true), PASSWORD_DEFAULT),
 		];
         $this->model_user->update_user($id, $data);
         $this->session->set_flashdata('flash','Data Berhasil Diubah !');
