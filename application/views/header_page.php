@@ -49,6 +49,12 @@
 			margin: 0 auto;
 		}
 
+		.container1 {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+
 		.topnav,
 		.fixed-footer {
 			width: 100%;
@@ -506,7 +512,7 @@
 
 <body>
 	<div class="topnav">
-		<div class="container">
+		<div class="container1">
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<a class="curiter" href="<?= base_url('home/') ?>">Curiter</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
