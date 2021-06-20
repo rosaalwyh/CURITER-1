@@ -37,11 +37,11 @@
 	<style>
 		body {
 			min-height: 100vh;
-    		display: flex;
-    		flex-direction: column;
+			display: flex;
+			flex-direction: column;
 			position: relative;
-  			margin: 0;
-  			padding-bottom: 10%;
+			margin: 0;
+			padding-bottom: 10%;
 		}
 
 		.container {
@@ -528,7 +528,7 @@ width: 18rem;
 						<li class="nav-item">
 							<a class="nav-link" href="<?= base_url('about/') ?>">About</a>
 						</li>
-						<li class="nav-item dropdown">
+						<!-- <li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<?php $cek = $this->session->all_userdata();
 								echo "Halo, " . $cek['user']['fullname']; ?> </a>
@@ -537,7 +537,7 @@ width: 18rem;
 								<a class="dropdown" href="<?= base_url('home/settings') ?>">Pengaturan</a>
 								<a class="dropdown" href="<?= base_url('home/logout') ?>">Keluar</a>
 							</div>
-						</li>
+						</li> -->
 				</div>
 			</nav>
 		</div>
