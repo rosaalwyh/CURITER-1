@@ -250,67 +250,68 @@
                 </div>
             </div>
         </div>
-    <?php } ?>
-    <script>
-        $("input:radio").change(function() {
-            $("#bayar-btn<?= $d['id_dokter'] ?>").prop("disabled", false);
-        });
-        $("input:radio").change(function() {
-            $("#bayar-btn-janji<?= $d['id_dokter'] ?>").prop("disabled", false);
-        });
-        $(".button_bayar").prop("disabled", true);
+    </div>
+<?php } ?>
+<script>
+    $("input:radio").change(function() {
+        $("#bayar-btn<?= $d['id_dokter'] ?>").prop("disabled", false);
+    });
+    $("input:radio").change(function() {
+        $("#bayar-btn-janji<?= $d['id_dokter'] ?>").prop("disabled", false);
+    });
+    $(".button_bayar").prop("disabled", true);
 
-        // $(document).ready(function(){
-        //     $(".close").click(function(){
-        //         location.reload(true);
-        //     });
-        // });
+    // $(document).ready(function(){
+    //     $(".close").click(function(){
+    //         location.reload(true);
+    //     });
+    // });
 
-        $('#acc-bayar<?= $d['id_dokter'] ?>').on('hidden.bs.modal', function() {
-            location.reload(true);
-        });
-        $('#edit<?= $d['id_dokter'] ?>').on('hidden.bs.modal', function() {
-            location.reload(true);
-        });
+    $('#acc-bayar<?= $d['id_dokter'] ?>').on('hidden.bs.modal', function() {
+        location.reload(true);
+    });
+    $('#edit<?= $d['id_dokter'] ?>').on('hidden.bs.modal', function() {
+        location.reload(true);
+    });
 
-        $(document).ready(function() {
-            $('#modalJadwal').on('show.bs.modal', function(e) {
-                var id_dokter = $(e.relatedTarget).data('id');
-                var url_data = $(e.relatedTarget).data('url');
-                /* fungsi AJAX untuk melakukan fetch data */
-                $.ajax({
-                    method: 'get',
-                    url: url_data,
-                    data: {
-                        id_dokter: id_dokter
-                    },
-                    dataType: 'json',
-                    success: function(data) {
-                        if (data.length > 0) {
-                            $('.nama-dokter').html(data[0].nama_dokter)
-                            $('#hari_senin').html(data[0].senin)
-                            $('#hari_selasa').html(data[0].selasa)
-                            $('#hari_rabu').html(data[0].rabu)
-                            $('#hari_kamis').html(data[0].kamis)
-                            $('#hari_jumat').html(data[0].jumat)
-                            $('#hari_sabtu').html(data[0].sabtu)
-                            $('#hari_minggu').html(data[0].minggu)
-                        } else {
-                            $('.nama-dokter').html("Jadwal Dokter")
-                            $('#hari_senin').html("Tidak Ada Jadwal")
-                            $('#hari_selasa').html("Tidak Ada Jadwal")
-                            $('#hari_rabu').html("Tidak Ada Jadwal")
-                            $('#hari_kamis').html("Tidak Ada Jadwal")
-                            $('#hari_jumat').html("Tidak Ada Jadwal")
-                            $('#hari_sabtu').html("Tidak Ada Jadwal")
-                            $('#hari_minggu').html("Tidak Ada Jadwal")
-                        }
-
-                    },
-                    error: function() {
-                        alert('Could not displaying data');
+    $(document).ready(function() {
+        $('#modalJadwal').on('show.bs.modal', function(e) {
+            var id_dokter = $(e.relatedTarget).data('id');
+            var url_data = $(e.relatedTarget).data('url');
+            /* fungsi AJAX untuk melakukan fetch data */
+            $.ajax({
+                method: 'get',
+                url: url_data,
+                data: {
+                    id_dokter: id_dokter
+                },
+                dataType: 'json',
+                success: function(data) {
+                    if (data.length > 0) {
+                        $('.nama-dokter').html(data[0].nama_dokter)
+                        $('#hari_senin').html(data[0].senin)
+                        $('#hari_selasa').html(data[0].selasa)
+                        $('#hari_rabu').html(data[0].rabu)
+                        $('#hari_kamis').html(data[0].kamis)
+                        $('#hari_jumat').html(data[0].jumat)
+                        $('#hari_sabtu').html(data[0].sabtu)
+                        $('#hari_minggu').html(data[0].minggu)
+                    } else {
+                        $('.nama-dokter').html("Jadwal Dokter")
+                        $('#hari_senin').html("Tidak Ada Jadwal")
+                        $('#hari_selasa').html("Tidak Ada Jadwal")
+                        $('#hari_rabu').html("Tidak Ada Jadwal")
+                        $('#hari_kamis').html("Tidak Ada Jadwal")
+                        $('#hari_jumat').html("Tidak Ada Jadwal")
+                        $('#hari_sabtu').html("Tidak Ada Jadwal")
+                        $('#hari_minggu').html("Tidak Ada Jadwal")
                     }
-                });
+
+                },
+                error: function() {
+                    alert('Could not displaying data');
+                }
             });
         });
-    </script>
+    });
+</script>
