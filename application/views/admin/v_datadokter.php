@@ -71,7 +71,7 @@
                 <?php if (empty($d['foto_dokter'])) { ?>
                   <img src="<?php echo base_url(); ?>assets/dokter.png" style="width: 120px;" class="card-img" alt="...">
                 <?php } else { ?>
-                  <img src="<?php echo base_url(); ?>Assets/dokter/<?= $d['foto_dokter'] ?>" style="width: 120px;" class="card-img" alt="...">
+                  <img src="<?php echo base_url(); ?>assets/dokter/<?= $d['foto_dokter'] ?>" style="width: 120px;" class="card-img" alt="...">
                 <?php } ?>
               </td>
               <td><a href="<?= base_url('admin/dokter/jadwal/' . $d['id_dokter']) ?>" style="color:black"><?php echo $d['nama_dokter']; ?></a><br>

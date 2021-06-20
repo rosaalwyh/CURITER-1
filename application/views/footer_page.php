@@ -1,20 +1,10 @@
 <style>
-.footer{
-  bottom:0;
-  padding-top: 10px;
-  margin-top: 10px;
-}
-.row{
-  margin:0px;
-}
-.img{
-  margin-left:5rem;
-}
-@media screen and (max-width: 586px) {
-  .col{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content: center;
+  .footer {
+    bottom: 0;
+    padding-top: 10px;
+    margin-top: 10px;
+    width: 100%;
+  }
 
   .row {
     margin: 0px;
@@ -32,12 +22,27 @@
 
     }
 
+    .row {
+      margin: 0px;
+    }
+
     .img {
       margin-left: 5rem;
     }
-
   }
-}
+
+  @media screen and (max-width: 586px) {
+    .col {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+    }
+
+    .img {
+      margin-left: 1rem;
+    }
+  }
 </style>
 
 <div class="footer" id="footer" style="background-color: #dff0fe; width:100%">

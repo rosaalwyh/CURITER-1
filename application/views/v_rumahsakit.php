@@ -35,13 +35,13 @@
       <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
         <div class="row no-gutters">
           <div class="col-md-2">
-            <img src="<?php echo base_url(); ?>Assets/rs/<?= $rs['foto_rumahsakit'] ?>" class="card-img" alt="<?= $rs['nama_rs'] ?>" style=" object-fit: cover; min-width: 100%; min-height: 100%">
+            <img src="<?php echo base_url(); ?>assets/rs/<?= $rs['foto_rumahsakit'] ?>" class="card-img" alt="<?= $rs['nama_rs'] ?>" style=" object-fit: cover; min-width: 100%; min-height: 100%">
           </div>
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title" style="text-align:left;"> <?= "Rumah Sakit " . $rs['nama_rs'] ?></h5>
               <!-- <h6 class="card-title">Jenis Spesialis</h6> -->
-              <p class="card-text" style="text-align:left;opacity:0.7"> <img src="<?php echo base_url(); ?>/Assets/location.png" style="width:20px;height:20px;"> <?= "Kota " . $rs['kota'] ?></p>
+              <p class="card-text" style="text-align:left;opacity:0.7"> <img src="<?php echo base_url(); ?>/assets/location.png" style="width:20px;height:20px;"> <?= "Kota " . $rs['kota'] ?></p>
               <p class="card-text" style="text-align:left;"><?= "Alamat : " . $rs['alamat_rs'] ?> </p>
               <p class="card-text" style="text-align:left;"><?= "Telpon : " . $rs['telp_rs'] ?> </p>
               <p class="card-text" data-rating="<?= $rs['rating'] ?>" title="Average Rating - <?= $rs['rating'] ?>"><?= $rs['rating'] ?>

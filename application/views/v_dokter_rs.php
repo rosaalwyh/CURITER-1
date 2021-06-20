@@ -75,9 +75,9 @@
       <div class="col">
         <div class="card mt-6 mr-md-5" style="width: 20rem;">
           <div class="card-body">
-            <img src="<?php echo base_url(); ?>Assets/rs/<?= $rs['foto_rumahsakit'] ?>" class="card-img" alt="..." width="200px">
+            <img src="<?php echo base_url(); ?>assets/rs/<?= $rs['foto_rumahsakit'] ?>" class="card-img" alt="..." width="200px">
             <h4 class="card-title" style="text-align:center;"><?= "Rumah Sakit " . $rs['nama_rs'] ?></h4>
-            <p class="card-text" style="text-align:center;opacity:0.7"> <img src="<?php echo base_url(); ?>/Assets/location.png" style="width:20px;height:20px;"> <?= "Kota " . $rs['kota'] ?></p>
+            <p class="card-text" style="text-align:center;opacity:0.7"> <img src="<?php echo base_url(); ?>/assets/location.png" style="width:20px;height:20px;"> <?= "Kota " . $rs['kota'] ?></p>
             <p class="card-text" style="text-align:center;"><?= "Alamat : " . $rs['alamat_rs'] ?> </p>
             <p class="card-text" style="text-align:center;"><?= "Telpon : " . $rs['telp_rs'] ?> </p>
             <a href=" <?php echo base_url('caridokterrs/poli/' . $rs['id_rs']) ?> " type="hidden"></a>
