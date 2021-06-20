@@ -35,8 +35,6 @@
       margin-bottom: 20px;
     }
 
-
-
   }
 
   .container1 {

@@ -63,20 +63,20 @@
     <div class="container-about">
 
       <div class="card card-about">
-        <img src="<?php echo base_url(); ?>/Assets/taufik.jpg" class="imgabt" alt="alvin" style="width:100%">
+        <img src="<?php echo base_url(); ?>/Assets/taufik.jpg" class="imgabt ri" alt="alvin" style="width:100%">
         <h2>Taufiiqulhakim</h2>
         <p class="title-card">Teknik Komputer</p>
         <p>Politeknik Negeri Sriwijaya</p>
       </div>
       <div class="card card-about">
-        <img src="<?php echo base_url(); ?>/Assets/oca.png" class="imgabt" alt="alvin" style="width:100%">
+        <img src="<?php echo base_url(); ?>/Assets/oca.png" class="imgabt ri" alt="alvin" style="width:100%">
         <h2>Rosa Alawiyah</h2>
         <p class="title-card">Manajemen Informatika</p>
         <p>Politeknik Negeri Sriwijaya</p>
 
       </div>
       <div class="card card-about">
-        <img src="<?php echo base_url(); ?>/Assets/def.png" class="imgabt" alt="alvin" style="width:100%">
+        <img src="<?php echo base_url(); ?>/Assets/def.png" class="imgabt ri" alt="alvin" style="width:100%">
         <h2>Rida Dwirahma D</h2>
         <p class="title-card">Manajemen Informatika</p>
         <p>Politeknik Negeri Sriwijaya</p>
