@@ -166,13 +166,13 @@
         <h5><?php echo $dokter[0]['nama_poli']; ?></h5>
         <?php foreach ($dokter as $d) { ?>
             <div class="konten-dokter" style="overflow:auto; height:auto;">
-                <div class="card mb-3" style="width:inherit; height: auto; margin-right: 80px;margin-left:20px;">
+                <div class="card mb-3" style="width:inherit;height: auto; margin-right: 80px;margin-left:20px;">
                     <div class="row no-gutters">
                         <div class="col-md-2">
                             <?php if (empty($d['foto_dokter'])) { ?>
-                                <img src="<?php echo base_url(); ?>assets/dokter.png" class="card-img" alt="..." style=" object-fit: cover; min-width: 100%; min-height: 100%">
+                                <img src="<?php echo base_url(); ?>Assets/dokter.png" class="card-img" alt="..." style=" object-fit: cover; min-width: 100%; min-height: 100%">
                             <?php } else { ?>
-                                <img src="<?php echo base_url(); ?>assets/dokter/<?= $d['foto_dokter'] ?>" class="card-img" alt="..." style=" object-fit: cover; min-width: 100%; min-height: 100%">
+                                <img src="<?php echo base_url(); ?>Assets/dokter/<?= $d['foto_dokter'] ?>" class="card-img" alt="..." style=" object-fit: cover; min-width: 100%; min-height: 100%">
                             <?php } ?>
                         </div>
                         <div class="col-md-8">
