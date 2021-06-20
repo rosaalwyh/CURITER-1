@@ -33,11 +33,14 @@
 		}
 	</script>
 	<style>
-		body {
-			display: flex;
-			flex-direction: column;
+		body {	
 			min-height: 100vh;
-
+    		display: flex;
+    		flex-direction: column;
+			position: relative;
+  			margin: 0;
+  			padding-bottom: 10%;
+			
 		}
 
 		.container {
@@ -65,6 +68,20 @@
 
 		.fixed-footer {
 			bottom: 0;
+		}
+
+		.footer {
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			color: #7f91a1;
+			font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';
+			font-weight: 600;
+			background: #FFFFFF;
+			padding: 10px 0;
+
+			/* position: fixed; */
+
 		}
 
 		nav a {

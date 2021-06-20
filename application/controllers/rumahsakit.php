@@ -15,7 +15,6 @@ class RumahSakit extends CI_Controller
     }
     public function index()
     {
-        $this->m_user->checklogin();
         $data['title'] = "Curiter | Rumah Sakit";
         if ($this->input->post('search')) {
             $data['rs'] = $this->m_rs->searchrs($this->input->post('search'));
@@ -29,7 +28,6 @@ class RumahSakit extends CI_Controller
     }
     public function DetailRS($id)
     {
-        $this->m_user->checklogin();
         $data['title'] = "Curiter | Detail Rumah Sakit";
         $data['rsid'] = $this->m_rs->get_datars($id);
         $data['drrs'] = $this->m_dokter->get_dokterbyid($id);

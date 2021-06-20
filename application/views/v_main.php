@@ -18,20 +18,34 @@
   }
 
   @media screen and (max-width: 1000px) {
-  .table1{
-    display: none;
+    .table1 {
+      display: none;
+    }
+
+    .cards {
+      align-content: space-around;
+      justify-content: center;
+      flex-direction: column;
+    }
+
   }
-  .cards{
-    align-content: space-around;
-    justify-content:center;
-    flex-direction: column;
+
+  @media screen and (max-width: 800px) {
+    .artikel1 {
+      font-size: 25px;
+    }
+
+    .artikel {
+      font-size: 15px;
+    }
+
+
   }
-}
 </style>
 <div class="container" style="margin-top: 90px">
   <center>
     <table style="width:100%;" class="table1">
-      <tr >
+      <tr>
         <td> <a href="<?= base_url('home/index/corona') ?>" style="font-size: 150%;text-decoration:none;"><button class="btn btn-outline-info buton" style="border-radius:25px;width:9em;">Corona</button></a> </td>
         <td> <a href="<?= base_url('home/index/vitamin') ?>" style="font-size: 150%;text-decoration:none;"><button class="btn btn-outline-info buton" style="border-radius:25px;width:9em;">Vitamin</button></a> </td>
         <td> <a href="<?= base_url('home/index/obat') ?>" style="font-size: 150%;text-decoration:none;"><button class="btn btn-outline-info buton" style="border-radius:25px;width:9em;">Obat</button></a> </td>
@@ -53,13 +67,13 @@
       </ol>
       <div class="carousel-inner" style="width: 70%; order: 0;">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="<?php echo base_url(); ?>Assets/depan.png" alt="First slide">
+          <img class="d-block w-100" src="<?php echo base_url(); ?>assets/depan.png" alt="First slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="<?php echo base_url(); ?>Assets/medicine1.png" alt="Second slide">
+          <img class="d-block w-100" src="<?php echo base_url(); ?>assets/medicine1.png" alt="Second slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="<?php echo base_url(); ?>Assets/medicine2.png" alt="Third slide">
+          <img class="d-block w-100" src="<?php echo base_url(); ?>assets/medicine2.png" alt="Third slide">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -73,13 +87,13 @@
     </div>
 </div>
 
-<div class="container" style="margin-top: 10px;margin-bottom:150px;">
+<div class="container" style="margin-top: 10px;margin-bottom:50px;">
   <div class="cards">
 
     <div class="card" style="width: 18rem;">
       <a href="<?= base_url('caridokter/') ?>"></a>
       <center>
-        <img class="card-img-top" src="<?php echo base_url(); ?>/Assets/dokter.png" alt="Card image cap">
+        <img class="card-img-top" src="<?php echo base_url(); ?>/assets/dokter.png" alt="Card image cap">
       </center>
       <div class="card-body">
         <p> <strong>CARI DOKTER</strong> </p>
@@ -89,7 +103,7 @@
     <div class="card" style="width: 18rem;">
       <a href="<?= base_url('rumahsakit/') ?>"></a>
       <center>
-        <img class="card-img-top" src="<?php echo base_url(); ?>/Assets/rs.jpeg" alt="Card image cap">
+        <img class="card-img-top" src="<?php echo base_url(); ?>/assets/rs.jpeg" alt="Card image cap">
       </center>
       <div class="card-body">
         <p> <strong>RUMAH SAKIT</strong></p>
@@ -99,7 +113,7 @@
     <div class="card" style="width: 18rem;">
       <a href="<?= base_url('about/') ?>"></a>
       <center>
-        <img class="card-img-top" src="<?php echo base_url(); ?>/Assets/drug.png" alt="Card image cap">
+        <img class="card-img-top" src="<?php echo base_url(); ?>/assets/drug.png" alt="Card image cap">
       </center>
       <div class="card-body">
         <p> <strong>Tentang Curiter</strong></p>
@@ -111,7 +125,7 @@
 
 <div class="main">
   <div class="container konten">
-    <h1>Artikel Kesehatan</h1>
+    <h1 class="artikel1">Artikel Kesehatan</h1>
     <?php if ($artikel) {
       foreach ($artikel as $ar) { ?>
         <hr>
@@ -121,8 +135,8 @@
           $split = explode('.', $ar['konten_artikel'])
           ?>
           <p class="artikel"><?= $split[0] . "." . $split[1] . "..." ?></p>
-          <a href="<?= base_url('home/artikel/' . $ar['id_artikel']) ?>" class="artikel" id="readmore" target="_blank" >Read More</a>
-          <textarea class="textarea" style="display:none;"><?=$ar['konten_artikel']?></textarea>
+          <a href="<?= base_url('home/artikel/' . $ar['id_artikel']) ?>" class="artikel" id="readmore" target="_blank">Read More</a>
+          <textarea class="textarea" style="display:none;"><?= $ar['konten_artikel'] ?></textarea>
         </div>
         <br>
         <hr>
@@ -137,4 +151,3 @@
     <?php } ?>
   </div>
 </div>
-

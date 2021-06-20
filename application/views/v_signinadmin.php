@@ -1,28 +1,31 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!doctype html>
 <html>
+
 <head>
 	<link rel="icon" href="<?php echo base_url(); ?>/assets/gopay.jpg">
-<meta charset="utf-8">
-<!-- <title><?= $title ?></title> -->
-<title> Curiter | Admin Sign In </title>
+	<meta charset="utf-8">
+	<!-- <title><?= $title ?></title> -->
+	<title> Curiter | Admin Sign In </title>
 	<style>
-		*{
+		* {
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
 			text-decoration: none;
 		}
-		.bodyadm{
+
+		.bodyadm {
 			font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';
 			overflow: hidden;
-			background-image:  url("<?php echo base_url(); ?>/Assets/bgcuriter.png");
+			background-image: url("<?php echo base_url(); ?>/assets/bgcuriter.png");
 			background-repeat: no-repeat;
-/*			background-color: white;*/
+			/*			background-color: white;*/
 			background-size: cover;
 		}
+
 		/* .background{
 			background-image:  ;
 			background-repeat: no-repeat;
@@ -31,40 +34,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			height: 100vh;
 			display: flex;
 		} */
-		.box{
+		.box {
 			margin-top: 20vh;
 			margin-left: 65%;
 			font-weight: 300px;
 		}
-/*		.text{
+
+		/*		.text{
 			margin-left: 10%;
 			font-weight: 300px;
 		}*/
-/*		.box{
+		/*		.box{
 			margin-left: 40%;
 		}*/
-		.texth1{
+		.texth1 {
 			font-size: 45px;
 			color: #477A98;
 			font-weight: 500;
 		}
-		.textp{
+
+		.textp {
 			font-size: 16px;
 			color: #477A98;
 			font-weight: 300;
 		}
-		.texta{
+
+		.texta {
 			color: #477A98;
 			font-weight: 700;
 		}
-		.texta{
+
+		.texta {
 			color: #7f91a1;
 			font-weight: 700;
 		}
-		.texta:hover{
+
+		.texta:hover {
 			color: #477A98;
 		}
-		.formlogin{
+
+		.formlogin {
 			background: transparent;
 			color: #477A98;
 			box-sizing: border-box;
@@ -72,7 +81,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			flex-direction: column;
 			width: 250px;
 		}
-		input{
+
+		input {
 			margin: 20px 0;
 			padding: 10px;
 			background: transparent;
@@ -82,7 +92,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			font-weight: 500;
 			font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';
 		}
-		button{
+
+		button {
 			margin: 20px 0;
 			padding: 10px;
 			background-color: transparent;
@@ -93,12 +104,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';
 			font-size: 16px;
 		}
-		button:hover{
+
+		button:hover {
 			background: #477A98;
 			color: #fff;
 			cursor: pointer;
 		}
-		.email, .password{
+
+		.email,
+		.password {
 			border-bottom: 1px solid #477A98;
 		}
 	</style>
@@ -122,17 +136,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 						</div>
 					</div>
-					<?php endif; ?>
-				<form class="formlogin" method = 'post' action='<?= base_url('admin/admin/login')?>'>
+				<?php endif; ?>
+				<form class="formlogin" method='post' action='<?= base_url('admin/admin/login') ?>'>
 					<!-- email gue ganti jadi username disini buat admin -->
-					<input type="text" class="email" name="username" placeholder="Admin Username" value="<?= set_value('username')?>">
-					<?= form_error("username",'<small class= "text-danger pl-3">','</small>')?>
-					<input type="password" class="password" name="password" placeholder="Password" >
-					<?= form_error("password",'<small class= "text-danger pl-3">','</small>')?>
-					<button type="submit" value="Sign In" class="button" >Sign In</button>
+					<input type="text" class="email" name="username" placeholder="Admin Username" value="<?= set_value('username') ?>">
+					<?= form_error("username", '<small class= "text-danger pl-3">', '</small>') ?>
+					<input type="password" class="password" name="password" placeholder="Password">
+					<?= form_error("password", '<small class= "text-danger pl-3">', '</small>') ?>
+					<button type="submit" value="Sign In" class="button">Sign In</button>
 				</form>
 			</div>
 		</div>
 	</main>
 </body>
+
 </html>

@@ -37,11 +37,11 @@
 	<style>
 		body {
 			min-height: 100vh;
-    		display: flex;
-    		flex-direction: column;
+			display: flex;
+			flex-direction: column;
 			position: relative;
-  			margin: 0;
-  			padding-bottom: 10%;
+			margin: 0;
+			padding-bottom: 10%;
 		}
 
 		.container {
@@ -393,7 +393,7 @@
 			border-radius: 4px;
 			font-size: 16px;
 			background-color: white;
-			background-image: url('http://localhost/toobes/Assets/kaca-pembesar.png');
+			background-image: url('http://localhost/toobes/assets/kaca-pembesar.png');
 			background-position: 8px 10px;
 			background-size: 30px 30px;
 			background-repeat: no-repeat;
@@ -480,29 +480,27 @@
 		.checked {
 			color: orange;
 		}
-
-
-
-		/* .artikel-main{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.artikel-main .card{
-  flex: 0 1 40%;
-border-radius: 20px;
-text-align: center;
-width: 18rem;
-} */
+		
 		@media screen and (max-width: 700px) {
 
 			.row,
 			.navbar {
 				flex-direction: none;
 			}
-
+			
 		}
+		@media screen and (max-width: 850px) {
+				body {
+				margin: 0;
+				padding-bottom: 20%;
+			}
+		}
+		@media screen and (max-width: 500px) {
+				body {
+				margin: 0;
+				padding-bottom: 40%;
+				}
+			}
 	</style>
 </head>
 
@@ -528,7 +526,7 @@ width: 18rem;
 						<li class="nav-item">
 							<a class="nav-link" href="<?= base_url('about/') ?>">About</a>
 						</li>
-						<li class="nav-item dropdown">
+						<!-- <li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<?php $cek = $this->session->all_userdata();
 								echo "Halo, " . $cek['user']['fullname']; ?> </a>
@@ -537,7 +535,7 @@ width: 18rem;
 								<a class="dropdown" href="<?= base_url('home/settings') ?>">Pengaturan</a>
 								<a class="dropdown" href="<?= base_url('home/logout') ?>">Keluar</a>
 							</div>
-						</li>
+						</li> -->
 				</div>
 			</nav>
 		</div>

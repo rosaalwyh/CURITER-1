@@ -16,7 +16,6 @@ class caridokterrs extends CI_Controller
 
     public function index()
     {
-        $this->m_user->checklogin();
         $data['title'] = "Curiter | Cari Dokter";
         $data['rs'] = $this->db->get('rumahsakit')->result_array();
         $this->load->view('header_page', $data);
