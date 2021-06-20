@@ -26,6 +26,18 @@
     justify-content:center;
     flex-direction: column;
   }
+ 
+}
+
+@media screen and (max-width: 800px) {
+  .artikel1{
+    font-size: 25px;
+  }
+  .artikel{
+    font-size: 15px;
+  }
+
+  
 }
 </style>
 <div class="container" style="margin-top: 90px">
@@ -73,7 +85,7 @@
     </div>
 </div>
 
-<div class="container" style="margin-top: 10px;margin-bottom:150px;">
+<div class="container" style="margin-top: 10px;margin-bottom:50px;">
   <div class="cards">
 
     <div class="card" style="width: 18rem;">
@@ -111,7 +123,7 @@
 
 <div class="main">
   <div class="container konten">
-    <h1>Artikel Kesehatan</h1>
+    <h1 class="artikel1">Artikel Kesehatan</h1>
     <?php if ($artikel) {
       foreach ($artikel as $ar) { ?>
         <hr>

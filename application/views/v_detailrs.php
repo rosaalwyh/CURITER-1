@@ -72,7 +72,7 @@
     cursor: pointer;
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1200px) {
     .konten-atas {
       display: flex;
       flex-direction: column;
@@ -97,7 +97,7 @@
       margin-bottom: -200px;
     }
 
-    @media screen and (max-width: 1250px) {
+    @media screen and (max-width: 1300px) {
       .kolom-fasilitas {
         float: left;
         width: 25%;

@@ -18,7 +18,6 @@
   </div>
   <div class="col-md-2"style="margin-top: 120px;" >
     <button class="ml-auto btn btn-primary text-uppercase" type="button" name="button_janji" style="border-radius:13px;font-size:13px;background-color:#033D68;border-color:#033D68;"> <a href="<?= base_url('admin/dokter/detaildokter/'.$rs['id_rs']) ?>"></a> Lihat Dokter</button>
-
   </div>
   </div>
 </div>

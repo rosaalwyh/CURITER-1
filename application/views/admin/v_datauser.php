@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="" dir="ltr">
 
-<head>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css') ?>">
-    <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/jquery.dataTables.css') ?>">
-    <script type="text/javascript" charset="utf8" src="<?php echo base_url('assets/js/jquery.dataTables.js') ?>"></script>
-    <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
-    <script src="<?php echo base_url('assets/js/all.min.js') ?>"></script>
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/all.min.css') ?>" >
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script> -->
-
-  <script src="<?= base_url('assets/js/fontawesome-all.js'); ?>">
-  </script>
-  <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
-  <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/custom.css'); ?>">
-  <script type="text/javascript" src="<?= base_url('assets/js/jquery.js'); ?>">
-  </script>
-  <script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js'); ?>">
-  </script>
-
-  <title>Curiter | Admin</title>
   <style>
     .bodiadm {
       margin-top: 90px;
@@ -170,6 +146,3 @@
 </table>
 </div>
 </div>
-</body>
-
-</html>
