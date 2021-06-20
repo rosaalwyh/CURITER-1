@@ -170,9 +170,9 @@
                     <div class="row no-gutters">
                         <div class="col-md-2">
                             <?php if (empty($d['foto_dokter'])) { ?>
-                                <img src="<?php echo base_url(); ?>Assets/dokter.png" class="card-img" alt="..." style=" object-fit: cover; min-width: 100%; min-height: 100%">
+                                <img src="<?php echo base_url(); ?>assets/dokter.png" class="card-img" alt="..." style=" object-fit: cover; min-width: 100%; min-height: 100%">
                             <?php } else { ?>
-                                <img src="<?php echo base_url(); ?>Assets/dokter/<?= $d['foto_dokter'] ?>" class="card-img" alt="..." style=" object-fit: cover; min-width: 100%; min-height: 100%">
+                                <img src="<?php echo base_url(); ?>assets/dokter/<?= $d['foto_dokter'] ?>" class="card-img" alt="..." style=" object-fit: cover; min-width: 100%; min-height: 100%">
                             <?php } ?>
                         </div>
                         <div class="col-md-8">

@@ -118,7 +118,7 @@
   </div>
   <div class="konten-atas" style="margin-bottom: 200px;">
     <div id='konten-kiri-atas' class="konten-sisikiri" style="margin-top:10px;">
-      <img src="<?php echo base_url(); ?>Assets/rs/<?= $rsid['foto_rumahsakit'] ?>" class="card-img" alt="..." width="100%">
+      <img src="<?php echo base_url(); ?>assets/rs/<?= $rsid['foto_rumahsakit'] ?>" class="card-img" alt="..." width="100%">
     </div>
     <div class="Tentang">
       <h4> <?= "Tentang Rumah Sakit " . $rsid['nama_rs'] ?></h4>
@@ -143,10 +143,10 @@
       <table style="width:100%;">
         <tr>
           <td>
-            <p class="card-text" style="text-align:left;opacity:0.7"> <img src="<?php echo base_url(); ?>/Assets/location.png" style="width:20px;height:20px;"> <?= "Kota " . $rsid['kota'] ?></p>
+            <p class="card-text" style="text-align:left;opacity:0.7"> <img src="<?php echo base_url(); ?>/assets/location.png" style="width:20px;height:20px;"> <?= "Kota " . $rsid['kota'] ?></p>
           </td>
           <td>
-            <p class="card-text" style="text-align:left;opacity:0.7"> <img src="<?php echo base_url(); ?>/Assets/call-icon.png" style="width:20px;height:20px;"> <?= $rsid['telp_rs'] ?></p>
+            <p class="card-text" style="text-align:left;opacity:0.7"> <img src="<?php echo base_url(); ?>/assets/call-icon.png" style="width:20px;height:20px;"> <?= $rsid['telp_rs'] ?></p>
           </td>
         </tr>
       </table>

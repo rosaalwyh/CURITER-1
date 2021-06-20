@@ -393,7 +393,7 @@
 			border-radius: 4px;
 			font-size: 16px;
 			background-color: white;
-			background-image: url('http://localhost/toobes/Assets/kaca-pembesar.png');
+			background-image: url('http://localhost/toobes/assets/kaca-pembesar.png');
 			background-position: 8px 10px;
 			background-size: 30px 30px;
 			background-repeat: no-repeat;
