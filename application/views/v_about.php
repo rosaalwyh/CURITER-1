@@ -11,14 +11,13 @@
       margin: auto;
       text-align: center;
       font-family: arial;
-
+      
     }
-
-    .bodi {
-      margin-top: 90px;
-      margin-left: 20px;
+    .bodi{
+      padding-top: 100px;
+      margin: 0 auto;
+      width: 90%;
     }
-
     .title-card {
       color: grey;
       font-size: 18px;
@@ -35,7 +34,7 @@
     .container-about {
       display: flex;
       margin: auto;
-      width: 1000px;
+      width: 900px;
     }
 
     @media screen and (max-width: 770px) {
@@ -46,11 +45,17 @@
         justify-content: center;
         flex-direction: column;
         margin: 10px;
+        width:100%;
       }
 
       .card-about {
         margin: 10px;
       }
+      .bodi{
+      padding-top: 100px;
+      margin: 0 auto;
+      width: 90%;
+    }
     }
   </style>
 </head>
