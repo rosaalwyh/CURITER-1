@@ -257,7 +257,7 @@
                     </div>
                     <div class="form-group">
                       <label for="formGroupExampleInput">Gambar</label>
-                      <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Email" name="gambar">
+                      <input type="file" class="form-control" id="formGroupExampleInput" placeholder="Email" name="foto_dokter">
                     </div>
                 </div>
                 <div class="modal-footer">
