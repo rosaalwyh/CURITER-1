@@ -35,13 +35,15 @@
       margin-bottom: 20px;
     }
 
+    .container1 {
+      flex-direction: row;
+      width: 80%;
+      margin: 0px auto;
+    }
+
   }
 
-  .container1 {
-    flex-direction: row;
-    width: 80%;
-    margin: 0px auto;
-  }
+
 
   /* Style the counter cards */
   .card {
@@ -65,8 +67,6 @@
       flex-wrap: wrap;
 
     }
-
-  }
   }
 </style>
 <div class="container1" style="margin-top: 90px; margin-bottom:50px">
